@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Generate changelog
+      - name: Generate Changelog
         uses: metcalfc/changelog-generator@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
