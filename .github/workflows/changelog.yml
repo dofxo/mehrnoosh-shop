@@ -13,10 +13,13 @@ on:
 
 jobs:
   changelog:
-    name: Changelog Generator
+    name: Generate Changelog
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: bala-raj/pull-request-changelog@master
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate changelog
+        uses: metcalfc/changelog-generator@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
