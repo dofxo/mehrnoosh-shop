@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import yekanBakh from "@/app/fonts/yekanBakh";
+import yekanBakh from "@/fonts/yekanBakh";
 import "./globals.scss";
 
 export const metadata: Metadata = {
