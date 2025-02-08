@@ -1,2 +1,3 @@
 reviews:
   enabled: false
+  review_status: false
