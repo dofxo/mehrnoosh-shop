@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import yekanbakh from "@/app/fonts/yekanBakh";
+import yekanbakh from "@/fonts/yekanBakh";
 import "../globals.scss";
-import { getDictionary } from "@/utils/langs";
+import { getLanguage } from "@/utils/langs";
 import { langType } from "./langs";
 
 export async function generateMetadata({
@@ -9,8 +9,8 @@ export async function generateMetadata({
 }: {
   params: { lang: langType };
 }): Promise<Metadata> {
-  const { lang } = params;
-  const language = await getDictionary(lang);
+  const { lang } = await params;
+  const language = await getLanguage(lang);
 
   // Dynamically set metadata based on language
   return {
@@ -26,7 +26,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: langType };
 }) {
-  const { lang } = params;
+  const { lang } = await params;
 
   return (
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>

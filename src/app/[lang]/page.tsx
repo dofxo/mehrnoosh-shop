@@ -1,4 +1,4 @@
-import { getDictionary } from "@/utils/langs";
+import { getLanguage } from "@/utils/langs";
 import { langType } from "./langs";
 
 export default async function Home({
@@ -7,7 +7,7 @@ export default async function Home({
   params: Promise<{ lang: langType }>;
 }) {
   const { lang } = await params;
-  const language = await getDictionary(lang);
+  const language = await getLanguage(lang);
 
   return (
     <>
