@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: {
+        container: "1300px",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
