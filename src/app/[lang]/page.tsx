@@ -1,6 +1,6 @@
 import { getLanguage } from "@/utils/langs";
 import { langType } from "./langs";
-import DesktopHeader from "@/components/header/desktop/DesktopHeader";
+import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 
 export default async function Home({
   params,
