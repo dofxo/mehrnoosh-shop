@@ -9,7 +9,7 @@ export async function GET(
   try {
     const { id } = await params;
 
-    let { data: product, error } = await supabase
+    const { data: product, error } = await supabase
       .from("products")
       .select("*")
       .eq("id", id);
