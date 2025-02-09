@@ -1,5 +1,9 @@
 {
   "general": {
     "websiteTitle": "وبسایت فروشگاهی مهرنوش"
+  },
+  "header": {
+    "searchPlaceholder": "جستجو محصولات ...",
+    "signupLogin": "ورود و عضویت"
   }
 }

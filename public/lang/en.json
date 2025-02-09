@@ -1,5 +1,9 @@
 {
   "general": {
     "websiteTitle": "Mehrnoosh Shop"
+  },
+  "header": {
+    "searchPlaceholder": "search for products ...",
+    "signupLogin": "signup and login"
   }
 }
