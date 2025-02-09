@@ -3,6 +3,7 @@ import type { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 
 export async function GET(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _: NextApiRequest,
   { params }: { params: { id: string } },
 ) {
