@@ -7,6 +7,9 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    borderRadius: {
+      primary: "var(--border-radius)",
+    },
     extend: {
       spacing: {
         container: "1300px",
@@ -15,6 +18,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
+        "text-primary": "var(--text-primary)",
         secondary: "var(--secondary)",
       },
     },
