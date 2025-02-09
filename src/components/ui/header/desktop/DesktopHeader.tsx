@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HeaderProps } from "../Header.types";
-import Logo from "../../../../public/images/text-logo.png";
+import Logo from "../../../../../public/images/text-logo.png";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
