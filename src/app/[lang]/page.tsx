@@ -1,5 +1,6 @@
 import { getLanguage } from "@/utils/langs";
 import { langType } from "./langs";
+import DesktopHeader from "@/components/header/desktop/DesktopHeader";
 
 export default async function Home({
   params,
@@ -11,7 +12,7 @@ export default async function Home({
 
   return (
     <>
-      <center>{language.general.websiteTitle}</center>
+      <DesktopHeader language={language} />
     </>
   );
 }
