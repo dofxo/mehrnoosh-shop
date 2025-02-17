@@ -71,6 +71,6 @@
   }
 
   body {
-    background: var(--background);
+    @apply bg-background text-foreground;
   }
 }
