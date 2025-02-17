@@ -8,6 +8,18 @@
   width: 90vw;
 }
 
+:root {
+  --text-primary: #757575;
+  --primary: #0070FF;
+  --secondary: #F2F6FB;
+  --border-radius: 20px;
+}
+
+.primary-box-shadow {
+  box-shadow: 0px 7px 15px #0070FF3B;
+}
+
+
 @layer base {
   :root {
     --background: #f2f6fc;
