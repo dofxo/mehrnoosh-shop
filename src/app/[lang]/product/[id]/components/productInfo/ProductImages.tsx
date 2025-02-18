@@ -28,6 +28,9 @@ const ProductImages = ({
   const sectionsClassName = "bg-[var(--background)] rounded-[25px] p-[30px]";
 
   const discountPercentage = Math.round(100 - (+discount_price * 100) / +price);
+
+  //TODO: replace all texts with lang file
+
   const actionButtonIcons = [
     {
       icon: <ShareRounded fontSize="small" />,
@@ -56,7 +59,7 @@ const ProductImages = ({
                     {item.icon}
                   </TooltipTrigger>
                   <TooltipContent
-                    className="rounded-[20px] text-[15px] bg-[#6D90B9] w-[120px] p-[7px 0] flex justify-center items-center"
+                    className="rounded-[20px] font-[500] text-[15px] bg-[#6D90B9] w-[120px] p-[7px 0] flex justify-center items-center"
                     align="start"
                   >
                     {item.tooltipContent}

@@ -1,5 +1,11 @@
 {
   "general": {
     "websiteTitle": "Mehrnoosh Shop"
+  },
+  "productSingle": {
+    "compare": "compare",
+    "share": "share",
+    "like": "like",
+    "discount": "discount"
   }
 }

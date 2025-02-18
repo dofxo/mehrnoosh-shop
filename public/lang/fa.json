@@ -1,5 +1,11 @@
 {
   "general": {
     "websiteTitle": "وبسایت فروشگاهی مهرنوش"
+  },
+  "productSingle": {
+    "compare": "مقایسه",
+    "share": "اشتراک گذاری",
+    "like": "علاقع مندی",
+    "discount": "تخفیف"
   }
 }
