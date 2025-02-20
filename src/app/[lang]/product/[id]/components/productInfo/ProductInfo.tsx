@@ -1,4 +1,4 @@
-import { IProduct } from "../../Product";
+import { IProduct } from "../../product";
 import ProductDetails from "./ProductDetails";
 import ProductImages from "./ProductImages";
 import ProductPrice from "./ProductPrice";
