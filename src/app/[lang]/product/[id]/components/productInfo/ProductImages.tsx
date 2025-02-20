@@ -146,7 +146,7 @@ const ProductImages = ({
                 alt="picture"
                 key={idx}
                 layout="responsive"
-                className="rounded-[8px]"
+                className="rounded-[8px] cursor-pointer"
               />
             ))}
           </Slider>
