@@ -15,6 +15,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -22,6 +23,7 @@ const ProductImages = ({
   images,
   quantity,
   sold_amount,
+  name,
   discount_price,
   price,
 }: {
@@ -30,10 +32,13 @@ const ProductImages = ({
   sold_amount: string;
   discount_price: string;
   price: string;
+  name: { en: string; fa: string };
 }) => {
   const sectionsClassName = "bg-[var(--background)] rounded-[25px] p-[30px]";
 
   const discountPercentage = Math.round(100 - (+discount_price * 100) / +price);
+  const soldPercentage = (+sold_amount * 100) / +quantity;
+
   const topSliderSettings = {
     infinite: false,
     speed: 500,
@@ -56,7 +61,16 @@ const ProductImages = ({
 
   const actionButtonIcons = [
     {
-      icon: <ShareRounded fontSize="small" />,
+      icon: (
+        <ShareRounded
+          fontSize="small"
+          onClick={() => {
+            //TODO: replace it with lang file to be dynamic
+            const productName = name.fa;
+            console.log(productName);
+          }}
+        />
+      ),
       tooltipContent: "اشتراک گذاری",
     },
     {
@@ -152,7 +166,24 @@ const ProductImages = ({
           </Slider>
         </div>
       </div>
-      <div id="sold_amount" className={`${sectionsClassName}`}></div>
+      <div
+        id="sold_amount"
+        className={`${sectionsClassName} flex flex-col gap-[20px]`}
+      >
+        <div
+          id="progress-bar"
+          className="relative h-[10px] bg-white rounded-[20px] primary-box-shadow "
+        >
+          <div
+            className="absolute bg-primary  h-full  rounded-[inherit]"
+            style={{ width: `${soldPercentage}%` }}
+          />
+        </div>
+
+        <span className="font-[500]">
+          {soldPercentage}% از موجودی انبار فروش رفته است.
+        </span>
+      </div>
     </div>
   );
 };

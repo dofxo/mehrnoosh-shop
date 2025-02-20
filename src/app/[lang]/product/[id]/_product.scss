@@ -32,3 +32,14 @@
   }
 
 }
+
+
+// progress bar
+
+div {
+  &[role="progressbar"] {
+    div {
+      border-radius: 10px;
+    }
+  }
+}

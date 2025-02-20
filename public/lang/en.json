@@ -6,6 +6,7 @@
     "compare": "compare",
     "share": "share",
     "like": "like",
-    "discount": "discount"
+    "discount": "discount",
+    "amount_sold": "of the product have been sold."
   }
 }
