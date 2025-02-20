@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import {
   FavoriteBorderRounded,
@@ -15,6 +16,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -39,6 +47,8 @@ const ProductImages = ({
   const discountPercentage = Math.round(100 - (+discount_price * 100) / +price);
   const soldPercentage = (+sold_amount * 100) / +quantity;
 
+  const productShareLink = `${process.env.NEXT_PUBLIC_BASE_URL}${usePathname()}`;
+
   const topSliderSettings = {
     infinite: false,
     speed: 500,
@@ -62,14 +72,21 @@ const ProductImages = ({
   const actionButtonIcons = [
     {
       icon: (
-        <ShareRounded
-          fontSize="small"
-          onClick={() => {
-            //TODO: replace it with lang file to be dynamic
-            const productName = name.fa;
-            console.log(productName);
-          }}
-        />
+        <Dialog>
+          <DialogTrigger>
+            <ShareRounded fontSize="small" />
+          </DialogTrigger>
+          <DialogContent className="bg-white max-w-[unset] w-fit !rounded-[30px]">
+            <DialogDescription className="mt-[50px] text-[16px]">
+              <div className="flex gap-5 items-center">
+                <div className="rounded-[20px] text-white font-[500] text-[15px] bg-[#6D90B9] w-[120px] p-[7px] flex justify-center items-center">
+                  اشتراک گذاری
+                </div>
+                <p className="text-black font-[500]">{name.fa}</p>
+              </div>
+            </DialogDescription>
+          </DialogContent>
+        </Dialog>
       ),
       tooltipContent: "اشتراک گذاری",
     },
