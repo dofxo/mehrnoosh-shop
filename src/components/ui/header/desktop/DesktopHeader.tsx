@@ -8,7 +8,7 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function DesktopHeader({ language }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -18,10 +18,6 @@ export default function DesktopHeader({ language }: HeaderProps) {
     e.stopPropagation();
     setIsSearchOpen(false);
   };
-
-  useEffect(() => {
-    console.log("Search Open:", isSearchOpen);
-  }, [isSearchOpen]);
 
   return (
     <section className="w-full bg-secondary p-[15px]">
