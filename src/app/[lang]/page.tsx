@@ -12,7 +12,7 @@ export default async function Home({
   const language = await getLanguage(lang);
 
   return (
-    <StoreProvider language={language}>
+    <StoreProvider language={language} currentLanguage="fa">
       <DesktopHeader language={language} />
       {/* other components that need the store can go here */}
     </StoreProvider>
