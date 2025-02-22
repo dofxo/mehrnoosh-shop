@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
-import yekanbakh from "@/fonts/yekanBakh";
 import "../globals.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { getLanguage } from "@/utils/langs";
 import { langType } from "./langs";
+import yekanbakh from "@/fonts/yekanBakh";
+import { getLanguage } from "@/utils/langs";
+import type { Metadata } from "next";
 
 export async function generateMetadata({
   params,
