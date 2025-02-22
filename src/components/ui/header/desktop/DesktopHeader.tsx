@@ -1,7 +1,8 @@
 "use client";
 
 import Logo from "../../../../../public/images/text-logo.png";
-import { HeaderProps } from "../Header.types";
+import ChangeLanguage from "@/components/ChangeLanguage";
+import { useAppSelector } from "@/lib/hooks";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
@@ -10,9 +11,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function DesktopHeader({ language }: HeaderProps) {
+export default function DesktopHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const handleOpen = () => setIsSearchOpen(true);
+  const language = useAppSelector((state) => state.language.languageData);
 
   const handleClose = (e: any) => {
     e.stopPropagation();
@@ -60,8 +62,14 @@ export default function DesktopHeader({ language }: HeaderProps) {
           </div>
           <div className="w-[25%]">
             <div className="flex flex-row items-center justify-end gap-1">
-              <NotificationsOutlinedIcon />
-              <FavoriteBorderOutlinedIcon />
+              <div className="cursor-pointer transition hover:text-primary">
+                <NotificationsOutlinedIcon />
+              </div>
+              <div className="cursor-pointer transition hover:text-primary">
+                <FavoriteBorderOutlinedIcon />
+              </div>
+
+              <ChangeLanguage />
             </div>
           </div>
         </div>
