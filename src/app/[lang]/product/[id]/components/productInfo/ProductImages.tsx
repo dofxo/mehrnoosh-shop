@@ -13,7 +13,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useAppStore } from "@/lib/hooks";
+import { useAppSelector } from "@/lib/hooks";
 import {
   FavoriteBorderRounded,
   ShareRounded,
@@ -45,8 +45,9 @@ const ProductImages = ({
   const soldPercentage = (+sold_amount * 100) / +quantity;
 
   const productShareLink = `${process.env.NEXT_PUBLIC_BASE_URL}${usePathname()}`;
-
-  const language = useAppStore();
+  const { currentLanguage, languageData } = useAppSelector(
+    (state) => state.language,
+  );
 
   const topSliderSettings = {
     infinite: false,
@@ -66,8 +67,6 @@ const ProductImages = ({
     swipeToSlide: true,
   };
 
-  //TODO: replace all texts with lang file
-
   const actionButtonIcons = [
     {
       icon: (
@@ -79,23 +78,25 @@ const ProductImages = ({
             <DialogDescription className="mt-[50px] text-[16px]">
               <div className="flex items-center gap-5">
                 <div className="flex w-[120px] items-center justify-center rounded-[20px] bg-[#6D90B9] p-[7px] text-[15px] font-[500] text-white">
-                  اشتراک گذاری
+                  {languageData.productSingle.share}
                 </div>
-                <p className="font-[500] text-black">{name.fa}</p>
+                <p className="font-[500] text-black">
+                  {name[currentLanguage as "en" | "fa"]}
+                </p>
               </div>
             </DialogDescription>
           </DialogContent>
         </Dialog>
       ),
-      tooltipContent: "اشتراک گذاری",
+      tooltipContent: languageData.productSingle.share,
     },
     {
       icon: <FavoriteBorderRounded fontSize="small" />,
-      tooltipContent: "علاقه مندی",
+      tooltipContent: languageData.productSingle.like,
     },
     {
       icon: <CompareArrowsRounded fontSize="small" />,
-      tooltipContent: "مقایسه",
+      tooltipContent: languageData.productSingle.compare,
     },
   ];
 
@@ -140,7 +141,7 @@ const ProductImages = ({
               variant="default"
               className="primary-box-shadow p-[6px 15px] h-[35px] rounded-[90px] text-[15px]"
             >
-              {discountPercentage}% تخفیف
+              {discountPercentage}% {languageData.productSingle.discount}
             </Badge>
           )}
         </div>
@@ -197,7 +198,7 @@ const ProductImages = ({
         </div>
 
         <span className="font-[500]">
-          {soldPercentage}% از موجودی انبار فروش رفته است.
+          {soldPercentage}% {languageData.productSingle.amount_sold}
         </span>
       </div>
     </div>
