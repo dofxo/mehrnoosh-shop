@@ -8,5 +8,9 @@
     "like": "like",
     "discount": "discount",
     "amount_sold": "of the product have been sold."
+  },
+  "header": {
+    "searchPlaceholder": "search for products ...",
+    "signupLogin": "signup and login"
   }
 }

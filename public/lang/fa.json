@@ -8,5 +8,9 @@
     "like": "علاقع مندی",
     "discount": "تخفیف",
     "amount_sold": "از موجودی انبار فروش رفته است."
+  },
+  "header": {
+    "searchPlaceholder": "جستجو محصولات ...",
+    "signupLogin": "ورود و عضویت"
   }
 }
