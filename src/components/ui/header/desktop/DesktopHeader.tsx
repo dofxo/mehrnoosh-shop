@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function DesktopHeader() {
   return (
-    <section className="w-full bg-secondary p-[15px]">
+    <section className="hidden lg:block w-full bg-secondary p-[15px]">
       <div className="container">
         <div className="flex flex-row items-center justify-center">
           <div className="w-[20%] max-w-[200px] p-[10px]">
