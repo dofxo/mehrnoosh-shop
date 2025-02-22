@@ -94,7 +94,7 @@ const ProductImages = ({
             onCloseAutoFocus={() => {
               setCopiedLinkStatus(false);
             }}
-            className="shadcn-modal w-fit max-w-[unset] !rounded-[30px] bg-white"
+            className="shadcn-modal w-fit max-w-[unset] !rounded-[30px] bg-gray-300"
           >
             <DialogDescription className="mt-[50px] flex flex-col gap-[20px] text-[16px]">
               <div className="flex items-center gap-5">
@@ -117,7 +117,7 @@ const ProductImages = ({
                   </a>
                 ))}
               </div>
-              <div className="flex items-center gap-3 self-end rounded-[15px] bg-white p-[10px] text-black shadow-lg">
+              <div className="flex items-center gap-3 self-end rounded-[15px] bg-white p-[10px] text-black">
                 {productShareLink}
                 <div
                   className="flex h-[35px] w-[35px] cursor-pointer items-center justify-center rounded-[50%] bg-primary p-1.5 transition"
