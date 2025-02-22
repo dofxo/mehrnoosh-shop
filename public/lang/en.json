@@ -4,6 +4,13 @@
   },
   "header": {
     "searchPlaceholder": "search for products ...",
-    "signupLogin": "signup and login"
+    "signupLogin": "signup and login",
+    "changeLanguage": {
+      "title:": "Change Language",
+      "searchPlaceholder": "Language",
+      "fa": "Persian",
+      "en": "English",
+      "button": "Change Language"
+    }
   }
 }

@@ -4,6 +4,13 @@
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",
-    "signupLogin": "ورود و عضویت"
+    "signupLogin": "ورود و عضویت",
+    "changeLanguage": {
+      "title:": "تغییر زبان",
+      "searchPlaceholder": "زبان",
+      "fa": "فارسی",
+      "en": "انگلیسی",
+      "button": "تغییر زبان"
+    }
   }
 }
