@@ -1,3 +1,4 @@
+import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,11 +29,16 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: langType };
 }) {
-  const { lang } = await params;
+  const { lang } = params;
+  const language = await getLanguage(lang);
 
   return (
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
-      <body className={`${yekanbakh.className} antialiased`}>{children}</body>
+      <body className={`${yekanbakh.className} antialiased`}>
+        <StoreProvider language={language} currentLanguage={lang}>
+          {children}
+        </StoreProvider>
+      </body>
     </html>
   );
 }
