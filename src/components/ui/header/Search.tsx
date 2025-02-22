@@ -1,6 +1,9 @@
+"use client";
+
 import { useAppSelector } from "@/lib/hooks";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -9,16 +12,20 @@ export default function Search() {
   const handleOpen = () => setIsSearchOpen(true);
   const language = useAppSelector((state) => state.language.languageData);
 
+  const isLg = useMediaQuery("(min-width: 970px)");
+
   const handleClose = (e: any) => {
     e.stopPropagation();
     setIsSearchOpen(false);
   };
 
   return (
-    <div className="w-[55%] p-[10px]">
+    <div className="w-full p-[10px] lg:w-[55%]">
       <motion.div
-        animate={{ width: isSearchOpen ? "100%" : "50%" }}
-        transition={{ duration: 0.2, ease: "easeInOut" }}
+        {...(isLg && {
+          animate: { width: isSearchOpen ? "100%" : "50%" },
+          transition: { duration: 0.2, ease: "easeInOut" },
+        })}
         className="overflow-hidden"
       >
         <div className="flex flex-row items-center justify-start">
@@ -36,7 +43,6 @@ export default function Search() {
                 <HighlightOffOutlinedIcon sx={{ width: 15, height: 15 }} />
               </div>
             )}
-
             <div className="cursor-pointer transition hover:text-primary">
               <SearchOutlinedIcon />
             </div>
