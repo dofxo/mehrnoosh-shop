@@ -219,17 +219,34 @@ const ProductImages = ({
             asNavFor={nav1 ?? undefined} // Link to the top slider
             ref={sliderRef2}
           >
-            {images.reverse().map((imgSrc, idx) => (
-              <Image
-                src={imgSrc}
-                width={0}
-                height={0}
-                alt="picture"
-                key={idx}
-                layout="responsive"
-                className="cursor-pointer rounded-[8px]"
-              />
-            ))}
+            {
+              // change direction of the images due to page direction.
+              currentLanguage === "fa"
+                ? images
+                    .reverse()
+                    .map((imgSrc, idx) => (
+                      <Image
+                        src={imgSrc}
+                        width={0}
+                        height={0}
+                        alt="picture"
+                        key={idx}
+                        layout="responsive"
+                        className="cursor-pointer rounded-[8px]"
+                      />
+                    ))
+                : images.map((imgSrc, idx) => (
+                    <Image
+                      src={imgSrc}
+                      width={0}
+                      height={0}
+                      alt="picture"
+                      key={idx}
+                      layout="responsive"
+                      className="cursor-pointer rounded-[8px]"
+                    />
+                  ))
+            }
           </Slider>
         </div>
       </div>
