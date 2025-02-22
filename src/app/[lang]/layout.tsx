@@ -29,7 +29,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: langType };
 }) {
-  const { lang } = params;
+  const { lang } = await params;
   const language = await getLanguage(lang);
 
   return (
