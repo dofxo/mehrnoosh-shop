@@ -122,7 +122,7 @@ const ProductImages = ({
             {actionButtonIcons.map((item, idx) => (
               <TooltipProvider key={idx} delayDuration={0}>
                 <Tooltip>
-                  <TooltipTrigger className="rounded-full flex h-[35px] w-[35px] cursor-pointer items-center justify-center bg-white transition hover:bg-primary hover:text-white">
+                  <TooltipTrigger className="flex h-[35px] w-[35px] cursor-pointer items-center justify-center rounded-[50%] bg-white transition hover:bg-primary hover:text-white">
                     {item.icon}
                   </TooltipTrigger>
                   <TooltipContent
