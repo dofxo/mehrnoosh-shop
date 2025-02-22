@@ -1,31 +1,28 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
-import {
-  FavoriteBorderRounded,
-  ShareRounded,
-  CompareArrowsRounded,
-} from "@mui/icons-material/";
-
-import Slider from "react-slick";
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { useAppStore } from "@/lib/hooks";
+import {
+  FavoriteBorderRounded,
+  ShareRounded,
+  CompareArrowsRounded,
+} from "@mui/icons-material/";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
 
 const ProductImages = ({
   images,
@@ -48,6 +45,8 @@ const ProductImages = ({
   const soldPercentage = (+sold_amount * 100) / +quantity;
 
   const productShareLink = `${process.env.NEXT_PUBLIC_BASE_URL}${usePathname()}`;
+
+  const language = useAppStore();
 
   const topSliderSettings = {
     infinite: false,
@@ -76,13 +75,13 @@ const ProductImages = ({
           <DialogTrigger>
             <ShareRounded fontSize="small" />
           </DialogTrigger>
-          <DialogContent className="bg-white max-w-[unset] w-fit !rounded-[30px]">
+          <DialogContent className="w-fit max-w-[unset] !rounded-[30px] bg-white">
             <DialogDescription className="mt-[50px] text-[16px]">
-              <div className="flex gap-5 items-center">
-                <div className="rounded-[20px] text-white font-[500] text-[15px] bg-[#6D90B9] w-[120px] p-[7px] flex justify-center items-center">
+              <div className="flex items-center gap-5">
+                <div className="flex w-[120px] items-center justify-center rounded-[20px] bg-[#6D90B9] p-[7px] text-[15px] font-[500] text-white">
                   اشتراک گذاری
                 </div>
-                <p className="text-black font-[500]">{name.fa}</p>
+                <p className="font-[500] text-black">{name.fa}</p>
               </div>
             </DialogDescription>
           </DialogContent>
@@ -118,16 +117,16 @@ const ProductImages = ({
         id="images"
         className={`${sectionsClassName} flex flex-col gap-[20px]`}
       >
-        <div className="p-[20px 30px 0 30px] flex gap-[50px] items-center justify-between">
-          <div id="action-buttons" className="flex gap-2 items-center">
+        <div className="p-[20px 30px 0 30px] flex items-center justify-between gap-[50px]">
+          <div id="action-buttons" className="flex items-center gap-2">
             {actionButtonIcons.map((item, idx) => (
               <TooltipProvider key={idx} delayDuration={0}>
                 <Tooltip>
-                  <TooltipTrigger className="bg-white w-[35px] h-[35px] rounded-full flex items-center justify-center cursor-pointer hover:bg-primary transition hover:text-white">
+                  <TooltipTrigger className="rounded-full flex h-[35px] w-[35px] cursor-pointer items-center justify-center bg-white transition hover:bg-primary hover:text-white">
                     {item.icon}
                   </TooltipTrigger>
                   <TooltipContent
-                    className="rounded-[20px] font-[500] text-[15px] bg-[#6D90B9] w-[120px] p-[7px 0] flex justify-center items-center"
+                    className="p-[7px 0] flex w-[120px] items-center justify-center rounded-[20px] bg-[#6D90B9] text-[15px] font-[500]"
                     align="start"
                   >
                     {item.tooltipContent}
@@ -139,13 +138,13 @@ const ProductImages = ({
           {+discount_price > 0 && (
             <Badge
               variant="default"
-              className="primary-box-shadow text-[15px] p-[6px 15px] rounded-[90px] h-[35px]"
+              className="primary-box-shadow p-[6px 15px] h-[35px] rounded-[90px] text-[15px]"
             >
               {discountPercentage}% تخفیف
             </Badge>
           )}
         </div>
-        <div className="bg-white rounded-[25px] p-[15px] w-[310px]">
+        <div className="w-[310px] rounded-[25px] bg-white p-[15px]">
           <Slider
             {...topSliderSettings}
             asNavFor={nav2 ?? undefined} // Link to the bottom slider
@@ -163,7 +162,7 @@ const ProductImages = ({
             ))}
           </Slider>
         </div>
-        <div className="bottom-slider bg-white rounded-[25px] p-[15px] w-[310px]">
+        <div className="bottom-slider w-[310px] rounded-[25px] bg-white p-[15px]">
           <Slider
             {...bottomSliderSettings}
             asNavFor={nav1 ?? undefined} // Link to the top slider
@@ -177,7 +176,7 @@ const ProductImages = ({
                 alt="picture"
                 key={idx}
                 layout="responsive"
-                className="rounded-[8px] cursor-pointer"
+                className="cursor-pointer rounded-[8px]"
               />
             ))}
           </Slider>
@@ -189,10 +188,10 @@ const ProductImages = ({
       >
         <div
           id="progress-bar"
-          className="relative h-[10px] bg-white rounded-[20px] primary-box-shadow "
+          className="primary-box-shadow relative h-[10px] rounded-[20px] bg-white"
         >
           <div
-            className="absolute bg-primary  h-full  rounded-[inherit]"
+            className="absolute h-full rounded-[inherit] bg-primary"
             style={{ width: `${soldPercentage}%` }}
           />
         </div>
