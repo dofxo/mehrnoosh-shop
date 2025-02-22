@@ -18,3 +18,5 @@ export default async function Product({ params }: { params: { id: string } }) {
     </div>
   );
 }
+
+
