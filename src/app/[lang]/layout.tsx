@@ -1,6 +1,7 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
+import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
@@ -34,6 +35,7 @@ export default async function RootLayout({
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
       <body className={`${yekanbakh.className} antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
+          <DesktopHeader />
           {children}
         </StoreProvider>
       </body>
