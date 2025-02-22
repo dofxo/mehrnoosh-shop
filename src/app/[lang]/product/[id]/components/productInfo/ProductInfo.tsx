@@ -4,8 +4,16 @@ import ProductImages from "./ProductImages";
 import ProductPrice from "./ProductPrice";
 
 const ProductInfo = ({ productData }: { productData: IProduct }) => {
-  const { images, quantity, sold_amount, price, discount_price, name } =
-    productData;
+  const {
+    images,
+    quantity,
+    sold_amount,
+    price,
+    discount_price,
+    name,
+    comments,
+    rating,
+  } = productData;
   return (
     <div className="flex justify-between gap-[20px] rounded-[25px] bg-white p-[30px]">
       <ProductImages
@@ -16,7 +24,7 @@ const ProductInfo = ({ productData }: { productData: IProduct }) => {
         price={price}
         discount_price={discount_price}
       />
-      <ProductDetails name={name} />
+      <ProductDetails name={name} comments={comments} rating={rating} />
       <ProductPrice />
     </div>
   );

@@ -28,12 +28,12 @@ export interface IProduct {
     en: string[];
     fa: string[];
   };
-  commnets: {
+  comments: {
     cons: string[];
     name: string;
     pros: string[];
     rating: string;
-    commnet: string;
+    comment: string;
     created_at: string;
   }[];
   images: string[];
