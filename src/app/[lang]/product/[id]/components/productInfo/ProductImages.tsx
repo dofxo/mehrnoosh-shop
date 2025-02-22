@@ -18,6 +18,9 @@ import {
   FavoriteBorderRounded,
   ShareRounded,
   CompareArrowsRounded,
+  ContentCopyRounded,
+  WhatsApp,
+  Telegram,
 } from "@mui/icons-material/";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -49,6 +52,8 @@ const ProductImages = ({
     (state) => state.language,
   );
 
+  const [shareLinkCopied, setCopiedLinkStatus] = useState(false);
+
   const topSliderSettings = {
     infinite: false,
     speed: 500,
@@ -67,6 +72,17 @@ const ProductImages = ({
     swipeToSlide: true,
   };
 
+  const socialsShare = [
+    {
+      icon: <WhatsApp />,
+      shareLink: `whatsapp://send?text=${productShareLink}`,
+    },
+    {
+      icon: <Telegram />,
+      shareLink: `https://telegram.me/share/url?${productShareLink}`,
+    },
+  ];
+
   const actionButtonIcons = [
     {
       icon: (
@@ -74,8 +90,13 @@ const ProductImages = ({
           <DialogTrigger>
             <ShareRounded fontSize="small" />
           </DialogTrigger>
-          <DialogContent className="w-fit max-w-[unset] !rounded-[30px] bg-white">
-            <DialogDescription className="mt-[50px] text-[16px]">
+          <DialogContent
+            onCloseAutoFocus={() => {
+              setCopiedLinkStatus(false);
+            }}
+            className="shadcn-modal w-fit max-w-[unset] !rounded-[30px] bg-white"
+          >
+            <DialogDescription className="mt-[50px] flex flex-col gap-[20px] text-[16px]">
               <div className="flex items-center gap-5">
                 <div className="flex w-[120px] items-center justify-center rounded-[20px] bg-[#6D90B9] p-[7px] text-[15px] font-[500] text-white">
                   {languageData.productSingle.share}
@@ -83,6 +104,35 @@ const ProductImages = ({
                 <p className="font-[500] text-black">
                   {name[currentLanguage as "en" | "fa"]}
                 </p>
+              </div>
+              <div className="socials-share flex items-center gap-3">
+                {socialsShare.map((item, idx) => (
+                  <a
+                    target="_blank"
+                    href={item.shareLink}
+                    key={idx}
+                    className="flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-[50%] bg-[#f2f6fc] text-[#37506F]"
+                  >
+                    {item.icon}
+                  </a>
+                ))}
+              </div>
+              <div className="flex items-center gap-3 self-end rounded-[15px] bg-white p-[10px] text-black shadow-lg">
+                {productShareLink}
+                <div
+                  className="flex h-[35px] w-[35px] cursor-pointer items-center justify-center rounded-[50%] bg-primary p-1.5 transition"
+                  onClick={() => {
+                    navigator.clipboard.writeText(productShareLink);
+                    setCopiedLinkStatus(true);
+
+                    setTimeout(() => {
+                      setCopiedLinkStatus(false);
+                    }, 1500);
+                  }}
+                  style={{ backgroundColor: shareLinkCopied ? "green" : "" }}
+                >
+                  <ContentCopyRounded className="!text-[16px] text-white" />
+                </div>
               </div>
             </DialogDescription>
           </DialogContent>

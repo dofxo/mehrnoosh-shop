@@ -43,3 +43,11 @@ div {
     }
   }
 }
+
+// modals close button 
+
+.shadcn-modal {
+  button {
+    @apply bg-[var(--primary)] opacity-100 text-white rounded-[50%] w-[35px] h-[35px] flex items-center justify-center font-bold
+  }
+}
