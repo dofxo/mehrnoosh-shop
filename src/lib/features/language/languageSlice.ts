@@ -10,9 +10,17 @@ interface InitializeLanguagePayload {
   currentLanguage: string;
 }
 
+// Helper to read a cookie by name
+function getCookie(name: string): string | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  return match ? match[2] : null;
+}
+
 const initialState: LanguageState = {
   languageData: {},
-  currentLanguage: "fa",
+  currentLanguage:
+    typeof document !== "undefined" ? getCookie("language") || "fa" : "fa",
 };
 
 const languageSlice = createSlice({
@@ -34,4 +42,5 @@ const languageSlice = createSlice({
 
 export const { initializeLanguage, changeCurrentLanguage } =
   languageSlice.actions;
+
 export default languageSlice.reducer;

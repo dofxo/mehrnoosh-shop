@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,11 +16,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import getCookie from "@/helpers/getCookie";
 import { changeCurrentLanguage } from "@/lib/features/language/languageSlice";
 import { useAppSelector, useAppDispatch } from "@/lib/hooks";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ChangeLanguage() {
   const language = useAppSelector((state) => state.language.languageData);
@@ -26,11 +29,19 @@ export default function ChangeLanguage() {
     (state) => state.language.currentLanguage,
   );
 
-  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const existingCookie = getCookie("language");
+    if (!existingCookie) {
+      document.cookie =
+        "language=" +
+        currentLanguage +
+        "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
+    }
+  }, [currentLanguage]);
 
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const pathname = usePathname();
-
   const [selectedLanguage, setSelectedLanguage] = useState(currentLanguage);
 
   const handleSelectChange = (value: string) => {
@@ -43,6 +54,10 @@ export default function ChangeLanguage() {
     const newPath = segments.join("/");
     router.push(newPath);
 
+    document.cookie =
+      "language=" +
+      selectedLanguage +
+      "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
     dispatch(changeCurrentLanguage(selectedLanguage));
   };
 
@@ -74,7 +89,7 @@ export default function ChangeLanguage() {
                 </SelectItem>
               </SelectContent>
             </Select>
-            <div className="!mt-5 mt-5 flex items-center justify-center">
+            <div className="mt-5 flex items-center justify-center">
               <Button className="w-1/2" onClick={handleChangeLanguage}>
                 {language.header.changeLanguage.button}
               </Button>

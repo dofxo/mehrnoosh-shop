@@ -3,16 +3,23 @@ import { NextRequest, NextResponse } from "next/server";
 const locales = ["fa", "en"];
 
 export function middleware(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
+
+  // Check if a supported locale is already in the pathname.
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  if (pathnameHasLocale) return;
+  if (pathnameHasLocale) {
+    return;
+  }
 
-  // Redirect if there is no locale
-  request.nextUrl.pathname = "/fa";
+  // Get the language cookie from the request.
+  const languageCookie = request.cookies.get("language")?.value;
+  const locale = locales.includes(languageCookie ?? "") ? languageCookie : "fa";
+
+  // Redirect to the URL with the locale prefix.
+  request.nextUrl.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }
 
