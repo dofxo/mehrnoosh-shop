@@ -2,8 +2,13 @@
   "general": {
     "websiteTitle": "وبسایت فروشگاهی مهرنوش"
   },
+  "productsNames": {
+    "mobile": "موبایل",
+    "tablet": "تبلت"
+  },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",
+    "frequentSearches": "جستجو های پر تکرار",
     "signupLogin": "ورود و عضویت",
     "changeLanguage": {
       "title:": "تغییر زبان",

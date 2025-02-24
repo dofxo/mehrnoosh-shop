@@ -2,9 +2,14 @@
   "general": {
     "websiteTitle": "Mehrnoosh Shop"
   },
+  "productsNames": {
+    "mobile": "mobile",
+    "tablet": "tablet"
+  },
   "header": {
     "searchPlaceholder": "search for products ...",
     "signupLogin": "signup and login",
+    "frequentSearches": "frequent searches",
     "changeLanguage": {
       "title:": "Change Language",
       "searchPlaceholder": "Language",

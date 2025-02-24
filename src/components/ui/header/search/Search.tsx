@@ -1,5 +1,6 @@
 "use client";
 
+import DropdownSearch from "@/components/ui/header/search/DropdownSearch";
 import { useAppSelector } from "@/lib/hooks";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -20,7 +21,7 @@ export default function Search() {
   };
 
   return (
-    <div className="w-full p-[10px] lg:w-[55%]">
+    <div className="relative w-full p-[5px] lg:w-[55%]">
       <motion.div
         {...(isLg && {
           animate: { width: isSearchOpen ? "100%" : "50%" },
@@ -48,6 +49,9 @@ export default function Search() {
             </div>
           </div>
         </div>
+
+        {/* drop down */}
+        <DropdownSearch language={language} isSearchOpen={isSearchOpen} />
       </motion.div>
     </div>
   );

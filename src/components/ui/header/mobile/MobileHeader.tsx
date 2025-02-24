@@ -1,7 +1,7 @@
 "use client";
 
 import Logo from "../../../../../public/images/logo.png";
-import Search from "@/components/ui/header/Search";
+import Search from "@/components/ui/header/search/Search";
 import Image from "next/image";
 
 export default function MobileHeader() {
