@@ -12,6 +12,10 @@ export default {
       primary: "var(--border-radius)",
     },
     extend: {
+      boxShadow: {
+        "search-drop-down": "0 30px 80px rgba(33, 38, 49, 0.15)",
+        "mobile-nav": "0 10px 50px rgba(1, 1, 2, 0.09);",
+      },
       spacing: {
         container: "1300px",
       },

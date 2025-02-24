@@ -1,6 +1,7 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
+import MobileNav from "@/components/ui/MobileNav";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
 import yekanbakh from "@/fonts/yekanBakh";
@@ -38,6 +39,7 @@ export default async function RootLayout({
         <StoreProvider language={language} currentLanguage={lang}>
           <DesktopHeader />
           <MobileHeader />
+          <MobileNav />
           {children}
         </StoreProvider>
       </body>

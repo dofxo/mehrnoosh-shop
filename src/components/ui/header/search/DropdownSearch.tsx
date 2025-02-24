@@ -14,7 +14,7 @@ export default function DropdownSearch({
 }: DropdownSearchProps) {
   return (
     <div
-      className={`${isSearchOpen ? "block" : "hidden"} absolute z-[2] mt-[10px] w-[98.5%] rounded-primary bg-white p-[25px]`}
+      className={`${isSearchOpen ? "block" : "hidden"} shadow-search-drop-down absolute z-[2] mt-[10px] w-[98.5%] rounded-primary bg-white p-[25px]`}
     >
       <div className="rounded-primary bg-secondary p-[20px]">
         <h4 className="mb-[15px] font-bold">
