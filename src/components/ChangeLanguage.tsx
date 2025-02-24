@@ -89,7 +89,7 @@ export default function ChangeLanguage() {
                 </SelectItem>
               </SelectContent>
             </Select>
-            <div className="mt-5 flex items-center justify-center">
+            <div className="!mt-5 flex items-center justify-center">
               <Button className="w-1/2" onClick={handleChangeLanguage}>
                 {language.header.changeLanguage.button}
               </Button>
