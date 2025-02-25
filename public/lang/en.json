@@ -10,7 +10,8 @@
     "amount_sold": "of the products have been sold.",
     "rating": "rating",
     "comment": "comment",
-    "of": "of"
+    "of": "of",
+    "properties": "Product properties"
   },
   "header": {
     "searchPlaceholder": "search for products ...",

@@ -10,7 +10,8 @@
     "amount_sold": "از موجودی انبار فروش رفته است.",
     "rating": "امتیاز",
     "comment": "دیدگاه",
-    "of": "از"
+    "of": "از",
+    "properties": "برخی از ویژگی ها"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",

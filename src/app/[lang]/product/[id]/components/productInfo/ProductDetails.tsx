@@ -1,12 +1,17 @@
 "use client";
 
 import { useAppSelector } from "@/lib/hooks";
-import { StarBorderRounded, CommentRounded } from "@mui/icons-material/";
+import {
+  StarBorderRounded,
+  CommentRounded,
+  ArticleRounded,
+} from "@mui/icons-material/";
 
 const ProductDetails = ({
   name,
   comments,
   rating,
+  properties,
 }: {
   name: { en: string; fa: string };
   comments: {
@@ -17,6 +22,16 @@ const ProductDetails = ({
     comment: string;
     created_at: string;
   }[];
+  properties: {
+    color: {
+      en: string[];
+      fa: string[];
+    };
+    brand: {
+      en: string;
+      fa: string;
+    };
+  };
   rating: string[];
 }) => {
   const { currentLanguage, languageData } = useAppSelector(
@@ -28,6 +43,11 @@ const ProductDetails = ({
       .map(Number) // Convert each string to a number
       .reduce((p, c) => p + c, 0) / rating.length
   ).toFixed(1);
+
+  const propertiesToUse = [
+    ...properties.color[currentLanguage as "fa" | "en"],
+    properties.brand[currentLanguage as "fa" | "en"],
+  ];
 
   return (
     <div className="p-[20px]">
@@ -61,6 +81,29 @@ const ProductDetails = ({
         </div>
       </div>
       {/* rate and comment info end */}
+
+      {/* product properties */}
+      <div className="mt-5 flex flex-col gap-5">
+        <div className="flex items-center gap-5">
+          <div className="primary-box-shadow flex h-[40px] w-[40px] items-center justify-center rounded-[50%] bg-primary text-white">
+            <ArticleRounded className="!w-[20px]" />
+          </div>
+          <h5 className="text-[18px] font-[600]">
+            {languageData.productSingle.properties}
+          </h5>
+        </div>
+        <div className="flex items-center gap-2">
+          {propertiesToUse.map((item, idx) => (
+            <div
+              className="rounded-[90px] bg-[#f2f6fc] px-[15px] py-[6px] font-[500]"
+              key={idx}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* product properties end */}
     </div>
   );
 };
