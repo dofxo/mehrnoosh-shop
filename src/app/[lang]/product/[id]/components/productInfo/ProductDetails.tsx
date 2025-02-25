@@ -14,6 +14,7 @@ const ProductDetails = ({
   rating,
   properties,
   category,
+  description,
 }: {
   name: { en: string; fa: string };
   comments: {
@@ -34,6 +35,7 @@ const ProductDetails = ({
       fa: string;
     };
   };
+  description: { en: string; fa: string };
   category: { en: string[]; fa: string[] };
   rating: string[];
 }) => {
@@ -129,6 +131,23 @@ const ProductDetails = ({
         </div>
       </div>
       {/* category end */}
+
+      {/* description */}
+      <div className="mt-[30px] flex flex-col gap-5 rounded-[20px] p-[20px] shadow-[0_2px_25px_rgba(41,41,94,0.08)]">
+        <div className="flex items-center gap-5">
+          <div className="primary-box-shadow flex h-[40px] w-[40px] items-center justify-center rounded-[50%] bg-primary text-white">
+            <ArticleRounded className="!w-[20px]" />
+          </div>
+          <h5 className="text-[18px] font-[600]">
+            {languageData.productSingle.description}
+          </h5>
+        </div>
+
+        <p className="font-[500]">
+          {description[currentLanguage as "fa" | "en"]}
+        </p>
+      </div>
+      {/* description end */}
     </div>
   );
 };

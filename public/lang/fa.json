@@ -12,7 +12,8 @@
     "comment": "دیدگاه",
     "of": "از",
     "properties": "برخی از ویژگی ها",
-    "category": "دسته بندی"
+    "category": "دسته بندی",
+    "description": "توضیحات کوتاه"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",
