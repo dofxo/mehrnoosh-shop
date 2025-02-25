@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+// TODO: move all to tailwind config
 :root {
   --text-primary: #757575;
   --primary: #0070FF;
+  --primary-700: #2786ff;
+  --primary-100: #e8f2ff;
   --secondary: #F2F6FB;
   --border-radius: 20px;
 }
@@ -24,6 +28,7 @@ body {
   }
 }
 
+// TODO: move all to tailwind config
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -84,18 +89,6 @@ body {
 @layer base {
   * {
     @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
   }
 
   body {

@@ -15,6 +15,7 @@ export default {
       boxShadow: {
         "search-drop-down": "0 30px 80px rgba(33, 38, 49, 0.15)",
         "mobile-nav": "0 10px 50px rgba(1, 1, 2, 0.09);",
+        "mobile-nav-button": "0px 7px 15px #0070FF3B;",
       },
       spacing: {
         container: "1300px",
@@ -23,6 +24,8 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: "var(--primary)",
+        "primary-700": "var(--primary-700)",
+        "primary-100": "var(--primary-100)",
         "text-primary": "var(--text-primary)",
         secondary: "var(--secondary)",
         card: {

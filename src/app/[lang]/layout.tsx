@@ -1,7 +1,7 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
-import MobileNav from "@/components/ui/MobileNav";
+import MobileNav from "@/components/ui/mobile-nav/MobileNav";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
 import yekanbakh from "@/fonts/yekanBakh";

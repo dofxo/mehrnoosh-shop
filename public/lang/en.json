@@ -17,5 +17,11 @@
       "en": "English",
       "button": "Change Language"
     }
+  },
+  "mobileNav": {
+    "cart": "cart",
+    "favorite": "favorite",
+    "language": "language",
+    "home": "home"
   }
 }
