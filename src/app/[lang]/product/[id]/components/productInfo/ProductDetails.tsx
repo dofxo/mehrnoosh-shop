@@ -31,13 +31,16 @@ const ProductDetails = ({
 
   return (
     <div className="p-[20px]">
+      {/* product title */}
       <h2 className="text-[20px] font-bold">
         {name[currentLanguage as "en" | "fa"]}
       </h2>
       <h5 className="py-[15px] font-[500] text-[#6D90B9]">
         {currentLanguage === "fa" && name.en}
       </h5>
+      {/* product title end */}
 
+      {/* rate and comment info */}
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-2">
           <div className="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-[#ffa5001f] text-[10px] text-orange-400">
@@ -57,6 +60,7 @@ const ProductDetails = ({
           </span>
         </div>
       </div>
+      {/* rate and comment info end */}
     </div>
   );
 };
