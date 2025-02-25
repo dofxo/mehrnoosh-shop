@@ -11,7 +11,8 @@
     "rating": "امتیاز",
     "comment": "دیدگاه",
     "of": "از",
-    "properties": "برخی از ویژگی ها"
+    "properties": "برخی از ویژگی ها",
+    "category": "دسته بندی"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",

@@ -11,7 +11,8 @@
     "rating": "rating",
     "comment": "comment",
     "of": "of",
-    "properties": "Product properties"
+    "properties": "Product properties",
+    "category": "category"
   },
   "header": {
     "searchPlaceholder": "search for products ...",

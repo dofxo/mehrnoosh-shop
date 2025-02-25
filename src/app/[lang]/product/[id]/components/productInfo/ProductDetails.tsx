@@ -5,6 +5,7 @@ import {
   StarBorderRounded,
   CommentRounded,
   ArticleRounded,
+  TocRounded,
 } from "@mui/icons-material/";
 
 const ProductDetails = ({
@@ -12,6 +13,7 @@ const ProductDetails = ({
   comments,
   rating,
   properties,
+  category,
 }: {
   name: { en: string; fa: string };
   comments: {
@@ -32,6 +34,7 @@ const ProductDetails = ({
       fa: string;
     };
   };
+  category: { en: string[]; fa: string[] };
   rating: string[];
 }) => {
   const { currentLanguage, languageData } = useAppSelector(
@@ -49,6 +52,14 @@ const ProductDetails = ({
     properties.brand[currentLanguage as "fa" | "en"],
   ];
 
+  const categories = category[currentLanguage as "fa" | "en"].reduce(
+    (p, c, index) => {
+      return index > 0 ? p + `, ${c}` : p + c;
+    },
+    "",
+  );
+
+  console.log(categories);
   return (
     <div className="p-[20px]">
       {/* product title */}
@@ -76,7 +87,8 @@ const ProductDetails = ({
             <CommentRounded fontSize="small" className="!w-[16px]" />
           </div>
           <span className="flex items-center gap-1 font-[500]">
-            {comments.length} {languageData.productSingle.comment}
+            <span>{comments.length}</span>
+            <span>{languageData.productSingle.comment}</span>
           </span>
         </div>
       </div>
@@ -104,6 +116,19 @@ const ProductDetails = ({
         </div>
       </div>
       {/* product properties end */}
+
+      {/* category */}
+      <div className="mt-[20px] flex items-center gap-2">
+        <div className="flex h-[35px] w-[35px] items-center justify-center rounded-[50%] bg-secondary text-[#3B5573]">
+          <TocRounded className="!w-[20px]" />
+        </div>
+        <div className="">
+          <span className="font-bold">
+            {languageData.productSingle.category} : {categories}
+          </span>
+        </div>
+      </div>
+      {/* category end */}
     </div>
   );
 };
