@@ -14,14 +14,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useAppSelector } from "@/lib/hooks";
-import {
-  FavoriteBorderRounded,
-  ShareRounded,
-  CompareArrowsRounded,
-  ContentCopyRounded,
-  WhatsApp,
-  Telegram,
-} from "@mui/icons-material/";
+import { WhatsApp, Telegram } from "@mui/icons-material/";
+import { GitCompareArrows, Heart, Share2, Star } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -88,7 +82,7 @@ const ProductImages = ({
       icon: (
         <Dialog>
           <DialogTrigger>
-            <ShareRounded fontSize="small" />
+            <Share2 size={20} />
           </DialogTrigger>
           <DialogContent
             onCloseAutoFocus={() => {
@@ -131,7 +125,7 @@ const ProductImages = ({
                   }}
                   style={{ backgroundColor: shareLinkCopied ? "green" : "" }}
                 >
-                  <ContentCopyRounded className="!text-[16px] text-white" />
+                  <Star size={16} className="text-white" />
                 </div>
               </div>
             </DialogDescription>
@@ -141,11 +135,11 @@ const ProductImages = ({
       tooltipContent: languageData.productSingle.share,
     },
     {
-      icon: <FavoriteBorderRounded fontSize="small" />,
+      icon: <Heart size={20} />,
       tooltipContent: languageData.productSingle.like,
     },
     {
-      icon: <CompareArrowsRounded fontSize="small" />,
+      icon: <GitCompareArrows size={20} />,
       tooltipContent: languageData.productSingle.compare,
     },
   ];
