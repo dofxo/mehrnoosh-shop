@@ -1,15 +1,26 @@
 .slick-arrow {
+  width: 50px;
+
   &::before {
-    color: var(--primary) !important
+    color: var(--primary) !important;
+  }
+}
+
+[dir="rtl"] {
+  .slick-arrow {
+    transform: rotate(180deg) !important;
+    top: 20px !important;
   }
 }
 
 .slick-next {
-  left: -40px !important
+  right: -40px !important;
+  left: unset !important
 }
 
 .slick-prev {
-  right: -40px !important
+  left: -40px !important;
+  right: unset !important
 }
 
 .bottom-slider {

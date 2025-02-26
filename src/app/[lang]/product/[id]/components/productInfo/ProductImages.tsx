@@ -66,7 +66,7 @@ const ProductImages = ({
     className: "center",
     infinite: false,
     centerPadding: "0",
-    slidesToShow: 3,
+    slidesToShow: 3.5,
     speed: 500,
     focusOnSelect: true,
     swipeToSlide: true,

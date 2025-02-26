@@ -16,6 +16,7 @@ const ProductInfo = ({ productData }: { productData: IProduct }) => {
     properties,
     category,
     description,
+    created_at,
   } = productData;
   return (
     <div className="flex justify-between gap-[20px] rounded-[25px] bg-white p-[30px]">
@@ -34,6 +35,8 @@ const ProductInfo = ({ productData }: { productData: IProduct }) => {
         properties={properties}
         category={category}
         description={description}
+        sold_amount={sold_amount}
+        created_at={created_at}
       />
       <ProductPrice />
     </div>

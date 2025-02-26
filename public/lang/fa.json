@@ -13,7 +13,9 @@
     "of": "از",
     "properties": "برخی از ویژگی ها",
     "category": "دسته بندی",
-    "description": "توضیحات کوتاه"
+    "description": "توضیحات کوتاه",
+    "sell": "فروش",
+    "update": "بروزرسانی"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",

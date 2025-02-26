@@ -6,6 +6,8 @@ import {
   CommentRounded,
   ArticleRounded,
   TocRounded,
+  SellRounded,
+  DateRangeRounded,
 } from "@mui/icons-material/";
 
 const ProductDetails = ({
@@ -15,6 +17,8 @@ const ProductDetails = ({
   properties,
   category,
   description,
+  sold_amount,
+  created_at,
 }: {
   name: { en: string; fa: string };
   comments: {
@@ -25,6 +29,8 @@ const ProductDetails = ({
     comment: string;
     created_at: string;
   }[];
+  sold_amount: string;
+  created_at: string;
   properties: {
     color: {
       en: string[];
@@ -126,7 +132,8 @@ const ProductDetails = ({
         </div>
         <div className="">
           <span className="font-bold">
-            {languageData.productSingle.category} : {categories}
+            {languageData.productSingle.category} :{" "}
+            <span className="font-[500]">{categories}</span>
           </span>
         </div>
       </div>
@@ -148,6 +155,26 @@ const ProductDetails = ({
         </p>
       </div>
       {/* description end */}
+
+      {/* under description */}
+      <div className="mt-[20px] flex items-center gap-2 font-[500]">
+        <div className="flex gap-2 rounded-[10px] bg-[#E6F1FF] px-[15px] py-[8px] text-[#0070FF]">
+          <SellRounded />
+          <span className="flex items-center gap-1">
+            <span className="font-[500]">{sold_amount}</span>
+            <span>{languageData.productSingle.sell}</span>
+          </span>
+        </div>
+        <div className="flex gap-2 rounded-[10px] bg-[#f2f6fc] px-[15px] py-[8px]">
+          <DateRangeRounded />
+          <span className="flex items-center gap-1">
+            <span>
+              {languageData.productSingle.update}:{/*FIXME: convert date */}
+            </span>
+          </span>
+        </div>
+      </div>
+      {/* under description end */}
     </div>
   );
 };

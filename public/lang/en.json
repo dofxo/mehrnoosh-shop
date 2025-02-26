@@ -13,7 +13,9 @@
     "of": "of",
     "properties": "Product properties",
     "category": "category",
-    "description": "description"
+    "description": "description",
+    "sell": "sell",
+    "update": "update"
   },
   "header": {
     "searchPlaceholder": "search for products ...",
