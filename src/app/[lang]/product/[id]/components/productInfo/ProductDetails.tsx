@@ -1,6 +1,7 @@
 "use client";
 
 import { useAppSelector } from "@/lib/hooks";
+import moment from "jalali-moment";
 import {
   CalendarRange,
   Captions,
@@ -67,7 +68,11 @@ const ProductDetails = ({
     "",
   );
 
-  console.log(categories);
+  const date =
+    currentLanguage === "fa"
+      ? moment(created_at).locale("fa").format(`YYYY/DD/MM`)
+      : moment(created_at).format(`YYYY/DD/MM`);
+
   return (
     <div className="p-[20px]">
       {/* product title */}
@@ -169,7 +174,7 @@ const ProductDetails = ({
           <CalendarRange size={20} />
           <span className="flex items-center gap-1">
             <span>
-              {languageData.productSingle.update}:{/*FIXME: convert date */}
+              {languageData.productSingle.update}: {date}
             </span>
           </span>
         </div>
