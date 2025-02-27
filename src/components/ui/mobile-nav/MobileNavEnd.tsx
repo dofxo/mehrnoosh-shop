@@ -2,8 +2,7 @@
 
 import ChangeLanguage from "@/components/ChangeLanguage";
 import { useAppSelector } from "@/lib/hooks";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import { House, Heart } from 'lucide-react';
 import { motion } from "framer-motion";
 
 export default function MobileNavEnd() {
@@ -13,11 +12,11 @@ export default function MobileNavEnd() {
   const endData = [
     {
       name: language.mobileNav.home,
-      icon: <HomeOutlinedIcon />,
+      icon: <House />,
     },
     {
       name: language.mobileNav.favorite,
-      icon: <FavoriteBorderOutlinedIcon />,
+      icon: <Heart />,
     },
     {
       name: language.mobileNav.language,

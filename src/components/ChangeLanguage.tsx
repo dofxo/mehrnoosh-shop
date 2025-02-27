@@ -19,7 +19,7 @@ import {
 import getCookie from "@/helpers/getCookie";
 import { changeCurrentLanguage } from "@/lib/features/language/languageSlice";
 import { useAppSelector, useAppDispatch } from "@/lib/hooks";
-import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import { Globe } from 'lucide-react';
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -66,7 +66,7 @@ export default function ChangeLanguage() {
       <Dialog>
         <DialogTrigger>
           <div className="cursor-pointer transition hover:text-primary">
-            <LanguageOutlinedIcon />
+            <Globe />
           </div>
         </DialogTrigger>
         <DialogContent>

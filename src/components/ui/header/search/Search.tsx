@@ -3,7 +3,7 @@
 import DropdownSearch from "@/components/ui/header/search/DropdownSearch";
 import { useAppSelector } from "@/lib/hooks";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { Search as SearchIcon, CircleX } from 'lucide-react';
 import { useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -41,11 +41,11 @@ export default function Search() {
                 className="flex h-[25px] w-[25px] cursor-pointer items-center justify-center rounded-[100%] bg-secondary transition hover:bg-primary hover:text-[#fff]"
                 onClick={handleClose}
               >
-                <HighlightOffOutlinedIcon sx={{ width: 15, height: 15 }} />
+					<CircleX style={{ width: "17px", height: "17px"}} />
               </div>
             )}
             <div className="cursor-pointer transition hover:text-primary">
-              <SearchOutlinedIcon />
+              <SearchIcon />
             </div>
           </div>
         </div>
