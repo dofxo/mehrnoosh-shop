@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import MobileNavEnd from "@/components/ui/mobile-nav/MobileNavEnd";
 import { useAppSelector } from "@/lib/hooks";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import { ShoppingBag } from 'lucide-react';
 
 export default function MobileNav() {
   const language = useAppSelector((state) => state.language.languageData);
@@ -14,7 +14,7 @@ export default function MobileNav() {
         {/* TODO: add link later */}
         <Button className="flex items-center justify-center rounded-primary bg-primary px-[15px] py-[20px] text-[16px] font-bold text-white shadow-mobile-nav-button">
           <div className="flex flex-row items-center justify-center rounded-primary bg-primary-700 p-1">
-            <ShoppingBagOutlinedIcon />
+            <ShoppingBag />
           </div>
           <span className="mb-[-3px]">{language.mobileNav.cart}</span>
         </Button>

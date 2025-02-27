@@ -2,7 +2,6 @@
 
 import DropdownSearch from "@/components/ui/header/search/DropdownSearch";
 import { useAppSelector } from "@/lib/hooks";
-import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import { Search as SearchIcon, CircleX } from 'lucide-react';
 import { useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";

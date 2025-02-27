@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import { X } from 'lucide-react';
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
@@ -66,12 +66,12 @@ const SheetContent = React.forwardRef<
       <SheetPrimitive.Title className="sr-only">
         Sheet Title
       </SheetPrimitive.Title>
-      <div className="absolute right-4 top-4 cursor-pointer rounded-primary bg-secondary p-2 transition hover:bg-primary hover:text-white">
-        <SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-secondary">
-          <CloseOutlinedIcon className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </SheetPrimitive.Close>
-      </div>
+		<div className="absolute right-4 top-4 px-2 pt-[7px] cursor-pointer rounded-primary bg-secondary transition hover:bg-primary hover:text-white">
+			<SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-secondary">
+				<X className="w-6 h-6" />
+				<span className="sr-only">Close</span>
+			</SheetPrimitive.Close>
+		</div>
       {children}
     </SheetPrimitive.Content>
   </SheetPortal>
