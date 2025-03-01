@@ -36,7 +36,7 @@ const ProductImages = ({
   price: string;
   name: { en: string; fa: string };
 }) => {
-  const sectionsClassName = "bg-[var(--background)] rounded-[25px] p-[30px]";
+  const sectionsClassName = "bg-background rounded-[25px] p-[30px]";
 
   const discountPercentage = Math.round(100 - (+discount_price * 100) / +price);
   const soldPercentage = (+sold_amount * 100) / +quantity;

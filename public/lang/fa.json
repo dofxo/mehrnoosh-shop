@@ -15,7 +15,8 @@
     "category": "دسته بندی",
     "description": "توضیحات کوتاه",
     "sell": "فروش",
-    "update": "بروزرسانی"
+    "update": "بروزرسانی",
+    "tooman": "تومان"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",

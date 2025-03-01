@@ -76,7 +76,7 @@ const ProductDetails = ({
   return (
     <div className="p-[20px]">
       {/* product title */}
-      <h2 className="text-[20px] font-bold">
+      <h2 className="text-[20px] font-bold text-text-primary">
         {name[currentLanguage as "en" | "fa"]}
       </h2>
       <h5 className="py-[15px] font-[500] text-[#6D90B9]">
@@ -113,7 +113,7 @@ const ProductDetails = ({
           <div className="primary-box-shadow flex h-[40px] w-[40px] items-center justify-center rounded-[50%] bg-primary text-white">
             <Captions size={25} />
           </div>
-          <h5 className="text-[18px] font-[600]">
+          <h5 className="text-[18px] font-[600] text-text-primary">
             {languageData.productSingle.properties}
           </h5>
         </div>
@@ -136,7 +136,7 @@ const ProductDetails = ({
           <List size={20} />
         </div>
         <div className="">
-          <span className="font-bold">
+          <span className="font-bold text-text-primary">
             {languageData.productSingle.category} :{" "}
             <span className="font-[500]">{categories}</span>
           </span>
@@ -150,7 +150,7 @@ const ProductDetails = ({
           <div className="primary-box-shadow flex h-[40px] w-[40px] items-center justify-center rounded-[50%] bg-primary text-white">
             <Captions size={25} />
           </div>
-          <h5 className="text-[18px] font-[600]">
+          <h5 className="text-[18px] font-[600] text-text-primary">
             {languageData.productSingle.description}
           </h5>
         </div>

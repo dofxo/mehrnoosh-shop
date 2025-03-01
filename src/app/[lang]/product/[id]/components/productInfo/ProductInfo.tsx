@@ -38,7 +38,7 @@ const ProductInfo = ({ productData }: { productData: IProduct }) => {
         sold_amount={sold_amount}
         created_at={created_at}
       />
-      <ProductPrice />
+      <ProductPrice price={price} discount_price={discount_price} />
     </div>
   );
 };

@@ -15,7 +15,8 @@
     "category": "category",
     "description": "description",
     "sell": "sell",
-    "update": "update"
+    "update": "update",
+    "tooman": "tooman"
   },
   "header": {
     "searchPlaceholder": "search for products ...",
