@@ -16,7 +16,10 @@
     "description": "description",
     "sell": "sell",
     "update": "update",
-    "tooman": "tooman"
+    "tooman": "tooman",
+    "add_to_shopping_cart": "add to shopping cart",
+    "authenticity_guarantee": "Guaranteed Authenticity",
+    "return_policy": "5-Day Return Guarantee"
   },
   "header": {
     "searchPlaceholder": "search for products ...",

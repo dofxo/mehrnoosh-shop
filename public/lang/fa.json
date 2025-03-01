@@ -16,7 +16,10 @@
     "description": "توضیحات کوتاه",
     "sell": "فروش",
     "update": "بروزرسانی",
-    "tooman": "تومان"
+    "tooman": "تومان",
+    "add_to_shopping_cart": "افزودن به سبد",
+    "authenticity_guarantee": "تضمین اصالت کالا",
+    "return_policy": " 5 روز ضمانت برگشت"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",
