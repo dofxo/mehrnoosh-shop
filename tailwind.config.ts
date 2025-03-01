@@ -16,8 +16,11 @@ export default {
         container: "1300px",
       },
       colors: {
-        background: "hsl(var(--background))",
+        background: "var(--background)",
         foreground: "hsl(var(--foreground))",
+        text: {
+          primary: "#141d26",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
