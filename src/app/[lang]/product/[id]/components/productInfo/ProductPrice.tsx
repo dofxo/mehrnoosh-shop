@@ -61,7 +61,7 @@ const ProductPrice = ({
           </span>
           <Input
             type="number"
-            className="border-none p-[0] text-center shadow-none"
+            className="min-w-[20px] border-none p-[0] text-center shadow-none"
             value={itemCount}
             onChange={handleChange}
             min={0}

@@ -1,3 +1,4 @@
+import ProductCons from "./components/productCons/ProductCons";
 import ProductInfo from "./components/productInfo/ProductInfo";
 
 export default async function Product({ params }: { params: { id: string } }) {
@@ -13,8 +14,9 @@ export default async function Product({ params }: { params: { id: string } }) {
   const productData = product[0];
 
   return (
-    <div className="container">
+    <div className="container flex flex-col gap-[35px]">
       <ProductInfo productData={productData} />
+      <ProductCons />
     </div>
   );
 }

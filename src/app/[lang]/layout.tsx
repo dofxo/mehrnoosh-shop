@@ -36,7 +36,6 @@ export default async function RootLayout({
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
       <body className={`${yekanbakh.className} antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
-          <MobileHeader />
           {children}
         </StoreProvider>
       </body>
