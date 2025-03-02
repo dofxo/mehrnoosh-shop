@@ -8,7 +8,7 @@ const ProductCons = () => {
   const { currentLanguage } = useAppSelector((state) => state.language);
 
   return (
-    <div className="flex items-center justify-between gap-2 rounded-[25px] bg-white p-[30px]">
+    <section className="flex items-center justify-between gap-2 rounded-[25px] bg-white p-[30px]">
       {cons[currentLanguage as "fa" | "en"].map(
         (item, key) => (
           console.log(item.imageUrl),
@@ -34,7 +34,7 @@ const ProductCons = () => {
           )
         ),
       )}
-    </div>
+    </section>
   );
 };
 

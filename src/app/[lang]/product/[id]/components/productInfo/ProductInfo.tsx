@@ -19,7 +19,7 @@ const ProductInfo = ({ productData }: { productData: IProduct }) => {
     created_at,
   } = productData;
   return (
-    <div className="flex justify-between gap-[20px] rounded-[25px] bg-white p-[30px]">
+    <section className="flex justify-between gap-[20px] rounded-[25px] bg-white p-[30px]">
       <ProductImages
         images={images}
         quantity={quantity}
@@ -39,7 +39,7 @@ const ProductInfo = ({ productData }: { productData: IProduct }) => {
         created_at={created_at}
       />
       <ProductPrice price={price} discount_price={discount_price} />
-    </div>
+    </section>
   );
 };
 
