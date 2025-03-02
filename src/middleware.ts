@@ -5,10 +5,6 @@ const locales = ["fa", "en"];
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Check if a supported locale is already in the pathname.
-
-  if (pathname.startsWith("/api/")) return;
-
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
@@ -27,5 +23,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next).*)"],
+  matcher: ["/((?!_next|api|images|favicon.ico).*)"],
 };
