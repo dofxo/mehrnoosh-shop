@@ -22,7 +22,9 @@
     "return_policy": "5-Day Return Guarantee",
     "product_satisfaction": "Satisfaction with this product",
     "statistic_from_this": "This statistic is from",
-    "from_comment": "comment"
+    "from_comment": "comment",
+    "rating_details": "Rating Details",
+    "rate":"rate"
   },
   "header": {
     "searchPlaceholder": "search for products ...",
