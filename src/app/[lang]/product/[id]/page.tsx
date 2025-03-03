@@ -18,7 +18,7 @@ export default async function Product({ params }: { params: { id: string } }) {
     <main className="container flex flex-col gap-[35px] py-[20px]">
       <ProductInfo productData={productData} />
       <ProductCons />
-      <RatingDetails />
+      <RatingDetails productData={productData} />
     </main>
   );
 }

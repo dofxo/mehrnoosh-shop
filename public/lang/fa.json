@@ -19,7 +19,10 @@
     "tooman": "تومان",
     "add_to_shopping_cart": "افزودن به سبد",
     "authenticity_guarantee": "تضمین اصالت کالا",
-    "return_policy": " 5 روز ضمانت برگشت"
+    "return_policy": " 5 روز ضمانت برگشت",
+    "product_satisfaction": "رضایت از این کالا",
+    "statistic_from_this": "این آمار از",
+    "from_comment": "دیدگاه می باشد"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",

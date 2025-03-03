@@ -19,7 +19,10 @@
     "tooman": "tooman",
     "add_to_shopping_cart": "add to cart",
     "authenticity_guarantee": "Guaranteed Authenticity",
-    "return_policy": "5-Day Return Guarantee"
+    "return_policy": "5-Day Return Guarantee",
+    "product_satisfaction": "Satisfaction with this product",
+    "statistic_from_this": "This statistic is from",
+    "from_comment": "comment"
   },
   "header": {
     "searchPlaceholder": "search for products ...",
