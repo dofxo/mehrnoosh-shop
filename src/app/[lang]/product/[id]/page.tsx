@@ -1,6 +1,6 @@
 import ProductCons from "./components/productCons/ProductCons";
 import ProductInfo from "./components/productInfo/ProductInfo";
-import RatingDetails from "./components/ratingDetails/RatingDetails";
+import RatingDetails from "./components/ratingDetails/percentage/RatingDetails";
 
 export default async function Product({ params }: { params: { id: string } }) {
   // extract id from param and call for product data
