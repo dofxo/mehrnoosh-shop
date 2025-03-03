@@ -1,9 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { X } from 'lucide-react';
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva, type VariantProps } from "class-variance-authority";
+import { X } from "lucide-react";
 import * as React from "react";
 
 const Sheet = SheetPrimitive.Root;
@@ -53,25 +53,29 @@ interface SheetContentProps
     VariantProps<typeof sheetVariants> {}
 
 const SheetContent = React.forwardRef<
-  React.ElementRef<typeof SheetPrimitive.Content>,
+  React.ComponentRef<typeof SheetPrimitive.Content>,
   SheetContentProps
 >(({ side = "right", className, children, ...props }, ref) => (
   <SheetPortal>
     <SheetOverlay />
     <SheetPrimitive.Content
       ref={ref}
-      className={cn(sheetVariants({ side }), className)}
+      className={cn(
+        sheetVariants({ side }),
+        "h-full overflow-y-auto",
+        className,
+      )}
       {...props}
     >
       <SheetPrimitive.Title className="sr-only">
         Sheet Title
       </SheetPrimitive.Title>
-		<div className="absolute right-4 top-4 px-2 pt-[7px] cursor-pointer rounded-primary bg-secondary transition hover:bg-primary hover:text-white">
-			<SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-secondary">
-				<X className="w-6 h-6" />
-				<span className="sr-only">Close</span>
-			</SheetPrimitive.Close>
-		</div>
+      <div className="absolute right-4 top-4 cursor-pointer rounded-primary bg-secondary px-2 pt-[7px] transition hover:bg-primary hover:text-white">
+        <SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-secondary">
+          <X className="h-6 w-6" />
+          <span className="sr-only">Close</span>
+        </SheetPrimitive.Close>
+      </div>
       {children}
     </SheetPrimitive.Content>
   </SheetPortal>

@@ -3,7 +3,8 @@
 import Logo from "../../../../../public/images/text-logo.png";
 import DirectionWrapper from "@/components/ui/direction";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from 'lucide-react';
+import SidebarMenuItems from "@/components/ui/sidebar/sidebar";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 
 export default function MobileDrawer() {
@@ -15,10 +16,12 @@ export default function MobileDrawer() {
             <Menu />
           </div>
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className="flex flex-col">
           <div className="mt-8 flex items-center justify-center">
             <Image src={Logo} width={250} height={63} alt="logo" />
           </div>
+
+          <SidebarMenuItems />
         </SheetContent>
       </Sheet>
     </DirectionWrapper>
