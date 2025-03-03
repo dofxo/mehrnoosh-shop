@@ -2,7 +2,7 @@
 
 import { useAppSelector } from "@/lib/hooks";
 
-const RateRow = ({
+const RateRows = ({
   comments,
 }: {
   comments: {
@@ -36,7 +36,7 @@ const RateRow = ({
   const { languageData } = useAppSelector((state) => state.language);
 
   return (
-    <div className="ratings mt-[20px] flex flex-col gap-[20px]">
+    <div className="ratings mt-[20px] flex flex-col gap-[10px]">
       {ratingsArray.map((item) => (
         <div className="flex items-center gap-[50px] font-bold">
           <div className="flex items-center gap-2">
@@ -62,4 +62,4 @@ const RateRow = ({
   );
 };
 
-export default RateRow;
+export default RateRows;
