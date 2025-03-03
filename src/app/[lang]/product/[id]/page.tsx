@@ -1,5 +1,6 @@
 import ProductCons from "./components/productCons/ProductCons";
 import ProductInfo from "./components/productInfo/ProductInfo";
+import RatingDetails from "./components/ratingDetails/RatingDetails";
 
 export default async function Product({ params }: { params: { id: string } }) {
   // extract id from param and call for product data
@@ -14,9 +15,10 @@ export default async function Product({ params }: { params: { id: string } }) {
   const productData = product[0];
 
   return (
-    <div className="container flex flex-col gap-[35px]">
+    <main className="container flex flex-col gap-[35px] py-[20px]">
       <ProductInfo productData={productData} />
       <ProductCons />
-    </div>
+      <RatingDetails />
+    </main>
   );
 }
