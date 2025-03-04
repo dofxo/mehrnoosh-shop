@@ -14,8 +14,13 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useAppSelector } from "@/lib/hooks";
-import { WhatsApp, Telegram } from "@mui/icons-material/";
-import { GitCompareArrows, Heart, Share2, Star } from "lucide-react";
+import {
+  ClipboardCopy,
+  GitCompareArrows,
+  Heart,
+  Share2,
+  Star,
+} from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -68,11 +73,11 @@ const ProductImages = ({
 
   const socialsShare = [
     {
-      icon: <WhatsApp />,
+      icon: "/images/productSingle/whatsapp.png",
       shareLink: `whatsapp://send?text=${productShareLink}`,
     },
     {
-      icon: <Telegram />,
+      icon: "/images/productSingle/telegram.png",
       shareLink: `https://telegram.me/share/url?${productShareLink}`,
     },
   ];
@@ -107,7 +112,11 @@ const ProductImages = ({
                     key={idx}
                     className="flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-[50%] bg-[#f2f6fc] text-[#37506F]"
                   >
-                    {item.icon}
+                    <img
+                      className="w-[25px]"
+                      src={item.icon}
+                      alt="social-icon"
+                    />
                   </a>
                 ))}
               </div>
@@ -125,7 +134,7 @@ const ProductImages = ({
                   }}
                   style={{ backgroundColor: shareLinkCopied ? "green" : "" }}
                 >
-                  <Star size={16} className="text-white" />
+                  <ClipboardCopy size={16} className="text-white" />
                 </div>
               </div>
             </DialogDescription>
