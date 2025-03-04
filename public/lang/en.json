@@ -26,7 +26,10 @@
     "rating_details": "Rating Details",
     "rate": "rate",
     "completion_description": "Completion Description",
-    "comments": "Comments"
+    "comments": "Comment",
+    "extra_details": "Extra Details",
+    "color": "Color",
+    "brand": "Brand"
   },
   "header": {
     "searchPlaceholder": "search for products ...",

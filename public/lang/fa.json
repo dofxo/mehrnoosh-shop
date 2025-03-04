@@ -26,7 +26,10 @@
     "rating_details": "جزییات امتیاز ها",
     "rate": "امتیاز",
     "completion_description": "توضیحات تکمیلی",
-    "comments": "نظرات"
+    "comments": "نظرات",
+    "extra_details": "جزییات بیشتر",
+    "color": "رنگ",
+    "brand": "برند"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",

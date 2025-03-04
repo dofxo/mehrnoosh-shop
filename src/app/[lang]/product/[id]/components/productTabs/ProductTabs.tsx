@@ -1,9 +1,11 @@
+import { IProduct } from "../../Product";
 import TabsSection from "./TabsSection";
 
-const ProductTabs = () => {
+const ProductTabs = ({ productData }: { productData: IProduct }) => {
+  const { description, properties } = productData;
   return (
     <section className="flex justify-center">
-      <TabsSection />
+      <TabsSection description={description} properties={properties} />
     </section>
   );
 };

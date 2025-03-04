@@ -20,7 +20,7 @@ export default async function Product({ params }: { params: { id: string } }) {
       <ProductInfo productData={productData} />
       <ProductCons />
       <RatingDetails productData={productData} />
-      <ProductTabs />
+      <ProductTabs productData={productData} />
     </main>
   );
 }
