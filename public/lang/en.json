@@ -24,7 +24,9 @@
     "statistic_from_this": "This statistic is from",
     "from_comment": "comment",
     "rating_details": "Rating Details",
-    "rate":"rate"
+    "rate": "rate",
+    "completion_description": "Completion Description",
+    "comments": "Comments"
   },
   "header": {
     "searchPlaceholder": "search for products ...",

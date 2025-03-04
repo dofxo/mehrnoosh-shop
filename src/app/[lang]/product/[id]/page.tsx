@@ -1,5 +1,6 @@
 import ProductCons from "./components/productCons/ProductCons";
 import ProductInfo from "./components/productInfo/ProductInfo";
+import ProductTabs from "./components/productTabs/ProductTabs";
 import RatingDetails from "./components/ratingDetails/RatingDetails";
 
 export default async function Product({ params }: { params: { id: string } }) {
@@ -19,6 +20,7 @@ export default async function Product({ params }: { params: { id: string } }) {
       <ProductInfo productData={productData} />
       <ProductCons />
       <RatingDetails productData={productData} />
+      <ProductTabs />
     </main>
   );
 }

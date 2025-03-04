@@ -24,7 +24,9 @@
     "statistic_from_this": "این آمار از",
     "from_comment": "دیدگاه می باشد",
     "rating_details": "جزییات امتیاز ها",
-    "rate": "امتیاز"
+    "rate": "امتیاز",
+    "completion_description": "توضیحات تکمیلی",
+    "comments": "نظرات"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",
