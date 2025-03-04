@@ -8,6 +8,7 @@ import { Captions, FileText, MessageCircleMore } from "lucide-react";
 const TabsSection = ({
   description,
   properties,
+  comments,
 }: {
   description: { en: string; fa: string };
   properties: {
@@ -20,6 +21,14 @@ const TabsSection = ({
       fa: string;
     };
   };
+  comments: {
+    cons: string[];
+    name: string;
+    pros: string[];
+    rating: string;
+    comment: string;
+    created_at: string;
+  }[];
 }) => {
   const { languageData, currentLanguage } = useAppSelector(
     (state) => state.language,
@@ -64,7 +73,7 @@ const TabsSection = ({
       icon: <FileText size={20} className="self-start" />,
     },
     {
-      value: languageData.productSingle.comments,
+      value: `${languageData.productSingle.comments} (${comments.length})`,
       content: {
         body: "",
         title: languageData.productSingle.comments,

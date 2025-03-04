@@ -2,10 +2,14 @@ import { IProduct } from "../../Product";
 import TabsSection from "./TabsSection";
 
 const ProductTabs = ({ productData }: { productData: IProduct }) => {
-  const { description, properties } = productData;
+  const { description, properties, comments } = productData;
   return (
     <section className="flex justify-center">
-      <TabsSection description={description} properties={properties} />
+      <TabsSection
+        description={description}
+        properties={properties}
+        comments={comments}
+      />
     </section>
   );
 };
