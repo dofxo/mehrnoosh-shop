@@ -1,5 +1,6 @@
 "use client";
 
+import { langType } from "@/app/[lang]/langs";
 import { useAppSelector } from "@/lib/hooks";
 import moment from "jalali-moment";
 import {
@@ -55,11 +56,11 @@ const ProductDetails = ({
   ).toFixed(1);
 
   const propertiesToUse = [
-    ...properties.color[currentLanguage as "fa" | "en"],
-    properties.brand[currentLanguage as "fa" | "en"],
+    ...properties.color[currentLanguage as langType],
+    properties.brand[currentLanguage as langType],
   ];
 
-  const categories = category[currentLanguage as "fa" | "en"].reduce(
+  const categories = category[currentLanguage as langType].reduce(
     (p, c, index) => {
       return index > 0 ? p + `, ${c}` : p + c;
     },
@@ -75,7 +76,7 @@ const ProductDetails = ({
     <div className="p-[20px]">
       {/* product title */}
       <h2 className="text-[20px] font-bold text-text-primary">
-        {name[currentLanguage as "en" | "fa"]}
+        {name[currentLanguage as langType]}
       </h2>
       <h5 className="py-[15px] font-[500] text-[#6D90B9]">
         {currentLanguage === "fa" && name.en}
@@ -153,9 +154,7 @@ const ProductDetails = ({
           </h5>
         </div>
 
-        <p className="font-[500]">
-          {description[currentLanguage as "fa" | "en"]}
-        </p>
+        <p className="font-[500]">{description[currentLanguage as langType]}</p>
       </div>
       {/* description end */}
 

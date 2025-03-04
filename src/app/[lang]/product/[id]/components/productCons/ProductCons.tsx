@@ -1,5 +1,6 @@
 "use client";
 
+import { langType } from "@/app/[lang]/langs";
 import { cons } from "@/configs/productCons";
 import { useAppSelector } from "@/lib/hooks";
 import Image from "next/image";
@@ -9,7 +10,7 @@ const ProductCons = () => {
 
   return (
     <section className="flex items-center justify-between gap-2 rounded-[25px] bg-white p-[30px]">
-      {cons[currentLanguage as "fa" | "en"].map((item, key) => (
+      {cons[currentLanguage as langType].map((item, key) => (
         <div key={key} className="flex items-center gap-5">
           <Image
             src={item.imageUrl}

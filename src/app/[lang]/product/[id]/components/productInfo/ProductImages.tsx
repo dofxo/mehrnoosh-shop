@@ -1,5 +1,6 @@
 "use client";
 
+import { langType } from "@/app/[lang]/langs";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -101,7 +102,7 @@ const ProductImages = ({
                   {languageData.productSingle.share}
                 </div>
                 <p className="font-[500] text-black">
-                  {name[currentLanguage as "en" | "fa"]}
+                  {name[currentLanguage as langType]}
                 </p>
               </div>
               <div className="socials-share flex items-center gap-3">

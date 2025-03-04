@@ -1,5 +1,6 @@
 "use client";
 
+import { langType } from "@/app/[lang]/langs";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAppSelector } from "@/lib/hooks";
 import { Captions, FileText, MessageCircleMore } from "lucide-react";
@@ -30,7 +31,7 @@ const TabsSection = ({
       content: {
         body: (
           <p className="font-[500]">
-            {description[currentLanguage as "fa" | "en"]}
+            {description[currentLanguage as langType]}
           </p>
         ),
         title: languageData.productSingle.description,
@@ -47,13 +48,13 @@ const TabsSection = ({
               <div className="flex w-[150px] items-center justify-center gap-2 rounded-[90px] bg-[#f2f6fc] p-[8px] text-[17px] font-bold text-text-primary">
                 {languageData.productSingle.color}
               </div>
-              {properties.color[currentLanguage as "en" | "fa"].join(", ")}
+              {properties.color[currentLanguage as langType].join(", ")}
             </div>
             <div className="flex items-center gap-2 font-[500]">
               <div className="flex w-[150px] items-center justify-center gap-2 rounded-[90px] bg-[#E6F1FF] p-[8px] text-[17px] font-bold text-primary">
                 {languageData.productSingle.brand}
               </div>
-              {properties.brand[currentLanguage as "en" | "fa"]}
+              {properties.brand[currentLanguage as langType]}
             </div>
           </div>
         ),
