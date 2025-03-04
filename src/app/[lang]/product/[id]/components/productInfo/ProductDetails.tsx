@@ -51,9 +51,7 @@ const ProductDetails = ({
   );
 
   const scoreAverage = (
-    rating
-      .map(Number) // Convert each string to a number
-      .reduce((p, c) => p + c, 0) / rating.length
+    rating.map(Number).reduce((p, c) => p + c, 0) / 5
   ).toFixed(1);
 
   const propertiesToUse = [
