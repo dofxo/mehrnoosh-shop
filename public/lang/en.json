@@ -29,7 +29,19 @@
     "comments": "Comment",
     "extra_details": "Extra Details",
     "color": "Color",
-    "brand": "Brand"
+    "brand": "Brand",
+    "write_your_comment": "Write your comment",
+    "your_rate": "Your Rating",
+    "your_comment": "Your Comment",
+    "pros": "Pros",
+    "pro": "Pro",
+    "cons": "Cons",
+    "con": "Con",
+    "add": "Add",
+    "name": "Name",
+    "email": "Email",
+    "submit": "Submit",
+    "comment_for": "Comment for"
   },
   "header": {
     "searchPlaceholder": "search for products ...",

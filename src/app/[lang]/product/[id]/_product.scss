@@ -81,3 +81,11 @@ div {
     }
   }
 }
+
+
+// rating star
+[data-highlighted] {
+  svg {
+    fill: black
+  }
+}

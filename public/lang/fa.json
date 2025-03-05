@@ -29,7 +29,19 @@
     "comments": "نظرات",
     "extra_details": "جزییات بیشتر",
     "color": "رنگ",
-    "brand": "برند"
+    "brand": "برند",
+    "write_your_comment": "دیدگاه خود را بنویسید",
+    "your_rate": "امتیاز شما",
+    "your_comment": "دیدگاه شما",
+    "pros": "نقاط قوت",
+    "pro": "نقطه قوت",
+    "cons": "نقاط ضعف",
+    "con": "نقطه ضعف",
+    "add": "افزودن",
+    "name": "نام",
+    "email": "ایمیل",
+    "submit": "ثبت",
+    "comment_for": "دیدگاه برای"
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",
