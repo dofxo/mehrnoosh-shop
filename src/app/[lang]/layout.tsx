@@ -1,6 +1,7 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
+import { Provider } from "@/components/ui/provider";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
@@ -33,10 +34,14 @@ export default async function RootLayout({
   const language = await getLanguage(lang);
 
   return (
-    <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
+    <html
+      lang={lang}
+      dir={lang === "fa" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+    >
       <body className={`${yekanbakh.className} antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
-          {children}
+          <Provider>{children}</Provider>
         </StoreProvider>
       </body>
     </html>
