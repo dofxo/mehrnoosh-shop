@@ -69,7 +69,12 @@ const TabsSection = ({
     {
       value: `${languageData.productSingle.comments} (${comments.length})`,
       content: {
-        body: <CommentsContent languageData={languageData} />,
+        body: (
+          <CommentsContent
+            languageData={languageData}
+            currentLanguage={currentLanguage}
+          />
+        ),
         title: languageData.productSingle.comments,
         icon: <MessageCircleMore size={20} />,
       },

@@ -33,6 +33,7 @@
     "write_your_comment": "Write your comment",
     "your_rate": "Your Rating",
     "your_comment": "Your Comment",
+    "your_name": "Name",
     "pros": "Pros",
     "pro": "Pro",
     "cons": "Cons",
@@ -41,7 +42,8 @@
     "name": "Name",
     "email": "Email",
     "submit": "Submit",
-    "comment_for": "Comment for"
+    "comment_for": "Comment for",
+    "leave_empty": "If left empty, it will be saved as Unknown"
   },
   "header": {
     "searchPlaceholder": "search for products ...",

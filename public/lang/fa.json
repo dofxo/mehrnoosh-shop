@@ -33,6 +33,7 @@
     "write_your_comment": "دیدگاه خود را بنویسید",
     "your_rate": "امتیاز شما",
     "your_comment": "دیدگاه شما",
+    "your_name": "نام",
     "pros": "نقاط قوت",
     "pro": "نقطه قوت",
     "cons": "نقاط ضعف",
@@ -41,7 +42,8 @@
     "name": "نام",
     "email": "ایمیل",
     "submit": "ثبت",
-    "comment_for": "دیدگاه برای"
+    "comment_for": "دیدگاه برای",
+    "leave_empty": "در صورت خالی بودن با نام 'ناشناس' ذخیره میشود."
   },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",
