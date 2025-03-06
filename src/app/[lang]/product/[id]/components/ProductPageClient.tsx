@@ -25,7 +25,7 @@ export default function ProductPageClient({
 
       if (productData && Object.keys(productData).length > 0) {
         dispatch(initializeProductData(productData));
-        // setIsLoading(false);
+        setIsLoading(false);
       }
     })();
   }, [dispatch, productId]);

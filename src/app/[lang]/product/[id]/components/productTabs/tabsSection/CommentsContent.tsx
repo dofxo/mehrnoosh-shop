@@ -133,7 +133,10 @@ const CommentsContent = ({
               />
               <ul>
                 {item.data.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li key={idx} className="flex gap-2">
+                    <span className="font-bold">{idx + 1}.</span>
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
               <Button
@@ -152,6 +155,10 @@ const CommentsContent = ({
             onClick={() => {
               // reset form
               formRef.current?.reset();
+
+              // reset pros and cons array
+              setPros([]);
+              setCons([]);
             }}
             className="w-fit text-[18px] font-bold"
           >
