@@ -1,5 +1,6 @@
 "use client";
 
+import CustomFlowbiteTheme from "@/components/ui/custom-flowbite-theme";
 import { SidebarMenuItem } from "@/components/ui/sidebar/navbarData";
 import { sidebarNavData } from "@/configs/navData";
 import { useAppSelector } from "@/lib/hooks";
@@ -29,13 +30,17 @@ export default function SidebarMenuItems() {
   };
 
   return (
-    <Sidebar
-      className="mt-5 flex w-full items-center justify-start bg-white"
-      aria-label="Sidebar with multi-level dropdown"
-    >
-      <Sidebar.Items>
-        <Sidebar.ItemGroup>{renderMenuItems(sidebarNavData)}</Sidebar.ItemGroup>
-      </Sidebar.Items>
-    </Sidebar>
+    <CustomFlowbiteTheme>
+      <Sidebar
+        className="mt-5 flex w-full items-center justify-start bg-white"
+        aria-label="Sidebar with multi-level dropdown"
+      >
+        <Sidebar.Items>
+          <Sidebar.ItemGroup>
+            {renderMenuItems(sidebarNavData)}
+          </Sidebar.ItemGroup>
+        </Sidebar.Items>
+      </Sidebar>
+    </CustomFlowbiteTheme>
   );
 }
