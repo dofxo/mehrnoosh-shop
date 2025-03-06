@@ -1,9 +1,13 @@
 "use client";
 
+import { IProduct } from "../../../Product";
+import { langType } from "@/app/[lang]/langs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useAppSelector } from "@/lib/hooks";
 import { RatingGroup, Textarea } from "@chakra-ui/react";
-import { Frown, Plus, Smile, Star } from "lucide-react";
+import moment from "jalali-moment";
+import { Check, Frown, Plus, Smile, Star, X } from "lucide-react";
 import { useRef, useState } from "react";
 
 const CommentsContent = ({
@@ -21,6 +25,10 @@ const CommentsContent = ({
   const prosRef = useRef<HTMLInputElement>(null);
   const consRef = useRef<HTMLInputElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+
+  const { comments, name }: IProduct = useAppSelector(
+    (state: any) => state.productSingle.productData,
+  );
 
   return (
     <div
@@ -59,7 +67,7 @@ const CommentsContent = ({
             {languageData.productSingle.your_rate} *
           </span>
           <RatingGroup.Root
-            className="rounded-[90px] bg-secondary px-[15px] py-[12px]"
+            className="your-rate rounded-[90px] bg-secondary px-[15px] py-[12px]"
             count={5}
             defaultValue={0}
             size="sm"
@@ -168,7 +176,85 @@ const CommentsContent = ({
       </form>
       {/* writing comment section end*/}
       {/* showing comment section */}
-      <div></div>
+      <div className="flex flex-col gap-5">
+        <h3 className="text-[20px] font-bold">
+          {comments.length} {languageData.productSingle.comment_for}{" "}
+          <span className="font-[400]">
+            {name[currentLanguage as langType]}
+          </span>
+        </h3>
+
+        <div className="comments flex max-h-[680px] flex-col gap-5 overflow-y-scroll bg-white p-2">
+          {comments.map((item, idx) => (
+            <div
+              key={idx}
+              className="flex min-h-fit flex-col gap-2 overflow-scroll rounded-[15px] bg-white p-[20px] shadow-[0_2px_25px_rgba(41,41,94,0.08)]"
+            >
+              <span className="flex items-center gap-5">
+                <span className="font-bold">{item.name}</span>
+                <span className="text-[18px]">
+                  {currentLanguage === "fa"
+                    ? moment(item.created_at).locale("fa").format(`YYYY/DD/MM`)
+                    : moment(item.created_at).format(`YYYY/DD/MM`)}
+                </span>
+              </span>
+              <div className="flex flex-col gap-5 rounded-[15px] bg-secondary p-[16px]">
+                <RatingGroup.Root
+                  value={+item.rating}
+                  count={5}
+                  colorPalette="yellow"
+                  readOnly
+                  className="w-fit"
+                >
+                  <RatingGroup.HiddenInput />
+                  <RatingGroup.Control>
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <RatingGroup.Item key={index} index={index + 1}>
+                        <RatingGroup.ItemIndicator />
+                      </RatingGroup.Item>
+                    ))}
+                  </RatingGroup.Control>
+                </RatingGroup.Root>
+                <span>{item.comment}</span>
+              </div>
+              {/* pros and cons */}
+              {item.pros.length ? (
+                <div className="flex flex-col gap-5 rounded-[15px] border border-[#dfe8f5e3] p-[15px]">
+                  <span className="text-[17px] font-[500]">
+                    {languageData.productSingle.pros}:
+                  </span>
+
+                  <div className="flex gap-2">
+                    {item.pros.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <Check color="var(--primary)" size={18} />
+                        <span className="text-[15px] text-[400]">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {item.cons.length ? (
+                <div className="flex flex-col gap-5 rounded-[15px] border border-[#dfe8f5e3] p-[15px]">
+                  <span className="text-[17px] font-[500]">
+                    {languageData.productSingle.cons}:
+                  </span>
+
+                  <div className="flex gap-2">
+                    {item.cons.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <X color="orange" size={18} />
+                        <span className="text-[15px] text-[400]">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </div>
       {/* showing comment section end*/}
     </div>
   );

@@ -84,8 +84,10 @@ div {
 
 
 // rating star
-[data-highlighted] {
-  svg {
-    fill: black
+.your-rate {
+  [data-highlighted] {
+    svg {
+      fill: black
+    }
   }
 }
