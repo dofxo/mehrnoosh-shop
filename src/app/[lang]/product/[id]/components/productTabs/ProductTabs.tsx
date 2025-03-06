@@ -1,5 +1,5 @@
 import { IProduct } from "../../Product";
-import TabsSection from "./TabsSection";
+import TabsSection from "./tabsSection/TabsSection";
 
 const ProductTabs = ({ productData }: { productData: IProduct }) => {
   const { description, properties, comments } = productData;
