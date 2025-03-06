@@ -1,5 +1,6 @@
 "use client";
 
+import { IProduct } from "../../../Product";
 import CommentsContent from "./CommentsContent";
 import CompletionDescriptionContent from "./CompletionDescriptionContent";
 import DescriptionContent from "./DescriptionContent";
@@ -7,31 +8,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAppSelector } from "@/lib/hooks";
 import { Captions, FileText, MessageCircleMore } from "lucide-react";
 
-const TabsSection = ({
-  description,
-  properties,
-  comments,
-}: {
-  description: { en: string; fa: string };
-  properties: {
-    color: {
-      en: string[];
-      fa: string[];
-    };
-    brand: {
-      en: string;
-      fa: string;
-    };
-  };
-  comments: {
-    cons: string[];
-    name: string;
-    pros: string[];
-    rating: string;
-    comment: string;
-    created_at: string;
-  }[];
-}) => {
+const TabsSection = () => {
+  const { description, properties, comments }: IProduct = useAppSelector(
+    (state: any) => state.productSingle.productData,
+  );
   const { languageData, currentLanguage } = useAppSelector(
     (state) => state.language,
   );

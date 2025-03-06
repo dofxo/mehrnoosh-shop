@@ -1,20 +1,19 @@
 "use client";
 
+import { IProduct } from "../../Product";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAppSelector } from "@/lib/hooks";
 import { CircleCheck, ShoppingCart, Truck } from "lucide-react";
 import { useState } from "react";
 
-const ProductPrice = ({
-  price,
-  discount_price,
-}: {
-  price: string;
-  discount_price: string;
-}) => {
+const ProductPrice = () => {
   const { languageData } = useAppSelector((state) => state.language);
   const [itemCount, setItemCount] = useState<number>(0);
+
+  const { price, discount_price } = useAppSelector(
+    (state) => state.productSingle.productData as IProduct,
+  );
 
   // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

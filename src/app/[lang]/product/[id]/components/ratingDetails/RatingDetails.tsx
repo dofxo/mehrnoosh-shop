@@ -1,11 +1,16 @@
+"use client";
+
 import { IProduct } from "../../Product";
 import RadialPercentageChart from "./percentage/RatingChart";
 import RatingStatics from "./percentage/RatingStatics";
 import RateRows from "./progress/RateRows";
 import Title from "./progress/Title";
+import { useAppSelector } from "@/lib/hooks";
 
-const RatingDetails = ({ productData }: { productData: IProduct }) => {
-  const { comments } = productData;
+const RatingDetails = () => {
+  const { comments }: IProduct = useAppSelector(
+    (state: any) => state.productSingle.productData,
+  );
 
   const totalRatingPercentage = Math.round(
     ((comments.reduce((total, comment) => total + +comment.rating, 0) /

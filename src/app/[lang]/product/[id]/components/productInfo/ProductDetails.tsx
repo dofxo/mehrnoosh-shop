@@ -1,5 +1,6 @@
 "use client";
 
+import { IProduct } from "../../Product";
 import { langType } from "@/app/[lang]/langs";
 import { useAppSelector } from "@/lib/hooks";
 import moment from "jalali-moment";
@@ -12,44 +13,20 @@ import {
   Star,
 } from "lucide-react";
 
-const ProductDetails = ({
-  name,
-  comments,
-  rating,
-  properties,
-  category,
-  description,
-  sold_amount,
-  created_at,
-}: {
-  name: { en: string; fa: string };
-  comments: {
-    cons: string[];
-    name: string;
-    pros: string[];
-    rating: string;
-    comment: string;
-    created_at: string;
-  }[];
-  sold_amount: string;
-  created_at: string;
-  properties: {
-    color: {
-      en: string[];
-      fa: string[];
-    };
-    brand: {
-      en: string;
-      fa: string;
-    };
-  };
-  description: { en: string; fa: string };
-  category: { en: string[]; fa: string[] };
-  rating: string[];
-}) => {
+const ProductDetails = () => {
   const { currentLanguage, languageData } = useAppSelector(
     (state) => state.language,
   );
+  const {
+    sold_amount,
+    name,
+    comments,
+    rating,
+    properties,
+    category,
+    description,
+    created_at,
+  } = useAppSelector((state) => state.productSingle.productData as IProduct);
 
   const scoreAverage = (
     rating.map(Number).reduce((p, c) => p + c, 0) / 5

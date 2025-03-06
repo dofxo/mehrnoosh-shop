@@ -1,5 +1,6 @@
 "use client";
 
+import { IProduct } from "../../Product";
 import { langType } from "@/app/[lang]/langs";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -15,33 +16,16 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useAppSelector } from "@/lib/hooks";
-import {
-  ClipboardCopy,
-  GitCompareArrows,
-  Heart,
-  Share2,
-  Star,
-} from "lucide-react";
+import { ClipboardCopy, GitCompareArrows, Heart, Share2 } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
-const ProductImages = ({
-  images,
-  quantity,
-  sold_amount,
-  name,
-  discount_price,
-  price,
-}: {
-  images: string[];
-  quantity: string;
-  sold_amount: string;
-  discount_price: string;
-  price: string;
-  name: { en: string; fa: string };
-}) => {
+const ProductImages = () => {
+  const { images, quantity, sold_amount, price, discount_price, name } =
+    useAppSelector((state) => state.productSingle.productData as IProduct);
+
   const sectionsClassName = "bg-background rounded-[25px] p-[30px]";
 
   const discountPercentage = Math.round(100 - (+discount_price * 100) / +price);
@@ -226,7 +210,7 @@ const ProductImages = ({
             {
               // change direction of the images due to page direction.
               currentLanguage === "fa"
-                ? images
+                ? [...images]
                     .reverse()
                     .map((imgSrc, idx) => (
                       <Image

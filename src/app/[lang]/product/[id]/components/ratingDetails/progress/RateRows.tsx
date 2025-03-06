@@ -37,8 +37,8 @@ const RateRows = ({
 
   return (
     <div className="ratings mt-[20px] flex flex-col gap-[10px]">
-      {ratingsArray.map((item) => (
-        <div className="flex items-center gap-[50px] font-bold">
+      {ratingsArray.map((item, idx) => (
+        <div key={idx} className="flex items-center gap-[50px] font-bold">
           <div className="flex items-center gap-2">
             <span className="flex h-[25px] w-[25px] items-end justify-center rounded-[50%] bg-[#E6F1FF] text-primary">
               {item.num}
