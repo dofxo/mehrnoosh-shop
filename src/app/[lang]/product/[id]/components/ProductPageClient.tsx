@@ -4,6 +4,7 @@ import ProductCons from "./productCons/ProductCons";
 import ProductInfo from "./productInfo/ProductInfo";
 import ProductTabs from "./productTabs/ProductTabs";
 import RatingDetails from "./ratingDetails/RatingDetails";
+import Loader from "@/components/Loader";
 import { initializeProductData } from "@/lib/features/productSingle/productSingleSlice";
 import { useAppDispatch } from "@/lib/hooks";
 import { useEffect, useState } from "react";
@@ -24,23 +25,21 @@ export default function ProductPageClient({
 
       if (productData && Object.keys(productData).length > 0) {
         dispatch(initializeProductData(productData));
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     })();
   }, [dispatch, productId]);
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <main className="container flex flex-col gap-[65px] py-[20px]">
-      {!isLoading ? (
-        <>
-          <ProductInfo />
-          <ProductCons />
-          <RatingDetails />
-          <ProductTabs />
-        </>
-      ) : (
-        <div className="loader self-center"></div>
-      )}
+      <ProductInfo />
+      <ProductCons />
+      <RatingDetails />
+      <ProductTabs />
     </main>
   );
 }
