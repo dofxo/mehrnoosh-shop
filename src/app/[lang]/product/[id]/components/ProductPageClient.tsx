@@ -7,6 +7,7 @@ import RatingDetails from "./ratingDetails/RatingDetails";
 import Loader from "@/components/Loader";
 import { initializeProductData } from "@/lib/features/productSingle/productSingleSlice";
 import { useAppDispatch } from "@/lib/hooks";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function ProductPageClient({
@@ -19,13 +20,16 @@ export default function ProductPageClient({
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`/api/products/${productId}`);
-      const product = await response.json();
-      const productData = product[0];
+      try {
+        const { data: product } = await axios.get(`/api/products/${productId}`);
+        const productData = product[0];
 
-      if (productData && Object.keys(productData).length > 0) {
-        dispatch(initializeProductData(productData));
-        setIsLoading(false);
+        if (productData && Object.keys(productData).length > 0) {
+          dispatch(initializeProductData(productData));
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error(error);
       }
     })();
   }, [dispatch, productId]);

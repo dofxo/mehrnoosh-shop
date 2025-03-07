@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAppSelector } from "@/lib/hooks";
 import { RatingGroup, Textarea } from "@chakra-ui/react";
+import axios from "axios";
 import moment from "jalali-moment";
-import { Check, Frown, Plus, Smile, Star, X } from "lucide-react";
-import { useRef, useState } from "react";
+import { Check, Frown, Loader2, Plus, Smile, Star, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 const CommentsContent = ({
   languageData,
@@ -18,6 +20,8 @@ const CommentsContent = ({
   currentLanguage: string;
 }) => {
   const [rateValue, setRateValue] = useState(3);
+  const [buttonIsLoading, setButtonIsLoading] = useState(false);
+  const [productComments, setProductComments] = useState<any[]>();
 
   const [cons, setCons] = useState<string[]>([]);
   const [pros, setPros] = useState<string[]>([]);
@@ -25,10 +29,16 @@ const CommentsContent = ({
   const prosRef = useRef<HTMLInputElement>(null);
   const consRef = useRef<HTMLInputElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const commentRef = useRef<HTMLTextAreaElement>(null);
 
-  const { comments, name }: IProduct = useAppSelector(
+  const { comments, name, id }: IProduct = useAppSelector(
     (state: any) => state.productSingle.productData,
   );
+
+  useEffect(() => {
+    setProductComments(comments);
+  }, []);
 
   return (
     <div
@@ -49,7 +59,11 @@ const CommentsContent = ({
           <span className="font-[500]">
             {languageData.productSingle.your_name}
           </span>
-          <Input className="flex items-center justify-between rounded-[10px] border-none bg-white p-1 p-[20px] !text-[15px] font-bold shadow-none outline-none focus:border-none" />
+          <Input
+            ref={nameRef}
+            name="name"
+            className="flex items-center justify-between rounded-[10px] border-none bg-white p-1 p-[20px] !text-[15px] font-bold shadow-none outline-none focus:border-none"
+          />
           <span className="self-start font-[500] text-gray-400">
             {languageData.productSingle.leave_empty}
           </span>
@@ -59,7 +73,11 @@ const CommentsContent = ({
           <span className="font-[500]">
             {languageData.productSingle.your_comment} *
           </span>
-          <Textarea className="flex items-center justify-between rounded-[10px] border-none bg-white p-[15px] text-[17px] font-bold outline-none focus:border-none" />
+          <Textarea
+            ref={commentRef}
+            name="comment"
+            className="flex items-center justify-between rounded-[10px] border-none bg-white p-[15px] text-[17px] font-bold outline-none focus:border-none"
+          />
         </div>
 
         <div className="flex items-center justify-between rounded-[10px] bg-white p-[15px]">
@@ -160,16 +178,52 @@ const CommentsContent = ({
           ))}
 
           <Button
-            onClick={() => {
-              // reset form
-              formRef.current?.reset();
+            disabled={buttonIsLoading}
+            onClick={async () => {
+              setButtonIsLoading(true);
+              try {
+                const dataToPost = {
+                  name: nameRef.current?.value,
+                  comment: commentRef.current?.value,
+                  pros,
+                  cons,
+                  rating: String(rateValue),
+                  created_at: new Date().toString(),
+                };
 
-              // reset pros and cons array
-              setPros([]);
-              setCons([]);
+                if (dataToPost.name === "") {
+                  dataToPost.name =
+                    currentLanguage === "fa" ? "ناشناس" : "anonymous";
+                }
+
+                if (dataToPost.comment === "") {
+                  toast.error(
+                    languageData.productSingle.write_your_comment_first,
+                  );
+                  return;
+                }
+
+                const {
+                  data: { body: product },
+                } = await axios.post(`/api/products/${id}`, dataToPost);
+
+                setProductComments((prev: any) => [product, ...prev]);
+
+                // reset form
+                formRef.current?.reset();
+
+                // reset pros and cons array
+                setPros([]);
+                setCons([]);
+              } catch (error) {
+                console.error(error);
+              } finally {
+                setButtonIsLoading(false);
+              }
             }}
             className="w-fit text-[18px] font-bold"
           >
+            {buttonIsLoading && <Loader2 className="animate-spin" />}
             {languageData.productSingle.submit}
           </Button>
         </div>
@@ -185,7 +239,7 @@ const CommentsContent = ({
         </h3>
 
         <div className="comments flex max-h-[680px] flex-col gap-5 overflow-y-scroll bg-white p-2">
-          {comments.map((item, idx) => (
+          {productComments?.map((item, idx) => (
             <div
               key={idx}
               className="flex min-h-fit flex-col gap-2 overflow-scroll rounded-[15px] bg-white p-[20px] shadow-[0_2px_25px_rgba(41,41,94,0.08)]"

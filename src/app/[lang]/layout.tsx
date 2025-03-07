@@ -5,6 +5,7 @@ import { Provider } from "@/components/ui/provider";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
@@ -43,6 +44,7 @@ export default async function RootLayout({
         <StoreProvider language={language} currentLanguage={lang}>
           <Provider>{children}</Provider>
         </StoreProvider>
+        <Toaster />
       </body>
     </html>
   );
