@@ -8,8 +8,7 @@ export const customFlowbiteTheme: CustomFlowbiteTheme = {
         on: "w-16",
         off: "w-64",
       },
-      inner:
-        "h-full w-full overflow-y-auto overflow-x-hidden rounded",
+      inner: "h-full w-full overflow-y-auto overflow-x-hidden rounded",
     },
     collapse: {
       button:
@@ -22,7 +21,7 @@ export const customFlowbiteTheme: CustomFlowbiteTheme = {
         },
       },
       label: {
-        base: "ml-3 rtl:ml-0 rtl:mr-3 flex-1 whitespace-nowrap ltr:text-left rtl:text-right",
+        base: "ml-3 flex rtl:ml-0 rtl:mr-3 flex-1 whitespace-nowrap",
         icon: {
           base: "h-6 w-6 transition delay-0 ease-in-out",
           open: {
