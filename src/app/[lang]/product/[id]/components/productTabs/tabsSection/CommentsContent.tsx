@@ -242,7 +242,7 @@ const CommentsContent = ({
           {productComments?.map((item, idx) => (
             <div
               key={idx}
-              className="flex min-h-fit flex-col gap-2 overflow-scroll rounded-[15px] bg-white p-[20px] shadow-[0_2px_25px_rgba(41,41,94,0.08)]"
+              className="flex min-h-fit flex-col gap-2 rounded-[15px] bg-white p-[20px] shadow-[0_2px_25px_rgba(41,41,94,0.08)]"
             >
               <span className="flex items-center gap-5">
                 <span className="font-bold">{item.name}</span>
