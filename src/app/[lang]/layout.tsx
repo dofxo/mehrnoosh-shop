@@ -1,6 +1,7 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
+import RemoveDarkClass from "@/components/RemoveDarkClass";
 import { Provider } from "@/components/ui/provider";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
@@ -45,6 +46,7 @@ export default async function RootLayout({
           <Provider>{children}</Provider>
         </StoreProvider>
         <Toaster />
+        <RemoveDarkClass />
       </body>
     </html>
   );
