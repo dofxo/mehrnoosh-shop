@@ -4,6 +4,7 @@ import ProductCons from "./productCons/ProductCons";
 import ProductInfo from "./productInfo/ProductInfo";
 import ProductTabs from "./productTabs/ProductTabs";
 import RatingDetails from "./ratingDetails/RatingDetails";
+import RelatedProducts from "./relatedProducts/RelatedProducts";
 import Loader from "@/components/Loader";
 import { initializeProductData } from "@/lib/features/productSingle/productSingleSlice";
 import { useAppDispatch } from "@/lib/hooks";
@@ -44,6 +45,7 @@ export default function ProductPageClient({
       <ProductCons />
       <RatingDetails />
       <ProductTabs />
+      <RelatedProducts />
     </main>
   );
 }
