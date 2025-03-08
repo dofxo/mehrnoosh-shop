@@ -3,17 +3,16 @@ import { CustomFlowbiteTheme } from "flowbite-react";
 export const customFlowbiteTheme: CustomFlowbiteTheme = {
   sidebar: {
     root: {
-      base: "h-full",
+      base: "h-full w-full",
       collapsed: {
         on: "w-16",
-        off: "w-64",
+        off: "w-100",
       },
-      inner:
-        "h-full w-full overflow-y-auto overflow-x-hidden bg-secondary rounded",
+      inner: "h-full w-full rounded",
     },
     collapse: {
       button:
-        "rtl:flex-row-reverse group flex w-full items-center rounded-lg p-4 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+        "rtl:flex-row-reverse group bg-secondary flex w-full items-center rounded-lg p-4 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
       icon: {
         base: "h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white",
         open: {
@@ -50,7 +49,7 @@ export const customFlowbiteTheme: CustomFlowbiteTheme = {
       },
     },
     item: {
-      base: "flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+      base: "flex bg-gray-50 items-center justify-center rounded-lg p-4 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
       active: "bg-gray-100 dark:bg-gray-700",
       collapsed: {
         insideCollapse:

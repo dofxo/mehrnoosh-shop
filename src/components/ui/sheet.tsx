@@ -62,7 +62,7 @@ const SheetContent = React.forwardRef<
       ref={ref}
       className={cn(
         sheetVariants({ side }),
-        "h-full overflow-y-auto",
+        "h-full overflow-y-auto overflow-x-hidden",
         className,
       )}
       {...props}

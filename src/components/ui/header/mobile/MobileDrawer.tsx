@@ -17,7 +17,7 @@ export default function MobileDrawer() {
           </div>
         </SheetTrigger>
         <SheetContent className="flex flex-col">
-          <div className="mt-8 flex items-center justify-center">
+          <div className="mt-8 flex items-center justify-center !overflow-hidden">
             <Image src={Logo} width={250} height={63} alt="logo" />
           </div>
 
