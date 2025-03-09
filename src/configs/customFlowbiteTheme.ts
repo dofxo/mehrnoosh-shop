@@ -21,7 +21,7 @@ export const customFlowbiteTheme: CustomFlowbiteTheme = {
         },
       },
       label: {
-        base: "ml-3 flex rtl:ml-0 rtl:mr-3 flex-1 whitespace-nowrap",
+        base: "ml-3 px-3 flex rtl:ml-0 rtl:mr-3 flex-1 whitespace-nowrap",
         icon: {
           base: "h-6 w-6 transition delay-0 ease-in-out",
           open: {
