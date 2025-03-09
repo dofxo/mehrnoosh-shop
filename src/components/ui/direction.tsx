@@ -7,7 +7,7 @@ export default function DirectionWrapper({
   children: React.ReactNode;
 }) {
   const currentLanguage = useAppSelector(
-    (state: any) => state.language.currentLanguage,
+    (state) => state.language.currentLanguage,
   );
 
   return (

@@ -10,7 +10,7 @@ export default function StoreProvider({
   currentLanguage,
   children,
 }: {
-  language: Record<string, any>;
+  language: Record<string, string>;
   currentLanguage: string;
   children: React.ReactNode;
 }) {
