@@ -1,8 +1,12 @@
-import type { Metadata } from "next";
-import yekanbakh from "@/fonts/yekanBakh";
+import StoreProvider from "../StoreProvider";
 import "../globals.scss";
-import { getLanguage } from "@/utils/langs";
 import { langType } from "./langs";
+import MobileNav from "@/components/ui/mobile-nav/MobileNav";
+import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
+import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
+import yekanbakh from "@/fonts/yekanBakh";
+import { getLanguage } from "@/utils/langs";
+import type { Metadata } from "next";
 
 export async function generateMetadata({
   params,
@@ -27,10 +31,18 @@ export default async function RootLayout({
   params: { lang: langType };
 }) {
   const { lang } = await params;
+  const language = await getLanguage(lang);
 
   return (
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
-      <body className={`${yekanbakh.className} antialiased`}>{children}</body>
+      <body className={`${yekanbakh.className} antialiased`}>
+        <StoreProvider language={language} currentLanguage={lang}>
+          <DesktopHeader />
+          <MobileHeader />
+          <MobileNav />
+          {children}
+        </StoreProvider>
+      </body>
     </html>
   );
 }
