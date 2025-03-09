@@ -1,5 +1,22 @@
 import { SidebarMenuItem } from "@/components/ui/sidebar/navbarData";
+import {
+  Computer,
+  Headset,
+  Info,
+  Keyboard,
+  Laptop,
+  MessageCircle,
+  Minus,
+  Mouse,
+  PcCase,
+  Smartphone,
+  Speaker,
+  Tablet,
+  TabletSmartphone,
+  Utensils,
+} from "lucide-react";
 
+// TODO: add icons
 export const sidebarNavData: SidebarMenuItem = [
   {
     id: "category",
@@ -10,12 +27,14 @@ export const sidebarNavData: SidebarMenuItem = [
     children: [
       {
         id: "mobile-and-tablet",
+        icon: TabletSmartphone,
         label: {
           en: "mobile and tablet",
           fa: "موبایل و تبلت",
         },
         children: [
           {
+            icon: Minus,
             id: "surface",
             label: {
               en: "surface",
@@ -23,6 +42,7 @@ export const sidebarNavData: SidebarMenuItem = [
             },
             children: [
               {
+                icon: Minus,
                 id: "surface-pro",
                 label: {
                   en: "surface pro",
@@ -30,6 +50,7 @@ export const sidebarNavData: SidebarMenuItem = [
                 },
               },
               {
+                icon: Minus,
                 id: "normal-surface",
                 label: {
                   en: "normal surface",
@@ -37,6 +58,7 @@ export const sidebarNavData: SidebarMenuItem = [
                 },
               },
               {
+                icon: Minus,
                 id: "copy-surface-version",
                 label: {
                   en: "copy version",
@@ -47,12 +69,14 @@ export const sidebarNavData: SidebarMenuItem = [
           },
           {
             id: "mobile",
+            icon: Smartphone,
             label: {
               en: "mobile",
               fa: "موبایل",
             },
             children: [
               {
+                icon: Minus,
                 id: "samsung-mobile",
                 label: {
                   en: "samsung",
@@ -60,6 +84,7 @@ export const sidebarNavData: SidebarMenuItem = [
                 },
               },
               {
+                icon: Minus,
                 id: "apple",
                 label: {
                   en: "apple",
@@ -67,6 +92,7 @@ export const sidebarNavData: SidebarMenuItem = [
                 },
               },
               {
+                icon: Minus,
                 id: "xiaomi",
                 label: {
                   en: "xiaomi",
@@ -74,6 +100,7 @@ export const sidebarNavData: SidebarMenuItem = [
                 },
               },
               {
+                icon: Minus,
                 id: "nokia",
                 label: {
                   en: "nokia",
@@ -83,6 +110,7 @@ export const sidebarNavData: SidebarMenuItem = [
             ],
           },
           {
+            icon: Tablet,
             id: "tablet",
             label: {
               en: "tablet",
@@ -93,12 +121,14 @@ export const sidebarNavData: SidebarMenuItem = [
       },
       {
         id: "laptop-and-computer",
+        icon: Computer,
         label: {
           en: "laptop and computer",
           fa: "لپتاپ و کامپیوتر",
         },
         children: [
           {
+            icon: Laptop,
             id: "laptop",
             label: {
               en: "laptop",
@@ -106,6 +136,7 @@ export const sidebarNavData: SidebarMenuItem = [
             },
           },
           {
+            icon: PcCase,
             id: "full-case",
             label: {
               en: "full case",
@@ -113,6 +144,7 @@ export const sidebarNavData: SidebarMenuItem = [
             },
           },
           {
+            icon: Keyboard,
             id: "keyboard",
             label: {
               en: "keyboard",
@@ -120,6 +152,7 @@ export const sidebarNavData: SidebarMenuItem = [
             },
           },
           {
+            icon: Mouse,
             id: "wireless-mouse",
             label: {
               en: "wireless mouse",
@@ -127,6 +160,7 @@ export const sidebarNavData: SidebarMenuItem = [
             },
           },
           {
+            icon: Speaker,
             id: "speaker",
             label: {
               en: "speaker",
@@ -136,6 +170,7 @@ export const sidebarNavData: SidebarMenuItem = [
         ],
       },
       {
+        icon: Minus,
         id: "vacuum",
         label: {
           en: "vacuum",
@@ -143,6 +178,7 @@ export const sidebarNavData: SidebarMenuItem = [
         },
       },
       {
+        icon: Minus,
         id: "cosmetics",
         label: {
           en: "cosmetics",
@@ -153,6 +189,7 @@ export const sidebarNavData: SidebarMenuItem = [
   },
   {
     id: "frier",
+    icon: Utensils,
     label: {
       en: "frier",
       fa: "سرخ کن",
@@ -160,6 +197,7 @@ export const sidebarNavData: SidebarMenuItem = [
     children: [
       {
         id: "fillips",
+        icon: Minus,
         label: {
           en: "fillips",
           fa: "برند فیلیپس",
@@ -167,6 +205,7 @@ export const sidebarNavData: SidebarMenuItem = [
       },
       {
         id: "general",
+        icon: Minus,
         label: {
           en: "general",
           fa: "برند جنرال",
@@ -174,6 +213,7 @@ export const sidebarNavData: SidebarMenuItem = [
       },
       {
         id: "lg",
+        icon: Minus,
         label: {
           en: "lg",
           fa: "برند ال جی",
@@ -181,6 +221,7 @@ export const sidebarNavData: SidebarMenuItem = [
       },
       {
         id: "samsung",
+        icon: Minus,
         label: {
           en: "samsung",
           fa: "برند سامسونگ",
@@ -190,6 +231,7 @@ export const sidebarNavData: SidebarMenuItem = [
   },
   {
     id: "contact-us",
+    icon: Headset,
     label: {
       en: "contact us",
       fa: "تماس با ما",
@@ -197,6 +239,7 @@ export const sidebarNavData: SidebarMenuItem = [
   },
   {
     id: "about-us",
+    icon: Info,
     label: {
       en: "about us",
       fa: "درباره ما",
@@ -204,6 +247,7 @@ export const sidebarNavData: SidebarMenuItem = [
   },
   {
     id: "faq",
+    icon: MessageCircle,
     label: {
       en: "faq",
       fa: "سوالات متداول",

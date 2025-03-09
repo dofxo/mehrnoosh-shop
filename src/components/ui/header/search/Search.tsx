@@ -3,7 +3,7 @@
 import DropdownSearch from "@/components/ui/header/search/DropdownSearch";
 import { useAppSelector } from "@/lib/hooks";
 import { Search as SearchIcon, CircleX } from 'lucide-react';
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import { motion } from "framer-motion";
 import { useState } from "react";
 

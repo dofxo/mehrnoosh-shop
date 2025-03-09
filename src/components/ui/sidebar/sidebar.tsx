@@ -15,13 +15,21 @@ export default function SidebarMenuItems() {
     return items.map((item) => {
       if (item.children) {
         return (
-          <Sidebar.Collapse key={item.id} label={item.label[currentLanguage]}>
+          <Sidebar.Collapse
+            icon={item?.icon ?? item.icon}
+            key={item.id}
+            label={item.label[currentLanguage]}
+          >
             {renderMenuItems(item.children)}
           </Sidebar.Collapse>
         );
       } else {
         return (
-          <Sidebar.Item key={item.id} href={item.link || "#"}>
+          <Sidebar.Item
+            icon={item?.icon ?? item.icon}
+            key={item.id}
+            href={item.link || "#"}
+          >
             {item.label[currentLanguage]}
           </Sidebar.Item>
         );

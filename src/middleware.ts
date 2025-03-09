@@ -5,6 +5,9 @@ const locales = ["fa", "en"];
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  if (pathname.startsWith("/api/")) return;
+
+
   // Check if a supported locale is already in the pathname.
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
