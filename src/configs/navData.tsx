@@ -5,6 +5,7 @@ import {
   Info,
   Keyboard,
   Laptop,
+  Layers,
   MessageCircle,
   Minus,
   Mouse,
@@ -20,6 +21,7 @@ import {
 export const sidebarNavData: SidebarMenuItem = [
   {
     id: "category",
+    icon: Layers,
     label: {
       en: "category",
       fa: "دسته بندی",
