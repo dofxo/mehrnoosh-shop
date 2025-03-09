@@ -3,9 +3,28 @@
 import { IProduct } from "../../Product";
 import { useAppSelector } from "@/lib/hooks";
 import { Store } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const RelatedProducts = () => {
+  const [filteredProductsData, setFilteredProductsData] =
+    useState<IProduct[]>();
   const { languageData } = useAppSelector((state) => state.language);
+  const { productsData, productData } = useAppSelector(
+    (state) => state.productSingle,
+  );
+
+  useEffect(() => {
+    // Filter out products that share any category with myProductCategories
+    const filteredProducts = productsData?.filter((product: IProduct) => {
+      const productCategories = product.category.en || [];
+
+      return productCategories.some((category) => {
+        return productData?.category.en.includes(category);
+      });
+    });
+
+    setFilteredProductsData(filteredProducts as IProduct[]);
+  }, []);
 
   return (
     <section>
