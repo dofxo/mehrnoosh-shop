@@ -5,12 +5,14 @@ import { useAppSelector } from "@/lib/hooks";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { motion } from "framer-motion";
 import { Search as SearchIcon, CircleX } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Search() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const handleOpen = () => setIsSearchOpen(true);
   const language = useAppSelector((state) => state.language.languageData);
+
+  const searchRef = useRef<HTMLDivElement | null>(null);
 
   const isLg = useMediaQuery("(min-width: 970px)");
 
@@ -19,8 +21,23 @@ export default function Search() {
     setIsSearchOpen(false);
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative w-full p-[5px] lg:w-[55%]">
+    <div className="relative w-full p-[5px] lg:w-[55%]" ref={searchRef}>
       <motion.div
         {...(isLg && {
           animate: { width: isSearchOpen ? "100%" : "50%" },
@@ -49,7 +66,7 @@ export default function Search() {
           </div>
         </div>
 
-        {/* drop down */}
+        {/* Dropdown */}
         <DropdownSearch language={language} isSearchOpen={isSearchOpen} />
       </motion.div>
     </div>
