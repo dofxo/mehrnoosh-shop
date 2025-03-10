@@ -2,7 +2,6 @@
 
 import DropdownSearch from "@/components/ui/header/search/DropdownSearch";
 import { useAppSelector } from "@/lib/hooks";
-import { useMediaQuery } from "@uidotdev/usehooks";
 import { motion } from "framer-motion";
 import { Search as SearchIcon, CircleX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -14,7 +13,24 @@ export default function Search() {
 
   const searchRef = useRef<HTMLDivElement | null>(null);
 
-  const isLg = useMediaQuery("(min-width: 970px)");
+  const [isLg, setIsLg] = useState(false);
+
+  useEffect(() => {
+    // This will only run on the client side after the component is mounted
+    const mediaQuery = window.matchMedia("(min-width: 970px)");
+    setIsLg(mediaQuery.matches);
+
+    const handleResize = () => {
+      setIsLg(mediaQuery.matches);
+    };
+
+    // Listen to changes in screen size
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, []);
 
   const handleClose = (e: React.MouseEvent) => {
     e.stopPropagation();
