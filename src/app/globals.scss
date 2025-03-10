@@ -8,11 +8,18 @@
   max-width: 1300px;
   margin: 0 auto;
   width: 90vw;
+
+  @media only screen and (max-width: 960px) {
+    width: 100% !important;
+  }
+
 }
 
 :root {
   --text-primary: #757575;
   --primary: #0070FF;
+  --primary-700: #2786ff;
+  --primary-100: #e8f2ff;
   --secondary: #F2F6FB;
   --border-radius: 20px;
 }
@@ -66,7 +73,6 @@ input[type='number'] {
   }
 }
 
-
 @layer base {
   :root {
     --background: #f2f6fc;
@@ -97,12 +103,13 @@ input[type='number'] {
   }
 }
 
+
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
 
   body {
-    background: var(--background);
+    @apply bg-background text-foreground;
   }
 }

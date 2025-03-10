@@ -47,8 +47,26 @@
     "write_your_comment_first": "You need to write your comment before submitting",
     "related_products": "Related Products"
   },
+  "productsNames": {
+    "mobile": "mobile",
+    "tablet": "tablet"
+  },
   "header": {
     "searchPlaceholder": "search for products ...",
-    "signupLogin": "signup and login"
+    "signupLogin": "signup and login",
+    "frequentSearches": "frequent searches",
+    "changeLanguage": {
+      "title:": "Change Language",
+      "searchPlaceholder": "Language",
+      "fa": "Persian",
+      "en": "English",
+      "button": "Change Language"
+    }
+  },
+  "mobileNav": {
+    "cart": "cart",
+    "favorite": "favorite",
+    "language": "language",
+    "home": "home"
   }
 }

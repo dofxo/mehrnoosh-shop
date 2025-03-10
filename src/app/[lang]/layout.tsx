@@ -3,6 +3,9 @@ import "../globals.scss";
 import { langType } from "./langs";
 import RemoveDarkClass from "@/components/RemoveDarkClass";
 import { Provider } from "@/components/ui/provider";
+import MobileNav from "@/components/ui/mobile-nav/MobileNav";
+import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
+import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
@@ -36,17 +39,18 @@ export default async function RootLayout({
   const language = await getLanguage(lang);
 
   return (
-    <html
-      lang={lang}
-      dir={lang === "fa" ? "rtl" : "ltr"}
-      suppressHydrationWarning
-    >
+    <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
       <body className={`${yekanbakh.className} antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
-          <Provider>{children}</Provider>
+          <Provider>
+          <DesktopHeader />
+          <MobileHeader />
+          <MobileNav />
+          <Toaster/>
+          <RemoveDarkClass/>
+          {children}
+          </Provider>
         </StoreProvider>
-        <Toaster />
-        <RemoveDarkClass />
       </body>
     </html>
   );
