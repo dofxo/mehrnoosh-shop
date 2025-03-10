@@ -1,4 +1,6 @@
+import { languageDataType } from "@/lib/features/language/languageSlice";
+
 export type DropdownSearchProps = {
   isSearchOpen: boolean;
-  language: Record<string, string>;
+  language: languageDataType;
 };
