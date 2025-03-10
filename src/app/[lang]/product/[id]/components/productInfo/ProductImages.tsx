@@ -97,10 +97,13 @@ const ProductImages = () => {
                     key={idx}
                     className="flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-[50%] bg-[#f2f6fc] text-[#37506F]"
                   >
-                    <img
+                    <Image
                       className="w-[25px]"
                       src={item.icon}
                       alt="social-icon"
+                      width={0}
+                      height={0}
+                      layout="responsive"
                     />
                   </a>
                 ))}

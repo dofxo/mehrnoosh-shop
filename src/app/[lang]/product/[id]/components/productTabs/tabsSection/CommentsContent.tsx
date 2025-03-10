@@ -38,7 +38,7 @@ const CommentsContent = ({
 
   useEffect(() => {
     setProductComments(comments);
-  }, []);
+  }, [comments]);
 
   return (
     <div
@@ -279,7 +279,7 @@ const CommentsContent = ({
                   </span>
 
                   <div className="flex gap-2">
-                    {item.pros.map((item, idx) => (
+                    {item.pros.map((item: any, idx: number) => (
                       <div key={idx} className="flex items-center gap-2">
                         <Check color="var(--primary)" size={18} />
                         <span className="text-[15px] text-[400]">{item}</span>
@@ -296,7 +296,7 @@ const CommentsContent = ({
                   </span>
 
                   <div className="flex gap-2">
-                    {item.cons.map((item, idx) => (
+                    {item.cons.map((item: any, idx: number) => (
                       <div key={idx} className="flex items-center gap-2">
                         <X color="orange" size={18} />
                         <span className="text-[15px] text-[400]">{item}</span>

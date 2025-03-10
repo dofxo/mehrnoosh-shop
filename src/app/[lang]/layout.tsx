@@ -2,10 +2,10 @@ import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
 import RemoveDarkClass from "@/components/RemoveDarkClass";
-import { Provider } from "@/components/ui/provider";
-import MobileNav from "@/components/ui/mobile-nav/MobileNav";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
+import MobileNav from "@/components/ui/mobile-nav/MobileNav";
+import { Provider } from "@/components/ui/provider";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
@@ -43,12 +43,12 @@ export default async function RootLayout({
       <body className={`${yekanbakh.className} antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
           <Provider>
-          <DesktopHeader />
-          <MobileHeader />
-          <MobileNav />
-          <Toaster/>
-          <RemoveDarkClass/>
-          {children}
+            <DesktopHeader />
+            <MobileHeader />
+            <MobileNav />
+            <Toaster />
+            <RemoveDarkClass />
+            {children}
           </Provider>
         </StoreProvider>
       </body>

@@ -1,15 +1,9 @@
 import { supabase } from "@/utils/supabase";
-import { error } from "console";
-import type { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
-export async function GET(
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _: NextApiRequest,
-  { params }: { params: { id: string } },
-) {
+export async function GET(_: NextRequest, { params }: { params: any }) {
   try {
-    const { id } = await params;
+    const { id } = params;
 
     const { data: product, error } = await supabase
       .from("products")
@@ -23,15 +17,14 @@ export async function GET(
   }
 }
 
-export async function POST(req: any, { params }: { params: { id: string } }) {
+export async function POST(req: NextRequest, { params }: { params: any }) {
   try {
     const { id } = params;
 
     // Parse the request body
     const body = await req.json();
 
-    // get the previous data to add the new data to it.
-
+    // Get the previous data to add the new data to it
     const { data: product } = await supabase
       .from("products")
       .select("*")
@@ -46,7 +39,7 @@ export async function POST(req: any, { params }: { params: { id: string } }) {
 
     const comments = product[0].comments;
 
-    // update field
+    // Update field
     const { error } = await supabase
       .from("products")
       .update({ comments: [body, ...comments] })

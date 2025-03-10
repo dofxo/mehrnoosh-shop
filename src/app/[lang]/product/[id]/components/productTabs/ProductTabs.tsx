@@ -1,4 +1,3 @@
-import { IProduct } from "../../Product";
 import TabsSection from "./tabsSection/TabsSection";
 
 const ProductTabs = () => {

@@ -27,7 +27,7 @@ const RelatedProducts = () => {
     });
 
     setFilteredProductsData(filteredProducts as IProduct[]);
-  }, []);
+  }, [productData?.category.en, productsData]);
 
   return (
     <section className="flex flex-col gap-10">

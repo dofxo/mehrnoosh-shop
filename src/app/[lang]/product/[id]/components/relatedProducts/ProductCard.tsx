@@ -10,7 +10,12 @@ const ProductCard = ({
   languageData: any;
   currentLanguage: string;
 }) => {
-  return <div>{productData.name[currentLanguage as langType]}</div>;
+  return (
+    <div>
+      {productData.name[currentLanguage as langType]}
+      {languageData.productSingle}
+    </div>
+  );
 };
 
 export default ProductCard;
