@@ -4,10 +4,6 @@ import { Provider } from 'react-redux'
 import { makeStore, AppStore } from '../lib/store'
 import { initializeLanguage } from '../lib/features/language/languageSlice'
 
-import { initializeLanguage } from "@/lib/features/language/languageSlice";
-import { makeStore, AppStore } from "@/lib/store";
-import { useRef } from "react";
-import { Provider } from "react-redux";
 
 export default function StoreProvider({
   language,
@@ -31,3 +27,4 @@ export default function StoreProvider({
 
   return <Provider store={storeRef.current}>{children}</Provider>
 }
+

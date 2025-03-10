@@ -16,11 +16,6 @@
 }
 
 :root {
-  --text-primary: #757575;
-  --primary: #0070FF;
-  --primary-700: #2786ff;
-  --primary-100: #e8f2ff;
-  --secondary: #F2F6FB;
   --border-radius: 20px;
 }
 
@@ -48,8 +43,8 @@ input[type='number'] {
   display: grid;
   border: 4px solid #0000;
   border-radius: 50%;
-  border-right-color: var(--primary);
   animation: l15 1s infinite linear;
+  @apply border-r-primary
 }
 
 .loader::before,
