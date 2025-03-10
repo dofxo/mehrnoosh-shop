@@ -23,14 +23,15 @@ export default {
       spacing: {
         container: "1300px",
       },
+
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: "var(--primary)",
-        "primary-700": "var(--primary-700)",
-        "primary-100": "var(--primary-100)",
-        "text-primary": "var(--text-primary)",
-        secondary: "var(--secondary)",
+        primary: { DEFAULT: "#0070FF", foreground: "#fff" },
+        secondary: "#F2F6FB",
+        "primary-700": "#2786ff",
+        "primary-100": "#e8f2ff",
+        text: { primary: "#141d26" },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
