@@ -17,7 +17,6 @@ import {
   Utensils,
 } from "lucide-react";
 
-// TODO: add icons
 export const sidebarNavData: SidebarMenuItem = [
   {
     id: "category",
