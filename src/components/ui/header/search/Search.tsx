@@ -1,8 +1,8 @@
 "use client";
 
 import DropdownSearch from "@/components/ui/header/search/DropdownSearch";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import { useAppSelector } from "@/lib/hooks";
-import { useMediaQuery } from "@uidotdev/usehooks";
 import { motion } from "framer-motion";
 import { Search as SearchIcon, CircleX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
