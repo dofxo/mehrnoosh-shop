@@ -6,7 +6,10 @@ import ProductTabs from "./productTabs/ProductTabs";
 import RatingDetails from "./ratingDetails/RatingDetails";
 import RelatedProducts from "./relatedProducts/RelatedProducts";
 import Loader from "@/components/Loader";
-import { initializeProductData } from "@/lib/features/productSingle/productSingleSlice";
+import {
+  initializeProductData,
+  initializeProductsData,
+} from "@/lib/features/productSingle/productSingleSlice";
 import { useAppDispatch } from "@/lib/hooks";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -23,10 +26,13 @@ export default function ProductPageClient({
     (async () => {
       try {
         const { data: product } = await axios.get(`/api/products/${productId}`);
+        const { data: productsData } = await axios.get("/api/products");
+
         const productData = product[0];
 
         if (productData && Object.keys(productData).length > 0) {
           dispatch(initializeProductData(productData));
+          dispatch(initializeProductsData(productsData));
           setIsLoading(false);
         }
       } catch (error) {
