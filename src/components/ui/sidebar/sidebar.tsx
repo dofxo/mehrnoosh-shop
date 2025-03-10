@@ -40,7 +40,7 @@ export default function SidebarMenuItems() {
   return (
     <CustomFlowbiteTheme>
       <Sidebar
-        className="mt-5 flex h-full items-center justify-start overflow-x-hidden bg-white"
+        className="mt-5 flex h-full items-center justify-start overflow-x-hidden"
         aria-label="Sidebar with multi-level dropdown"
       >
         <Sidebar.Items>
