@@ -47,7 +47,7 @@ export default function Search() {
       >
         <div className="flex flex-row items-center justify-start">
           <input
-            className="w-full border-none p-[20px] font-medium outline-none placeholder:text-text-secondary ltr:rounded-bl-primary ltr:rounded-tl-primary rtl:rounded-br-primary rtl:rounded-tr-primary"
+            className="bg-white w-full border-none p-[20px] font-medium outline-none placeholder:text-text-secondary ltr:rounded-bl-primary ltr:rounded-tl-primary rtl:rounded-br-primary rtl:rounded-tr-primary"
             placeholder={language.header.searchPlaceholder}
             onClick={handleOpen}
           />
