@@ -1,9 +1,11 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
-import MobileNav from "@/components/ui/mobile-nav/MobileNav";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
+import MegaMenuWrapper from "@/components/ui/mega-menu/MegaMenuWrapper";
+import MobileNav from "@/components/ui/mobile-nav/MobileNav";
+import { Provider } from "@/components/ui/provider";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
@@ -37,10 +39,13 @@ export default async function RootLayout({
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
       <body className={`${yekanbakh.className} antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
-          <DesktopHeader />
-          <MobileHeader />
-          <MobileNav />
-          {children}
+          <Provider>
+            <DesktopHeader />
+            <MobileHeader />
+            <MegaMenuWrapper />
+            <MobileNav />
+            {children}
+          </Provider>
         </StoreProvider>
       </body>
     </html>
