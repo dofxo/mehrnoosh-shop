@@ -1,41 +1,24 @@
-import { Button } from "@/components/ui/button";
-import {
-  MenuContent,
-  MenuItem,
-  MenuItemCommand,
-  MenuRoot,
-  MenuTrigger,
-} from "@/components/ui/menu";
+"use client";
+
+import MegaMenuCascadingMenu from "@/components/ui/mega-menu/cascading-menu/CascadingMenu";
+import MegaMenuCategory from "@/components/ui/mega-menu/category/Category";
+import MegaMenuDigitalEquipments from "@/components/ui/mega-menu/digital-equipments/DigitalEquipments";
+import MegaMenuHouseEquipments from "@/components/ui/mega-menu/house-equipments/HouseEquipments";
+import MegaMenuLaptopAndComputer from "@/components/ui/mega-menu/laptop-and-computer/LaptopAndComputer";
+import { useAppSelector } from "@/lib/hooks";
 
 export default function MegaMenuWrapper() {
+  const language = useAppSelector((state) => state.language.languageData);
+
   return (
-    <section className="bg-white p-[15px] pt-[20px]">
-      <div className="container">
+    <section className="hidden bg-white p-[15px] pt-[20px] lg:block">
+      <div className="container flex gap-4">
         {/* category */}
-        <MenuRoot>
-          <MenuTrigger asChild>
-            <Button variant="outline" size="sm">
-              Open
-            </Button>
-          </MenuTrigger>
-          <MenuContent>
-            <MenuItem value="new-txt-a">
-              New Text File <MenuItemCommand>⌘E</MenuItemCommand>
-            </MenuItem>
-            <MenuItem value="new-file-a">
-              New File... <MenuItemCommand>⌘N</MenuItemCommand>
-            </MenuItem>
-            <MenuItem value="new-win-a">
-              New Window <MenuItemCommand>⌘⇧N</MenuItemCommand>
-            </MenuItem>
-            <MenuItem value="open-file-a">
-              Open File... <MenuItemCommand>⌘O</MenuItemCommand>
-            </MenuItem>
-            <MenuItem value="export-a">
-              Export <MenuItemCommand>⌘S</MenuItemCommand>
-            </MenuItem>
-          </MenuContent>
-        </MenuRoot>
+        <MegaMenuCategory language={language} />
+        <MegaMenuDigitalEquipments language={language} />
+        <MegaMenuHouseEquipments language={language} />
+        <MegaMenuLaptopAndComputer language={language} />
+        <MegaMenuCascadingMenu language={language} />
       </div>
     </section>
   );

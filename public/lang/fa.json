@@ -23,5 +23,12 @@
     "favorite": "مورد‌علاقه",
     "language": "زبان",
     "home": "خانه"
+  },
+  "megaMenu": {
+    "category": "دسته بندی",
+	"digitalEquipments":"لوازم دیجیتال",
+	"houseEquipments":"لوازم خانگی",
+	"laptopAndComputer":"لپ تاپ و کامپیوتر",
+	"cascadingMenu":"منو آبشاری"
   }
 }

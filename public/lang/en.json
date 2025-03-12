@@ -23,5 +23,12 @@
     "favorite": "favorite",
     "language": "language",
     "home": "home"
+  },
+  "megaMenu": {
+    "category": "category",
+    "digitalEquipments": "digital equipments",
+    "houseEquipments": "house equipments",
+    "laptopAndComputer": "laptop and computer",
+    "cascadingMenu": "cascading menu"
   }
 }
