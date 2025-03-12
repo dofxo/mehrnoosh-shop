@@ -63,7 +63,7 @@ const TabsSection = () => {
   ];
 
   return (
-    <Tabs defaultValue={tabsData[0].value} dir="rtl" className="w-full">
+    <Tabs defaultValue={tabsData[0].value} dir="rtl" className="tablist w-full">
       <TabsList className="flex items-center gap-5">
         {tabsData.map((tab, index) => (
           <TabsTrigger

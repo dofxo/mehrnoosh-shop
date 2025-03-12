@@ -1,10 +1,6 @@
-// app/RemoveDarkClass.tsx
 "use client";
 
-// Mark this as a client component
 import { useEffect } from "react";
-
-// app/RemoveDarkClass.tsx
 
 export default function RemoveDarkClass() {
   useEffect(() => {
@@ -12,5 +8,5 @@ export default function RemoveDarkClass() {
     document.documentElement.classList.remove("dark");
   }, []);
 
-  return null; // This component doesn't render anything
+  return null;
 }

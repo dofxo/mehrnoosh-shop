@@ -25,7 +25,6 @@ export default {
       spacing: {
         container: "1300px",
       },
-
       colors: {
         text: { primary: "#141d26", secondary: "#757575" },
         background: {
@@ -36,10 +35,6 @@ export default {
           DEFAULT: "#191C1D",
           dark: "#FAFAFA",
         },
-        secondary: "#F2F6FB",
-        "primary-700": "#2786ff",
-        "primary-100": "#e8f2ff",
-        primary: { DEFAULT: "#0070FF", foreground: "#fff" },
         card: {
           DEFAULT: "#ffffff",
           foreground: "#191C1D",

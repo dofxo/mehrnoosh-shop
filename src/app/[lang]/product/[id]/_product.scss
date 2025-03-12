@@ -91,3 +91,13 @@ div {
     }
   }
 }
+
+.tablist {
+
+  div {
+    &[role='tablist'] {
+      @apply bg-background
+    }
+  }
+
+}
