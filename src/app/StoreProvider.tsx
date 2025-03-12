@@ -1,7 +1,10 @@
 "use client";
 
-import { initializeLanguage } from "../lib/features/language/languageSlice";
-import { makeStore, AppStore } from "../lib/store";
+import {
+  initializeLanguage,
+  languageDataType,
+} from "@/lib/features/language/languageSlice";
+import { makeStore, AppStore } from "@/lib/store";
 import { useRef } from "react";
 import { Provider } from "react-redux";
 
@@ -10,7 +13,7 @@ export default function StoreProvider({
   currentLanguage,
   children,
 }: {
-  language: any;
+  language: languageDataType;
   currentLanguage: string;
   children: React.ReactNode;
 }) {

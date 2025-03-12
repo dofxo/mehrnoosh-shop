@@ -1,7 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export type languageDataType = Record<string, any>;
+
 interface LanguageState {
-  languageData: Record<string, any>;
+  languageData: languageDataType;
   currentLanguage: string;
 }
 
