@@ -5,7 +5,7 @@ import ProductInfo from "./productInfo/ProductInfo";
 import ProductTabs from "./productTabs/ProductTabs";
 import RatingDetails from "./ratingDetails/RatingDetails";
 import RelatedProducts from "./relatedProducts/RelatedProducts";
-import Loader from "@/components/Loader";
+import Loader from "@/components/loader/Loader";
 import {
   initializeProductData,
   initializeProductsData,
