@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
 const ProductImages = () => {
-  const { images, quantity, sold_amount, price, discount_price, name } =
+  const { images, quantity, sold_amount, price, discount_price } =
     useAppSelector((state) => state.productSingle.productData as IProduct);
 
   const sectionsClassName = "bg-background rounded-[25px] p-[30px]";

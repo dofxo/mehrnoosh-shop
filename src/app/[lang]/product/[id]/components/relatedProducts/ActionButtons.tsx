@@ -9,13 +9,12 @@ import {
 } from "@/components/ui/tooltip";
 import { useAppSelector } from "@/lib/hooks";
 import { Eye, GitCompareArrows, Heart, ShoppingCart } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const ActionButtons = ({ productData }: { productData: IProduct }) => {
   const { currentLanguage, languageData } = useAppSelector(
     (state) => state.language,
   );
-  const productShareLink = `${process.env.NEXT_PUBLIC_BASE_URL}${usePathname()}`;
   const router = useRouter();
 
   const actionButtonIcons = [
@@ -70,6 +69,7 @@ const ActionButtons = ({ productData }: { productData: IProduct }) => {
         } else {
           return (
             <div
+              key={idx}
               className={`flex h-[35px] items-center justify-center gap-1 rounded-[90px] bg-primary px-[15px] py-[7px] text-[16px] font-bold text-white ${currentLanguage === "fa" ? "ml-[30px]" : "mr-[30px]"}`}
             >
               <span>%</span> <span>{item.tooltipContent}</span>

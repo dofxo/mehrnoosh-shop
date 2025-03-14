@@ -1,5 +1,6 @@
 "use client";
 
+import { IProduct } from "../../../Product";
 import { langType } from "@/app/[lang]/langs";
 import {
   Dialog,
@@ -25,6 +26,10 @@ const ActionButtons = () => {
   const [shareLinkCopied, setCopiedLinkStatus] = useState(false);
   const { currentLanguage, languageData } = useAppSelector(
     (state) => state.language,
+  );
+
+  const { name } = useAppSelector(
+    (state) => state.productSingle.productData as IProduct,
   );
 
   const socialsShare = [
