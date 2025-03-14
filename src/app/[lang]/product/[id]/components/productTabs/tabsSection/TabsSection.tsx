@@ -77,7 +77,12 @@ const TabsSection = () => {
         ))}
       </TabsList>
       {tabsData.map((tab, index) => (
-        <TabsContent key={index} value={tab.value} className="mt-[40px]">
+        <TabsContent
+          key={index}
+          style={{ direction: currentLanguage === "fa" ? "rtl" : "ltr" }}
+          value={tab.value}
+          className="mt-[40px]"
+        >
           <div className="mt-[30px] flex w-full flex-col gap-5 rounded-[20px] bg-white p-[20px] shadow-[0_2px_25px_rgba(41,41,94,0.08)]">
             <div className="flex items-center gap-5">
               <div className="primary-box-shadow flex h-[40px] w-[40px] items-center justify-center rounded-[50%] bg-primary text-white">
