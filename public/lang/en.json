@@ -76,5 +76,9 @@
     "houseEquipments": "house equipments",
     "laptopAndComputer": "laptop and computer",
     "cascadingMenu": "cascading menu"
+  },
+  "shoppingBasket": {
+    "empty_basket": "there is no items in shopping basket",
+    "go_to_shop": "go to shop"
   }
 }

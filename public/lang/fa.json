@@ -72,9 +72,13 @@
   },
   "megaMenu": {
     "category": "دسته بندی",
-	"digitalEquipments":"لوازم دیجیتال",
-	"houseEquipments":"لوازم خانگی",
-	"laptopAndComputer":"لپ تاپ و کامپیوتر",
-	"cascadingMenu":"منو آبشاری"
+    "digitalEquipments": "لوازم دیجیتال",
+    "houseEquipments": "لوازم خانگی",
+    "laptopAndComputer": "لپ تاپ و کامپیوتر",
+    "cascadingMenu": "منو آبشاری"
+  },
+  "shoppingBasket": {
+    "empty_basket": "هیچ محصولی در سبد خرید نیست",
+    "go_to_shop": "به فروشگاه بروید"
   }
 }
