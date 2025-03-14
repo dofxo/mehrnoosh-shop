@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { IProduct } from "../../Product";
 import {
   Tooltip,
   TooltipContent,
@@ -14,25 +9,24 @@ import {
 } from "@/components/ui/tooltip";
 import { useAppSelector } from "@/lib/hooks";
 import { Eye, GitCompareArrows, Heart, ShoppingCart } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
-const ActionButtons = () => {
+const ActionButtons = ({ productData }: { productData: IProduct }) => {
   const { currentLanguage, languageData } = useAppSelector(
     (state) => state.language,
   );
+  const productShareLink = `${process.env.NEXT_PUBLIC_BASE_URL}${usePathname()}`;
+  const router = useRouter();
 
   const actionButtonIcons = [
     {
       icon: (
-        <Dialog>
-          <DialogTrigger>
-            <Eye size={15} />
-          </DialogTrigger>
-          <DialogContent className="shadcn-modal w-fit max-w-[unset] !rounded-[30px] bg-gray-300">
-            <DialogDescription className="mt-[50px] flex flex-col gap-[20px] text-[16px]"></DialogDescription>
-          </DialogContent>
-        </Dialog>
+        <Eye
+          size={15}
+          onClick={() => router.push(`/product/${productData.id}`)}
+        />
       ),
-      tooltipContent: languageData.productSingle.quick_view,
+      tooltipContent: languageData.productSingle.view_product,
     },
 
     {

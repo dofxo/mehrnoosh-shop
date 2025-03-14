@@ -18,7 +18,7 @@ const ProductCard = ({
   ).toFixed(1);
 
   return (
-    <div className="flex w-[295px] flex-col items-center gap-10 rounded-[30px] bg-white p-[20px] shadow-[0_10px_50px_rgba(1,1,2,0.08)]">
+    <div className="flex w-[295px] flex-col items-center gap-[20px] rounded-[30px] bg-white p-[20px] shadow-[0_10px_50px_rgba(1,1,2,0.08)]">
       <Image
         width={0}
         height={0}
@@ -59,7 +59,7 @@ const ProductCard = ({
           </div>
         </div>
       </div>
-      <ActionButtons />
+      <ActionButtons productData={productData} />
     </div>
   );
 };
