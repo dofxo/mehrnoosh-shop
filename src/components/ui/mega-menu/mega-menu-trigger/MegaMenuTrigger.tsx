@@ -7,9 +7,14 @@ export default function MegaMenuTrigger({
   ...props
 }: MegaMenuTriggerProps) {
   return (
-    <Button variant="megaMenu" size="xl" {...props}>
+    <Button
+      variant="megaMenu"
+      className="flex ltr:flex-row-reverse rtl:flex-row"
+      size="xl"
+      {...props}
+    >
+      <span className="-mb-1">{text}</span>
       <div className="h-6 w-6">{icon}</div>
-      <span className="">{text}</span>
     </Button>
   );
 }
