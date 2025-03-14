@@ -45,7 +45,8 @@
     "comment_for": "Comment for",
     "leave_empty": "If left empty, it will be saved as anonymous",
     "write_your_comment_first": "You need to write your comment before submitting",
-    "related_products": "Related Products"
+    "related_products": "Related Products",
+    "quick_view": "Quick View"
   },
   "productsNames": {
     "mobile": "mobile",

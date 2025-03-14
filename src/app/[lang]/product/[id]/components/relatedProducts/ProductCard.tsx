@@ -1,4 +1,5 @@
 import { IProduct } from "../../Product";
+import ActionButtons from "./ActionButtons";
 import { langType } from "@/app/[lang]/langs";
 import { Star } from "lucide-react";
 import Image from "next/image";
@@ -45,7 +46,9 @@ const ProductCard = ({
             <span>{languageData.productSingle.tooman}</span>
           </span>
         </div>
-        <div className="flex items-center gap-2 border-r pr-[20px]">
+        <div
+          className={`flex items-center gap-2 ${currentLanguage === "fa" ? "border-r" : "border-l"} ${currentLanguage === "fa" ? "pr-[20px]" : "pl-[20px]"}`}
+        >
           <span className="flex items-center gap-1 font-[500]">
             <span>{scoreAverage}</span>
             <span>{languageData.productSingle.of}</span> <span>5</span>
@@ -56,6 +59,7 @@ const ProductCard = ({
           </div>
         </div>
       </div>
+      <ActionButtons />
     </div>
   );
 };
