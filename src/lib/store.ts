@@ -1,10 +1,12 @@
 import languageReducer from "./features/language/languageSlice";
+import productSingleReducer from "./features/productSingle/productSingleSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       language: languageReducer,
+      productSingle: productSingleReducer,
     },
   });
 };

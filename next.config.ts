@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    optimizePackageImports: ["@chakra-ui/react"],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "rbjblexkzjklgsmerogn.supabase.co",
+        pathname: "/**",
+        port: "",
+        search: "",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

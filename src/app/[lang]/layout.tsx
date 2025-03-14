@@ -1,12 +1,17 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
-import MobileNav from "@/components/ui/mobile-nav/MobileNav";
+import RemoveDarkClass from "@/components/RemoveDarkClass";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
+import MobileNav from "@/components/ui/mobile-nav/MobileNav";
+import { Provider } from "@/components/ui/provider";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 export async function generateMetadata({
   params,
@@ -37,10 +42,14 @@ export default async function RootLayout({
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
       <body className={`${yekanbakh.className} antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
-          <DesktopHeader />
-          <MobileHeader />
-          <MobileNav />
-          {children}
+          <Provider>
+            <DesktopHeader />
+            <MobileHeader />
+            <MobileNav />
+            <Toaster />
+            <RemoveDarkClass />
+            {children}
+          </Provider>
         </StoreProvider>
       </body>
     </html>
