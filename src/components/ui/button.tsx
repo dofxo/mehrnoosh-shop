@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         megaMenu:
-          "outline-none border-none shadow-none bg-white hover:bg-primary hover:text-white",
+          "flex ltr:flex-row-reverse rtl:flex-row outline-none border-none shadow-none bg-white hover:bg-primary hover:text-white",
       },
       size: {
         default: "h-9 px-4 py-2",
