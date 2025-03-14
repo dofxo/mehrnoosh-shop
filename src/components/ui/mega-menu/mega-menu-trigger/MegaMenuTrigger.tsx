@@ -9,7 +9,6 @@ export default function MegaMenuTrigger({
   return (
     <Button
       variant="megaMenu"
-      className="flex ltr:flex-row-reverse rtl:flex-row"
       size="xl"
       {...props}
     >
