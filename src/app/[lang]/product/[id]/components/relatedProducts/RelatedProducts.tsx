@@ -1,6 +1,7 @@
 "use client";
 
 import { IProduct } from "../../Product";
+import ProductCard from "./ProductCard";
 import { useAppSelector } from "@/lib/hooks";
 import { Store } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -8,7 +9,9 @@ import { useEffect, useState } from "react";
 const RelatedProducts = () => {
   const [filteredProductsData, setFilteredProductsData] =
     useState<IProduct[]>();
-  const { languageData } = useAppSelector((state) => state.language);
+  const { languageData, currentLanguage } = useAppSelector(
+    (state) => state.language,
+  );
   const { productsData, productData } = useAppSelector(
     (state) => state.productSingle,
   );
@@ -27,7 +30,7 @@ const RelatedProducts = () => {
   }, []);
 
   return (
-    <section>
+    <section className="flex flex-col gap-10">
       <div className="flex items-center gap-2">
         <div className="flex h-[40px] w-[40px] items-center justify-center rounded-[50%] bg-primary text-[18px] text-white">
           <Store size={18} />
@@ -35,6 +38,17 @@ const RelatedProducts = () => {
         <h3 className="text-[20px] font-bold">
           {languageData.productSingle.related_products}
         </h3>
+      </div>
+
+      <div className="related-products flex gap-5">
+        {filteredProductsData?.map((product, idx) => (
+          <ProductCard
+            currentLanguage={currentLanguage}
+            productData={product}
+            languageData={languageData}
+            key={idx}
+          />
+        ))}
       </div>
     </section>
   );
