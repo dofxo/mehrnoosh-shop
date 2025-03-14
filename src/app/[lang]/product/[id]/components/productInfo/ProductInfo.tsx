@@ -1,6 +1,6 @@
 import ProductDetails from "./ProductDetails";
-import ProductImages from "./ProductImages";
 import ProductPrice from "./ProductPrice";
+import ProductImages from "./productImage/ProductImages";
 
 const ProductInfo = () => {
   return (
