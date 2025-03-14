@@ -17,6 +17,11 @@ body {
   }
 }
 
+// override svg sizes from lucid
+.\[\&_svg\]\:size-4 svg {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
 
 @layer base {
   * {
