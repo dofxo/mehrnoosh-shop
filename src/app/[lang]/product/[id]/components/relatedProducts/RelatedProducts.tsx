@@ -27,7 +27,7 @@ const RelatedProducts = () => {
     });
 
     setFilteredProductsData(filteredProducts as IProduct[]);
-  }, []);
+  }, [productData?.category.en, productsData]);
 
   return (
     <section className="flex flex-col gap-10">
@@ -39,13 +39,12 @@ const RelatedProducts = () => {
           {languageData.productSingle.related_products}
         </h3>
       </div>
-
-      <div className="related-products flex gap-5">
-        {filteredProductsData?.map((product, idx) => (
+      <div className="related-products flex gap-2">
+        {filteredProductsData?.map((productData, idx) => (
           <ProductCard
-            currentLanguage={currentLanguage}
-            productData={product}
             languageData={languageData}
+            currentLanguage={currentLanguage}
+            productData={productData}
             key={idx}
           />
         ))}

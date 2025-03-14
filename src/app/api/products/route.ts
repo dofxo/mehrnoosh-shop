@@ -1,10 +1,9 @@
 import { supabase } from "@/utils/supabase";
-import type { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 export async function GET(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _: NextApiRequest,
+  _: NextRequest,
 ) {
   try {
     const { data: products, error } = await supabase

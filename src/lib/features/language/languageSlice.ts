@@ -1,12 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface LanguageState {
-  languageData: Record<string, any>;
-  currentLanguage: string;
-}
+export type languageDataType = Record<string, any>;
 
-interface InitializeLanguagePayload {
-  languageData: Record<string, any>;
+interface LanguageState {
+  languageData: languageDataType;
   currentLanguage: string;
 }
 
@@ -27,10 +24,7 @@ const languageSlice = createSlice({
   name: "language",
   initialState,
   reducers: {
-    initializeLanguage: (
-      state,
-      action: PayloadAction<InitializeLanguagePayload>,
-    ) => {
+    initializeLanguage: (state, action: PayloadAction<LanguageState>) => {
       state.languageData = action.payload.languageData;
       state.currentLanguage = action.payload.currentLanguage;
     },

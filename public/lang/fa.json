@@ -47,8 +47,26 @@
     "write_your_comment_first": "برای ثبت نظر ابتدا دیدگاه خود را بنویسید",
     "related_products": "محصولات مرتبط"
   },
+  "productsNames": {
+    "mobile": "موبایل",
+    "tablet": "تبلت"
+  },
   "header": {
     "searchPlaceholder": "جستجو محصولات ...",
-    "signupLogin": "ورود و عضویت"
+    "frequentSearches": "جستجو های پر تکرار",
+    "signupLogin": "ورود و عضویت",
+    "changeLanguage": {
+      "title:": "تغییر زبان",
+      "searchPlaceholder": "زبان",
+      "fa": "فارسی",
+      "en": "انگلیسی",
+      "button": "تغییر زبان"
+    }
+  },
+  "mobileNav": {
+    "cart": "سبد خرید",
+    "favorite": "مورد‌علاقه",
+    "language": "زبان",
+    "home": "خانه"
   }
 }

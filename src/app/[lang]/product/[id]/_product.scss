@@ -2,7 +2,7 @@
   width: 50px;
 
   &::before {
-    color: var(--primary) !important;
+    @apply text-primary #{!important};
   }
 }
 
@@ -39,7 +39,8 @@
   }
 
   .slick-current {
-    border: 5px solid var(--primary)
+    border: 5px solid;
+    @apply border-primary
   }
 
 }
@@ -59,7 +60,7 @@ div {
 
 .shadcn-modal {
   button {
-    @apply bg-[var(--primary)] opacity-100 text-white rounded-[50%] w-[35px] h-[35px] flex items-center justify-center font-bold
+    @apply bg-primary opacity-100 text-white rounded-[50%] w-[35px] h-[35px] flex items-center justify-center font-bold
   }
 }
 
@@ -73,10 +74,9 @@ div {
   &[role='tablist'] {
     button {
       &[data-state="active"] {
-        background-color: var(--primary);
         color: white;
         box-shadow: 0px 7px 15px #0070FF3B;
-
+        @apply bg-primary
       }
     }
   }
@@ -90,4 +90,14 @@ div {
       fill: black
     }
   }
+}
+
+.tablist {
+
+  div {
+    &[role='tablist'] {
+      @apply bg-background
+    }
+  }
+
 }

@@ -8,101 +8,55 @@
   max-width: 1300px;
   margin: 0 auto;
   width: 90vw;
-}
 
-:root {
-  --text-primary: #757575;
-  --primary: #0070FF;
-  --secondary: #F2F6FB;
-  --border-radius: 20px;
-}
-
-.primary-box-shadow {
-  box-shadow: 0px 7px 15px #0070FF3B;
-}
-
-/* Hide number input arrows */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type='number'] {
-  -moz-appearance: textfield;
-}
-
-
-/* HTML: <div class="loader"></div> */
-.loader {
-  width: 80px;
-  aspect-ratio: 1;
-  display: grid;
-  border: 4px solid #0000;
-  border-radius: 50%;
-  border-right-color: var(--primary);
-  animation: l15 1s infinite linear;
-}
-
-.loader::before,
-.loader::after {
-  content: "";
-  grid-area: 1/1;
-  margin: 2px;
-  border: inherit;
-  border-radius: 50%;
-  animation: l15 2s infinite;
-}
-
-.loader::after {
-  margin: 8px;
-  animation-duration: 3s;
-}
-
-@keyframes l15 {
-  100% {
-    transform: rotate(1turn)
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
   }
-}
 
 
-@layer base {
-  :root {
-    --background: #f2f6fc;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+  /* HTML: <div class="loader"></div> */
+  .loader {
+    width: 80px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid;
+    border-radius: 50%;
+    animation: l15 1s infinite linear;
+    @apply border-r-primary
   }
+
+  .loader::before,
+  .loader::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: l15 2s infinite;
+  }
+
+  .loader::after {
+    margin: 8px;
+    animation-duration: 3s;
+  }
+
+  @keyframes l15 {
+    100% {
+      transform: rotate(1turn)
+    }
+  }
+
+
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
 
   body {
-    background: var(--background);
+    @apply bg-background text-foreground;
   }
+
 }
