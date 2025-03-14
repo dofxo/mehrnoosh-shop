@@ -1,6 +1,7 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
+import RemoveDarkClass from "@/components/RemoveDarkClass";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
 import MegaMenuWrapper from "@/components/ui/mega-menu/MegaMenuWrapper";
@@ -9,6 +10,9 @@ import { Provider } from "@/components/ui/provider";
 import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 export async function generateMetadata({
   params,
@@ -42,8 +46,10 @@ export default async function RootLayout({
           <Provider>
             <DesktopHeader />
             <MobileHeader />
-            <MegaMenuWrapper />
             <MobileNav />
+            <MegaMenuWrapper />
+            <Toaster />
+            <RemoveDarkClass />
             {children}
           </Provider>
         </StoreProvider>
