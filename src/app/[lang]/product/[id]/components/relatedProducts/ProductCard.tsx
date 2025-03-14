@@ -13,10 +13,11 @@ const ProductCard = ({
   languageData: any;
   currentLanguage: string;
 }) => {
-  const scoreAverage = (
-    productData.rating.map(Number).reduce((p, c) => p + c, 0) / 5
-  ).toFixed(1);
-
+  const scoreAverage =
+    productData.comments.reduce(
+      (total, comment) => total + +comment.rating,
+      0,
+    ) / productData.comments.length;
   return (
     <div className="flex w-[295px] flex-col items-center gap-[20px] rounded-[30px] bg-white p-[20px] shadow-[0_10px_50px_rgba(1,1,2,0.08)]">
       <Image

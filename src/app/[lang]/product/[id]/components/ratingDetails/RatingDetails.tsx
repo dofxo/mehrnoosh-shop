@@ -12,12 +12,13 @@ const RatingDetails = () => {
     (state: any) => state.productSingle.productData,
   );
 
-  const totalRatingPercentage = Math.round(
-    ((comments.reduce((total, comment) => total + +comment.rating, 0) /
-      comments.length) *
-      100) /
-      5,
-  );
+  const totalRatingPercentage =
+    Math.round(
+      ((comments.reduce((total, comment) => total + +comment.rating, 0) /
+        comments.length) *
+        100) /
+        5,
+    ) || 0;
 
   return (
     <section className="flex gap-5">

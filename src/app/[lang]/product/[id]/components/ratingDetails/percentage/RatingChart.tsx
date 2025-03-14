@@ -36,7 +36,7 @@ const RadialPercentageChart = ({
     <div className="relative h-[120px] w-[120px]">
       <Doughnut data={data} options={options} />
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="font-bold text-[20px]">{totalRatingPercentage}%</span>
+        <span className="text-[20px] font-bold">{totalRatingPercentage}%</span>
       </div>
     </div>
   );
