@@ -30,7 +30,7 @@ const RateRows = ({
   // Transform the ratings object into an array for rendering
   const ratingsArray = Object.entries(ratings).map(([num, count]) => ({
     num: +num,
-    rating: Math.round((count * 100) / comments.length), // Calculate percentage
+    rating: Math.round((count * 100) / comments.length) || 0, // Calculate percentage
   }));
 
   const { languageData } = useAppSelector((state) => state.language);
