@@ -9,7 +9,7 @@ import { RatingGroup, Textarea } from "@chakra-ui/react";
 import axios from "axios";
 import moment from "jalali-moment";
 import { Check, Frown, Loader2, Plus, Smile, Star, X } from "lucide-react";
-import { SetStateAction, Dispatch, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 const CommentsContent = ({
@@ -34,13 +34,13 @@ const CommentsContent = ({
 
   const [productCommentsLength, setProductCommentsLength] = useState(0);
 
-  useEffect(() => {
-    setProductCommentsLength(comments.length);
-  }, []);
-
   const { comments, name, id }: IProduct = useAppSelector(
     (state: any) => state.productSingle.productData,
   );
+
+  useEffect(() => {
+    setProductCommentsLength(comments.length);
+  }, [comments.length]);
 
   useEffect(() => {
     setProductComments(comments);
