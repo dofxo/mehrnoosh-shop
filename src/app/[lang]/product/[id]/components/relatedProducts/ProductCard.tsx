@@ -51,7 +51,7 @@ const ProductCard = ({
           className={`flex items-center gap-2 ${currentLanguage === "fa" ? "border-r" : "border-l"} ${currentLanguage === "fa" ? "pr-[20px]" : "pl-[20px]"}`}
         >
           <span className="flex items-center gap-1 font-[500]">
-            <span>{scoreAverage}</span>
+            <span>{scoreAverage || 0}</span>
             <span>{languageData.productSingle.of}</span> <span>5</span>
           </span>
 
