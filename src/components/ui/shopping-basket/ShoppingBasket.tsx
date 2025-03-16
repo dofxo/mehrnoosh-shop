@@ -1,6 +1,6 @@
 "use client";
 
-import type { ShoppingBasketProps } from "./ShoppingBasket.d";
+import type { ShoppingBasketProps } from "./ShoppingBasket";
 import DirectionWrapper from "@/components/ui/direction";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useAppSelector } from "@/lib/hooks";

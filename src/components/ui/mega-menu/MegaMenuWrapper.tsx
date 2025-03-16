@@ -5,7 +5,7 @@ import MegaMenuCategory from "@/components/ui/mega-menu/category/Category";
 import MegaMenuDigitalEquipments from "@/components/ui/mega-menu/digital-equipments/DigitalEquipments";
 import MegaMenuHouseEquipments from "@/components/ui/mega-menu/house-equipments/HouseEquipments";
 import MegaMenuLaptopAndComputer from "@/components/ui/mega-menu/laptop-and-computer/LaptopAndComputer";
-import ShoppingBasketSheet from "@/components/ui/mega-menu/shopping-basket/ShoppingBasket";
+import ShoppingBasketSheet from "@/components/ui/shopping-basket/ShoppingBasket";
 import { useAppSelector } from "@/lib/hooks";
 import { ShoppingBasket as ShoppingBasketIcon } from "lucide-react";
 
