@@ -9,7 +9,7 @@ import { RatingGroup, Textarea } from "@chakra-ui/react";
 import axios from "axios";
 import moment from "jalali-moment";
 import { Check, Frown, Loader2, Plus, Smile, Star, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { SetStateAction, Dispatch, useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 const CommentsContent = ({
@@ -31,6 +31,12 @@ const CommentsContent = ({
   const formRef = useRef<HTMLFormElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const commentRef = useRef<HTMLTextAreaElement>(null);
+
+  const [productCommentsLength, setProductCommentsLength] = useState(0);
+
+  useEffect(() => {
+    setProductCommentsLength(comments.length);
+  }, []);
 
   const { comments, name, id }: IProduct = useAppSelector(
     (state: any) => state.productSingle.productData,
@@ -107,7 +113,7 @@ const CommentsContent = ({
             {
               title: {
                 text: languageData.productSingle.pros,
-                color: "var(--primary)",
+                color: "#0070FF",
                 icon: <Smile size={20} />,
               },
               placeHolder: languageData.productSingle.pro,
@@ -203,6 +209,8 @@ const CommentsContent = ({
                   return;
                 }
 
+                setProductCommentsLength((prev) => prev + 1);
+
                 const {
                   data: { body: product },
                 } = await axios.post(`/api/products/${id}`, dataToPost);
@@ -232,7 +240,7 @@ const CommentsContent = ({
       {/* showing comment section */}
       <div className="flex flex-col gap-5">
         <h3 className="text-[20px] font-bold">
-          {comments.length} {languageData.productSingle.comment_for}{" "}
+          {productCommentsLength} {languageData.productSingle.comment_for}{" "}
           <span className="font-[400]">
             {name[currentLanguage as langType]}
           </span>
@@ -248,7 +256,7 @@ const CommentsContent = ({
                 <span className="font-bold">{item.name}</span>
                 <span className="text-[18px]">
                   {currentLanguage === "fa"
-                    ? moment(item.created_at).locale("fa").format(`YYYY/DD/MM`)
+                    ? moment(item.created_at).locale("fa").format(`YYYY/MM/DD`)
                     : moment(item.created_at).format(`YYYY/DD/MM`)}
                 </span>
               </span>
@@ -281,7 +289,7 @@ const CommentsContent = ({
                   <div className="flex gap-2">
                     {item.pros.map((item: any, idx: number) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <Check color="var(--primary)" size={18} />
+                        <Check color="#0070FF" size={18} />
                         <span className="text-[15px] text-[400]">{item}</span>
                       </div>
                     ))}

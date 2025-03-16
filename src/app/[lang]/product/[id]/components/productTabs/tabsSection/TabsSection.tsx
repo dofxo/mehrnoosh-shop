@@ -9,7 +9,7 @@ import { useAppSelector } from "@/lib/hooks";
 import { Captions, FileText, MessageCircleMore } from "lucide-react";
 
 const TabsSection = () => {
-  const { description, properties, comments }: IProduct = useAppSelector(
+  const { description, properties }: IProduct = useAppSelector(
     (state: any) => state.productSingle.productData,
   );
   const { languageData, currentLanguage } = useAppSelector(
@@ -47,7 +47,7 @@ const TabsSection = () => {
       icon: <FileText size={20} className="self-start" />,
     },
     {
-      value: `${languageData.productSingle.comments} (${comments.length})`,
+      value: languageData.productSingle.comments,
       content: {
         body: (
           <CommentsContent

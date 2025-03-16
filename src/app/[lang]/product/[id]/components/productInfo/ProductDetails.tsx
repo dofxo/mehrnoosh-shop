@@ -66,7 +66,8 @@ const ProductDetails = () => {
             <Star size={15} />
           </div>
           <span className="flex items-center gap-1 font-[500]">
-            {languageData.productSingle.rating}: <span>{scoreAverage}</span>
+            {languageData.productSingle.rating}:{" "}
+            <span>{Math.round(scoreAverage) || 0}</span>
             <span>{languageData.productSingle.of}</span> <span>5</span>
           </span>
         </div>
