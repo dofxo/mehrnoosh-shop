@@ -9,7 +9,7 @@ export default function MegaMenuCascadingMenu({ language }: CascadingMenuProps) 
       <MenuTrigger asChild>
         <MegaMenuTrigger
           icon={<EllipsisVertical />}
-          text={language["megaMenu"].cascadingMenu}
+          text={language["megaMenu"].cascading_menu}
         />
       </MenuTrigger>
       <MenuContent>

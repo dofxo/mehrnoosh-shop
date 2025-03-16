@@ -9,7 +9,7 @@ export default function MegaMenuLaptopAndComputer({ language }: LaptopAndCompute
       <MenuTrigger asChild>
         <MegaMenuTrigger
           icon={<Computer />}
-          text={language["megaMenu"].laptopAndComputer}
+          text={language["megaMenu"].laptop_and_computer}
         />
       </MenuTrigger>
       <MenuContent>

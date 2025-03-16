@@ -24,8 +24,8 @@ export async function generateMetadata({
 
   // Dynamically set metadata based on language
   return {
-    title: language.general.websiteTitle,
-    description: language.general.websiteTitle,
+    title: language.general.website_title,
+    description: language.general.websit_title,
   };
 }
 

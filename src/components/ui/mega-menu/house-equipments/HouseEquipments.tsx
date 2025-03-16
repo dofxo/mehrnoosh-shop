@@ -11,7 +11,7 @@ export default function MegaMenuHouseEquipments({
       <MenuTrigger asChild>
         <MegaMenuTrigger
           icon={<Refrigerator />}
-          text={language["megaMenu"].houseEquipments}
+          text={language["megaMenu"].house_equipments}
         />
       </MenuTrigger>
       <MenuContent>

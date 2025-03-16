@@ -72,26 +72,26 @@ export default function ChangeLanguage() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="mb-5">
-              {language.header.changeLanguage.title}
+              {language.header.change_language.title}
             </DialogTitle>
             <Select value={selectedLanguage} onValueChange={handleSelectChange}>
               <SelectTrigger>
                 <SelectValue
-                  placeholder={language.header.changeLanguage.searchPlaceholder}
+                  placeholder={language.header.change_language.search_placeholder}
                 />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="fa">
-                  {language.header.changeLanguage.fa}
+                  {language.header.change_language.fa}
                 </SelectItem>
                 <SelectItem value="en">
-                  {language.header.changeLanguage.en}
+                  {language.header.change_language.en}
                 </SelectItem>
               </SelectContent>
             </Select>
             <div className="!mt-5 flex items-center justify-center">
               <Button className="w-1/2 text-white" onClick={handleChangeLanguage}>
-                {language.header.changeLanguage.button}
+                {language.header.change_language.button}
               </Button>
             </div>
           </DialogHeader>

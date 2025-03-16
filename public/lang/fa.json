@@ -1,6 +1,6 @@
 {
   "general": {
-    "websiteTitle": "وبسایت فروشگاهی مهرنوش"
+    "website_title": "وبسایت فروشگاهی مهرنوش"
   },
   "productSingle": {
     "compare": "مقایسه",
@@ -53,12 +53,11 @@
     "tablet": "تبلت"
   },
   "header": {
-    "searchPlaceholder": "جستجو محصولات ...",
-    "frequentSearches": "جستجو های پر تکرار",
-    "signupLogin": "ورود و عضویت",
-    "changeLanguage": {
+    "search_placeholder": "جستجو محصولات ...",
+    "frequent_searches": "جستجو های پر تکرار",
+    "change_language": {
       "title:": "تغییر زبان",
-      "searchPlaceholder": "زبان",
+      "search_placeholder": "زبان",
       "fa": "فارسی",
       "en": "انگلیسی",
       "button": "تغییر زبان"
@@ -72,10 +71,10 @@
   },
   "megaMenu": {
     "category": "دسته بندی",
-    "digitalEquipments": "لوازم دیجیتال",
-    "houseEquipments": "لوازم خانگی",
-    "laptopAndComputer": "لپ تاپ و کامپیوتر",
-    "cascadingMenu": "منو آبشاری"
+    "digital_equipments": "لوازم دیجیتال",
+    "house_equipments": "لوازم خانگی",
+    "laptop_and_computer": "لپ تاپ و کامپیوتر",
+    "cascading_menu": "منو آبشاری"
   },
   "shoppingBasket": {
     "empty_basket": "هیچ محصولی در سبد خرید نیست",
