@@ -139,7 +139,7 @@ const ProductImages = () => {
         </div>
 
         <span className="font-[500]">
-          {soldPercentage}% {languageData.productSingle.amount_sold}
+          {Math.round(soldPercentage)}% {languageData.productSingle.amount_sold}
         </span>
       </div>
     </div>

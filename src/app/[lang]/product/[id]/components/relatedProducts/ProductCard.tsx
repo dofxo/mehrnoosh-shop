@@ -13,10 +13,11 @@ const ProductCard = ({
   languageData: any;
   currentLanguage: string;
 }) => {
-  const scoreAverage = (
-    productData.rating.map(Number).reduce((p, c) => p + c, 0) / 5
-  ).toFixed(1);
-
+  const scoreAverage =
+    productData.comments.reduce(
+      (total, comment) => total + +comment.rating,
+      0,
+    ) / productData.comments.length;
   return (
     <div className="flex w-[295px] flex-col items-center gap-[20px] rounded-[30px] bg-white p-[20px] shadow-[0_10px_50px_rgba(1,1,2,0.08)]">
       <Image
@@ -50,7 +51,7 @@ const ProductCard = ({
           className={`flex items-center gap-2 ${currentLanguage === "fa" ? "border-r" : "border-l"} ${currentLanguage === "fa" ? "pr-[20px]" : "pl-[20px]"}`}
         >
           <span className="flex items-center gap-1 font-[500]">
-            <span>{scoreAverage}</span>
+            <span>{scoreAverage || 0}</span>
             <span>{languageData.productSingle.of}</span> <span>5</span>
           </span>
 

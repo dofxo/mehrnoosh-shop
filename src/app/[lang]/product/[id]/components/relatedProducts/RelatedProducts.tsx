@@ -39,7 +39,7 @@ const RelatedProducts = () => {
           {languageData.productSingle.related_products}
         </h3>
       </div>
-      <div className="related-products flex gap-2">
+      <div className="related-products flex flex-wrap gap-5 p-5">
         {filteredProductsData?.map((productData, idx) => (
           <ProductCard
             languageData={languageData}

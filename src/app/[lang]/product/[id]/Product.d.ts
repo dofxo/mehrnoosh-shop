@@ -23,7 +23,6 @@ export interface IProduct {
   };
   price: string;
   discount_price: string;
-  rating: string[];
   category: {
     en: string[];
     fa: string[];

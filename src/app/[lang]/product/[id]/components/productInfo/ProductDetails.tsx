@@ -21,16 +21,15 @@ const ProductDetails = () => {
     sold_amount,
     name,
     comments,
-    rating,
     properties,
     category,
     description,
     created_at,
   } = useAppSelector((state) => state.productSingle.productData as IProduct);
 
-  const scoreAverage = (
-    rating.map(Number).reduce((p, c) => p + c, 0) / 5
-  ).toFixed(1);
+  const scoreAverage =
+    comments.reduce((total, comment) => total + +comment.rating, 0) /
+    comments.length;
 
   const propertiesToUse = [
     ...properties.color[currentLanguage as langType],
@@ -67,7 +66,8 @@ const ProductDetails = () => {
             <Star size={15} />
           </div>
           <span className="flex items-center gap-1 font-[500]">
-            {languageData.productSingle.rating}: <span>{scoreAverage}</span>
+            {languageData.productSingle.rating}:{" "}
+            <span>{Math.round(scoreAverage) || 0}</span>
             <span>{languageData.productSingle.of}</span> <span>5</span>
           </span>
         </div>
