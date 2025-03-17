@@ -32,6 +32,7 @@ export default function ProductPageClient({
 
         if (productData && Object.keys(productData).length > 0) {
           dispatch(initializeProductData(productData));
+          //NOTE: might need to change
           dispatch(initializeProductsData(productsData));
           setIsLoading(false);
         }
