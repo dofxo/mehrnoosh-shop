@@ -21,6 +21,9 @@ const RelatedProducts = () => {
     const filteredProducts = productsData?.filter((product: IProduct) => {
       const productCategories = product.category.en || [];
 
+      // remove the current product
+      if (productData?.id === product.id) return;
+
       return productCategories.some((category) => {
         return productData?.category.en.includes(category);
       });
