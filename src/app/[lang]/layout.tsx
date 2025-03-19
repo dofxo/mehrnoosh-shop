@@ -2,6 +2,7 @@ import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
 import RemoveDarkClass from "@/components/RemoveDarkClass";
+import InitProducts from "@/components/InitProducts";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
 import MegaMenuWrapper from "@/components/ui/mega-menu/MegaMenuWrapper";
@@ -25,7 +26,7 @@ export async function generateMetadata({
   // Dynamically set metadata based on language
   return {
     title: language.general.website_title,
-    description: language.general.websit_title,
+    description: language.general.website_title,
   };
 }
 
@@ -44,6 +45,7 @@ export default async function RootLayout({
       <body className={`${yekanbakh.className} antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
           <Provider>
+            <InitProducts />
             <DesktopHeader />
             <MobileHeader />
             <MobileNav />
