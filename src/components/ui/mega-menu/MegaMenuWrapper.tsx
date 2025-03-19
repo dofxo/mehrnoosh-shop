@@ -6,11 +6,14 @@ import MegaMenuDigitalEquipments from "@/components/ui/mega-menu/digital-equipme
 import MegaMenuHouseEquipments from "@/components/ui/mega-menu/house-equipments/HouseEquipments";
 import MegaMenuLaptopAndComputer from "@/components/ui/mega-menu/laptop-and-computer/LaptopAndComputer";
 import ShoppingBasketSheet from "@/components/ui/shopping-basket/ShoppingBasket";
+import { getCategories } from "@/helpers/getCategories";
 import { useAppSelector } from "@/lib/hooks";
 import { ShoppingBasket as ShoppingBasketIcon } from "lucide-react";
 
 export default function MegaMenuWrapper() {
   const language = useAppSelector((state) => state.language.languageData);
+  const products = useAppSelector((state) => state.productSingle);
+  const categories = getCategories(products);
 
   return (
     <section className="hidden bg-white p-[15px] pt-[20px] lg:block">
