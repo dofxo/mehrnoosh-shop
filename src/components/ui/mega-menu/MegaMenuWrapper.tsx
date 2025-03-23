@@ -1,10 +1,6 @@
 "use client";
 
-import MegaMenuCascadingMenu from "@/components/ui/mega-menu/cascading-menu/CascadingMenu";
 import MegaMenuCategory from "@/components/ui/mega-menu/category/Category";
-import MegaMenuDigitalEquipments from "@/components/ui/mega-menu/digital-equipments/DigitalEquipments";
-import MegaMenuHouseEquipments from "@/components/ui/mega-menu/house-equipments/HouseEquipments";
-import MegaMenuLaptopAndComputer from "@/components/ui/mega-menu/laptop-and-computer/LaptopAndComputer";
 import ShoppingBasketSheet from "@/components/ui/shopping-basket/ShoppingBasket";
 import { getCategories } from "@/helpers/getCategories";
 import { useAppSelector } from "@/lib/hooks";
@@ -20,10 +16,6 @@ export default function MegaMenuWrapper() {
       <div className="container flex flex-row items-center justify-between">
         <div className="flex gap-1">
           <MegaMenuCategory language={language} />
-          <MegaMenuDigitalEquipments language={language} />
-          <MegaMenuHouseEquipments language={language} />
-          <MegaMenuLaptopAndComputer language={language} />
-          <MegaMenuCascadingMenu language={language} />
         </div>
         <div className="flex w-[20%] max-w-[200px] flex-row items-center justify-between gap-1 p-[10px]">
           <ShoppingBasketSheet>

@@ -3,6 +3,7 @@ import MegaMenuTrigger from "@/components/ui/mega-menu/mega-menu-trigger/MegaMen
 import { MenuContent, MenuRoot, MenuTrigger } from "@/components/ui/menu";
 import { List } from "lucide-react";
 
+// TODO: change it to a component that renders each category
 export default function MegaMenuCategory({ language }: MegaMenuCategoryProps) {
   return (
     <MenuRoot>
