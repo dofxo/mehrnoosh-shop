@@ -2,6 +2,9 @@
   "general": {
     "websiteTitle": "Mehrnoosh Shop"
   },
+  "whishlist": {
+    "title": "My Wishlist"
+  },
   "productSingle": {
     "compare": "compare",
     "share": "share",

@@ -2,6 +2,9 @@
   "general": {
     "websiteTitle": "وبسایت فروشگاهی مهرنوش"
   },
+  "whishlist": {
+    "title": "لیست علاقه مندی های من"
+  },
   "productSingle": {
     "compare": "مقایسه",
     "share": "اشتراک گذاری",
