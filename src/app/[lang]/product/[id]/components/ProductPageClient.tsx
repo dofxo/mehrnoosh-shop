@@ -1,5 +1,6 @@
 "use client";
 
+import { initializeProductsData } from "@/lib/features/productsData/productsSlice";
 import ProductCons from "./productCons/ProductCons";
 import ProductInfo from "./productInfo/ProductInfo";
 import ProductTabs from "./productTabs/ProductTabs";
