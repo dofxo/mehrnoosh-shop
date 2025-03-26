@@ -17,6 +17,10 @@ const ActionButtons = ({ productData }: { productData: IProduct }) => {
   );
   const router = useRouter();
 
+  const soldPercentage = Math.round(
+    (+productData.sold_amount * 100) / +productData.quantity,
+  );
+
   const actionButtonIcons = [
     {
       icon: (
@@ -38,7 +42,7 @@ const ActionButtons = ({ productData }: { productData: IProduct }) => {
     },
     {
       isNotActionButton: true,
-      tooltipContent: 43,
+      tooltipContent: soldPercentage,
     },
 
     {

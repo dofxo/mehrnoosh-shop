@@ -15,7 +15,7 @@ const ProductImages = () => {
   const sectionsClassName = "bg-background rounded-[25px] p-[30px]";
 
   const discountPercentage = Math.round(100 - (+discount_price * 100) / +price);
-  const soldPercentage = (+sold_amount * 100) / +quantity;
+  const soldPercentage = Math.round((+sold_amount * 100) / +quantity);
 
   const { currentLanguage, languageData } = useAppSelector(
     (state) => state.language,
