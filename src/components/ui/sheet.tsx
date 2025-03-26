@@ -62,7 +62,7 @@ const SheetContent = React.forwardRef<
       ref={ref}
       className={cn(
         sheetVariants({ side }),
-        "h-full bg-white overflow-y-auto overflow-x-hidden",
+        "h-full overflow-y-auto overflow-x-hidden bg-white",
         className,
       )}
       {...props}
@@ -70,9 +70,9 @@ const SheetContent = React.forwardRef<
       <SheetPrimitive.Title className="sr-only">
         Sheet Title
       </SheetPrimitive.Title>
-      <div className="absolute right-4 top-4 cursor-pointer rounded-primary bg-secondary px-2 pt-[7px] transition hover:bg-primary hover:text-white">
-        <SheetPrimitive.Close className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-secondary">
-          <X className="h-6 w-6" />
+      <div className="absolute right-4 top-4 z-10 cursor-pointer rounded-primary bg-primary px-2 pt-[7px] text-white transition hover:bg-primary-700">
+        <SheetPrimitive.Close className="rounded-sm ring-offset-background disabled:pointer-events-none data-[state=open]:bg-white">
+          <X className="h-6 w-6 text-white" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
       </div>

@@ -12,7 +12,7 @@ export const customFlowbiteTheme: CustomFlowbiteTheme = {
     },
     collapse: {
       button:
-        "rtl:flex-row-reverse group bg-secondary flex w-full items-center rounded-lg p-4 text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+        "rtl:flex-row-reverse group bg-secondary flex w-full items-center rounded-lg p-4 text-text-primary text-base font-normal text-gray-900 transition duration-75 hover:bg-gray-100 text-text-primary hover:text-white dark:hover:bg-gray-700",
       icon: {
         base: "h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white",
         open: {
@@ -49,7 +49,7 @@ export const customFlowbiteTheme: CustomFlowbiteTheme = {
       },
     },
     item: {
-      base: "flex bg-gray-50 items-center justify-center rounded-lg p-4 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+      base: "flex text-text-primary bg-gray-50 items-center justify-center rounded-lg p-4 text-base font-normal text-gray-900 hover:bg-gray-100",
       active: "bg-gray-100 dark:bg-gray-700",
       collapsed: {
         insideCollapse:
@@ -60,7 +60,7 @@ export const customFlowbiteTheme: CustomFlowbiteTheme = {
         base: "flex-1 whitespace-nowrap px-3",
       },
       icon: {
-        base: "h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white",
+        base: "h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400",
         active: "text-gray-700 dark:text-gray-100",
       },
       label: "",

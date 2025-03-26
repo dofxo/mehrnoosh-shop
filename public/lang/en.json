@@ -1,6 +1,6 @@
 {
   "general": {
-    "websiteTitle": "Mehrnoosh Shop"
+    "website_title": "Mehrnoosh Shop"
   },
   "whishlist": {
     "title": "My Wishlist"
@@ -56,12 +56,11 @@
     "tablet": "tablet"
   },
   "header": {
-    "searchPlaceholder": "search for products ...",
-    "signupLogin": "signup and login",
-    "frequentSearches": "frequent searches",
-    "changeLanguage": {
+    "search_placeholder": "search for products ...",
+    "frequent_searches": "frequent searches",
+    "change_language": {
       "title:": "Change Language",
-      "searchPlaceholder": "Language",
+      "search_placeholder": "Language",
       "fa": "Persian",
       "en": "English",
       "button": "Change Language"
@@ -72,5 +71,16 @@
     "favorite": "favorite",
     "language": "language",
     "home": "home"
+  },
+  "megaMenu": {
+    "category": "category",
+    "digital_equipments": "digital equipments",
+    "house_equipments": "house equipments",
+    "laptop_and_computer": "laptop and computer",
+    "cascading_menu": "cascading menu"
+  },
+  "shoppingBasket": {
+    "empty_basket": "there is no items in shopping basket",
+    "go_to_shop": "go to shop"
   }
 }
