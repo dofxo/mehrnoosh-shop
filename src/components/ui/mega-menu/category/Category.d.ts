@@ -1,5 +1,7 @@
-import { languageDataType } from "@/lib/features/language/languageSlice";
+import { IProduct } from "@/app/[lang]/product/[id]/Product";
+import { CategoryType } from "@/helpers/getCategories";
 
 export type MegaMenuCategoryProps = {
-  language: languageDataType;
+  currentLanguage: string;
+  category: CategoryType;
 };
