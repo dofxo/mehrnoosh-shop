@@ -3,7 +3,8 @@
     "website_title": "وبسایت فروشگاهی مهرنوش"
   },
   "whishlist": {
-    "title": "لیست علاقه مندی های من"
+    "title": "لیست علاقه مندی های من",
+    "add_to_shopping_cart": "افزودن به سبد خرید"
   },
   "productSingle": {
     "compare": "مقایسه",

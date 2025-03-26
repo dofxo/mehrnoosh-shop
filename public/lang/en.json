@@ -3,7 +3,8 @@
     "website_title": "Mehrnoosh Shop"
   },
   "whishlist": {
-    "title": "My Wishlist"
+    "title": "My Wishlist",
+    "add_to_shopping_cart": "add to shopping cart"
   },
   "productSingle": {
     "compare": "compare",
