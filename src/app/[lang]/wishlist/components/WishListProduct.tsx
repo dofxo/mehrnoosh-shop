@@ -11,15 +11,27 @@ const WishListProduct = ({ productData }: { productData: IProduct }) => {
   );
 
   return (
-    <div className="flex items-center justify-between border-b border-background px-[10px] py-[25px]">
-      <div className="flex items-center gap-5">
-        <div className="flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[50%] bg-[#ffd0d0]">
-          <X color="red" size={15} />
-        </div>
+    <div className="flex items-center justify-between gap-3 border-b border-background px-[10px] py-[25px] max-[800px]:flex-col">
+      <div className="flex min-h-[30px] min-w-[30px] cursor-pointer items-center justify-center rounded-[50%] bg-[#ffd0d0] max-[800px]:self-start">
+        <X color="red" size={15} />
+      </div>
+      <div className="min-h-[60px] min-w-[60px] items-center justify-center !rounded-[50%] bg-white shadow-[0_2px_25px_#29295e14] max-[800px]:flex min-[800px]:hidden">
+        <Image
+          src={productData.images[0]}
+          width={0}
+          height={0}
+          layout="responsive"
+          alt={productData.name[currentLanguage as langType]}
+          className="!w-[35px]"
+        />
+      </div>
+
+      <div className="flex items-center gap-5 max-[800px]:flex-col">
         <h3 className="font-bold">
           {productData.name[currentLanguage as langType]}
         </h3>
-        <div className="flex h-[60px] w-[60px] items-center justify-center !rounded-[50%] bg-white shadow-[0_2px_25px_#29295e14]">
+
+        <div className="flex min-h-[60px] min-w-[60px] items-center justify-center !rounded-[50%] bg-white shadow-[0_2px_25px_#29295e14] max-[800px]:hidden">
           <Image
             src={productData.images[0]}
             width={0}

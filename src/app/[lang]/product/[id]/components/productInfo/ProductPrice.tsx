@@ -34,7 +34,7 @@ const ProductPrice = () => {
   };
 
   return (
-    <div className="flex h-fit min-w-[310px] flex-col gap-4 rounded-[20px] bg-background p-[25px]">
+    <div className="flex h-fit flex-col gap-4 rounded-[20px] bg-background p-[25px]">
       {/* price */}
       <div className="price flex flex-col">
         <span className="flex items-center gap-2 text-[15px] text-[#324A66]">
@@ -70,7 +70,7 @@ const ProductPrice = () => {
           </span>
         </div>
 
-        <Button className="flex w-full items-center p-6 text-[18px] font-[400]">
+        <Button className="flex items-center p-6 text-[18px] font-[400] xl:w-full">
           <ShoppingCart color="white" />
           <span>{languageData.productSingle.add_to_shopping_cart}</span>
         </Button>

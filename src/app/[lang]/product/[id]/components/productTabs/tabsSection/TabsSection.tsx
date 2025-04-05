@@ -64,7 +64,7 @@ const TabsSection = () => {
 
   return (
     <Tabs defaultValue={tabsData[0].value} dir="rtl" className="tablist w-full">
-      <TabsList className="flex items-center gap-5">
+      <TabsList className="flex h-fit items-center gap-5 max-[520px]:flex-col">
         {tabsData.map((tab, index) => (
           <TabsTrigger
             className="flex items-center gap-2 rounded-[15px] bg-white px-[20px] py-[15px] text-[16px] font-[500] text-text-primary"

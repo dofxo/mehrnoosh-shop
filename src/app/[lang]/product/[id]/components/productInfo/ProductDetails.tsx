@@ -93,10 +93,10 @@ const ProductDetails = () => {
             {languageData.productSingle.properties}
           </h5>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-3">
           {propertiesToUse.map((item, idx) => (
             <div
-              className="rounded-[90px] bg-[#f2f6fc] px-[15px] py-[6px] font-[500]"
+              className="w-max rounded-[90px] bg-[#f2f6fc] px-[15px] py-[6px] font-[500]"
               key={idx}
             >
               {item}
@@ -138,16 +138,16 @@ const ProductDetails = () => {
       {/* under description */}
       <div className="mt-[20px] flex items-center gap-2 font-[500]">
         <div className="flex items-center gap-2 rounded-[10px] bg-[#E6F1FF] px-[15px] py-[8px] text-[#0070FF]">
-          <ShoppingCart size={20} />
+          <ShoppingCart className="max-[435px]:hidden" size={20} />
           <span className="flex items-center gap-1">
             <span className="font-[500]">{sold_amount}</span>
             <span>{languageData.productSingle.sell}</span>
           </span>
         </div>
         <div className="flex items-center gap-2 rounded-[10px] bg-[#f2f6fc] px-[15px] py-[8px]">
-          <CalendarRange size={20} />
+          <CalendarRange  className="max-[435px]:hidden" size={20} />
           <span className="flex items-center gap-1">
-            <span>
+            <span className="w-max">
               {languageData.productSingle.update}: {date}
             </span>
           </span>

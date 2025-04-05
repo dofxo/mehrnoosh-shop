@@ -48,7 +48,7 @@ const CommentsContent = ({
 
   return (
     <div
-      className="grid grid-cols-2 gap-5"
+      className="grid grid-cols-2 gap-5 max-[930px]:flex max-[930px]:flex-col-reverse"
       style={{ direction: currentLanguage === "fa" ? "rtl" : "ltr" }}
     >
       {/* writing comment section */}
