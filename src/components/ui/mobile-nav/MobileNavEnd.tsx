@@ -2,21 +2,24 @@
 
 import ChangeLanguage from "@/components/ChangeLanguage";
 import { useAppSelector } from "@/lib/hooks";
-import { House, Heart } from 'lucide-react';
 import { motion } from "framer-motion";
+import { House, Heart } from "lucide-react";
 
 export default function MobileNavEnd() {
   const language = useAppSelector((state) => state.language.languageData);
+  const { currentLanguage } = useAppSelector((state) => state.language);
 
   // TODO: add links
   const endData = [
     {
       name: language.mobileNav.home,
       icon: <House />,
+      href: "/",
     },
     {
       name: language.mobileNav.favorite,
       icon: <Heart />,
+      href: `/${currentLanguage}/wishlist`,
     },
     {
       name: language.mobileNav.language,
@@ -48,8 +51,9 @@ export default function MobileNavEnd() {
   return (
     <div className="flex flex-row ltr:mr-4 rtl:ml-4">
       {endData.map((item, idx) => (
-        <motion.div
+        <motion.a
           key={idx}
+          href={item.href ?? null}
           variants={containerVariants}
           initial="initial"
           whileHover="hover"
@@ -67,7 +71,7 @@ export default function MobileNavEnd() {
           >
             {item.name}
           </motion.span>
-        </motion.div>
+        </motion.a>
       ))}
     </div>
   );
