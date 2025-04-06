@@ -1,8 +1,8 @@
 import type { MegaMenuCategoryProps } from "./Category.d";
 import MegaMenuTrigger from "@/components/ui/mega-menu/mega-menu-trigger/MegaMenuTrigger";
 import { MenuContent, MenuRoot, MenuTrigger } from "@/components/ui/menu";
-import { List, Smartphone, LaptopMinimal } from "lucide-react";
-import { GiLipstick, GiVacuumCleaner,GiSmallFire } from "react-icons/gi";
+import { Smartphone, LaptopMinimal } from "lucide-react";
+import { GiLipstick, GiVacuumCleaner, GiSmallFire } from "react-icons/gi";
 
 // TODO: change it to a component that renders each category
 export default function MegaMenuCategory({

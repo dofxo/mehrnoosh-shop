@@ -1,8 +1,8 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
 import { langType } from "./langs";
-import RemoveDarkClass from "@/components/RemoveDarkClass";
 import InitProducts from "@/components/InitProducts";
+import RemoveDarkClass from "@/components/RemoveDarkClass";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
 import MegaMenuWrapper from "@/components/ui/mega-menu/MegaMenuWrapper";
