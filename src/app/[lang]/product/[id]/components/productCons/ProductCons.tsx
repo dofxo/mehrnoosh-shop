@@ -9,7 +9,7 @@ const ProductCons = () => {
   const { currentLanguage } = useAppSelector((state) => state.language);
 
   return (
-    <section className="flex items-center justify-between gap-2 rounded-[25px] bg-white p-[30px]">
+    <section className="hidden items-center justify-between gap-2 rounded-[25px] bg-white p-[30px] lg:flex">
       {cons[currentLanguage as langType].map((item, key) => (
         <div key={key} className="flex items-center gap-5">
           <Image

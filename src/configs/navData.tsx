@@ -17,6 +17,7 @@ import {
   Utensils,
 } from "lucide-react";
 
+// TODO: replace data with database data
 export const sidebarNavData: SidebarMenuItem = [
   {
     id: "category",

@@ -21,14 +21,14 @@ const RatingDetails = () => {
     ) || 0;
 
   return (
-    <section className="flex gap-5">
+    <section className="flex gap-5 max-[930px]:flex-col">
       {/* details */}
-      <div className="relative w-[60%] rounded-[30px] bg-white p-[30px]">
+      <div className="relative w-[60%] rounded-[30px] bg-white p-[30px] max-[930px]:w-full">
         <Title />
         <RateRows comments={comments} />
       </div>
       {/* percentage */}
-      <div className="flex w-[40%] items-center justify-start gap-[50px] rounded-[30px] bg-white p-[30px]">
+      <div className="flex w-[40%] items-center justify-start gap-2 rounded-[30px] bg-white p-[30px] max-[930px]:w-full min-[500px]:gap-[50px]">
         <RadialPercentageChart totalRatingPercentage={totalRatingPercentage} />
         <RatingStatics
           totalComments={comments.length}

@@ -18,7 +18,7 @@ export default function DropdownSearch({
     >
       <div className="rounded-primary bg-secondary p-[20px]">
         <h4 className="mb-[15px] font-bold">
-          {language.header.frequentSearches}
+          {language.header.frequent_searches}
         </h4>
 
         {/* items */}
