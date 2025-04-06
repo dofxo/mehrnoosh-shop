@@ -7,7 +7,6 @@ import RatingDetails from "./ratingDetails/RatingDetails";
 import RelatedProducts from "./relatedProducts/RelatedProducts";
 import Loader from "@/components/loader/Loader";
 import { initializeProductData } from "@/lib/features/productSingle/productSingleSlice";
-import { initializeProductsData } from "@/lib/features/productsData/productsSlice";
 import { useAppDispatch } from "@/lib/hooks";
 import axios from "axios";
 import { useEffect, useState } from "react";

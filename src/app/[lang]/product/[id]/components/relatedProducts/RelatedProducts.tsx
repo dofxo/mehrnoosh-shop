@@ -13,7 +13,7 @@ const RelatedProducts = () => {
     (state) => state.language,
   );
   const { productData } = useAppSelector((state) => state.productSingle);
-  const { productsData} = useAppSelector((state) => state.productsData);
+  const { productsData } = useAppSelector((state) => state.productsData);
 
   useEffect(() => {
     // Filter out products that share any category with myProductCategories
@@ -29,7 +29,7 @@ const RelatedProducts = () => {
     });
 
     setFilteredProductsData(filteredProducts as IProduct[]);
-  }, [productData?.category.en, productsData]);
+  }, [productData?.category.en, productsData, productData?.id]);
 
   return (
     <section className="flex flex-col gap-10">
