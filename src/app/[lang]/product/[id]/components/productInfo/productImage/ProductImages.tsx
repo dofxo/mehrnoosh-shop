@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
 const ProductImages = () => {
-  const { images, quantity, sold_amount, price, discount_price } =
+  const { images, quantity, id, sold_amount, price, discount_price } =
     useAppSelector((state) => state.productSingle.productData as IProduct);
 
   const sectionsClassName = "bg-background rounded-[25px] p-[30px]";
@@ -58,7 +58,7 @@ const ProductImages = () => {
         className={`${sectionsClassName} flex flex-col gap-[20px]`}
       >
         <div className="p-[20px 30px 0 30px] flex items-center justify-between gap-[50px]">
-          <ActionButtons />
+          <ActionButtons productId={id} />
 
           {+discount_price > 0 && (
             <Badge

@@ -15,12 +15,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useAppSelector } from "@/lib/hooks";
+import { getWishList } from "@/utils/wishList/getWishList";
+import { manageWishList } from "@/utils/wishList/manageWishList";
 import { ClipboardCopy, GitCompareArrows, Heart, Share2 } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const ActionButtons = () => {
+const ActionButtons = ({ productId }: { productId: number }) => {
   const productShareLink = `${process.env.NEXT_PUBLIC_BASE_URL}${usePathname()}`;
 
   const [shareLinkCopied, setCopiedLinkStatus] = useState(false);
@@ -31,6 +33,9 @@ const ActionButtons = () => {
   const { name } = useAppSelector(
     (state) => state.productSingle.productData as IProduct,
   );
+
+  const wishList = getWishList();
+  const isItemWishListed = wishList.includes(productId);
 
   const socialsShare = [
     {
@@ -108,7 +113,16 @@ const ActionButtons = () => {
       tooltipContent: languageData.productSingle.share,
     },
     {
-      icon: <Heart size={20} />,
+      icon: (
+        <Heart
+          size={20}
+          onClick={(e) => {
+            manageWishList(productId, e);
+          }}
+        />
+      ),
+      isWishList: true,
+
       tooltipContent: languageData.productSingle.like,
     },
     {
@@ -122,7 +136,9 @@ const ActionButtons = () => {
       {actionButtonIcons.map((item, idx) => (
         <TooltipProvider key={idx} delayDuration={0}>
           <Tooltip>
-            <TooltipTrigger className="flex h-[35px] w-[35px] cursor-pointer items-center justify-center rounded-[50%] bg-white transition hover:bg-primary hover:text-white">
+            <TooltipTrigger
+              className={`${item.isWishList && isItemWishListed ? "wishListed" : ""} flex h-[35px] w-[35px] cursor-pointer items-center justify-center rounded-[50%] bg-white transition hover:bg-primary hover:text-white`}
+            >
               {item.icon}
             </TooltipTrigger>
             <TooltipContent

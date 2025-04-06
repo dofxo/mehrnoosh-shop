@@ -2,18 +2,32 @@ import { langType } from "../../langs";
 import { IProduct } from "../../product/[id]/Product";
 import { Button } from "@/components/ui/button";
 import { useAppSelector } from "@/lib/hooks";
+import { manageWishList } from "@/utils/wishList/manageWishList";
 import { X } from "lucide-react";
 import Image from "next/image";
+import { useRef } from "react";
 
 const WishListProduct = ({ productData }: { productData: IProduct }) => {
   const { languageData, currentLanguage } = useAppSelector(
     (state) => state.language,
   );
 
+  const productRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="flex items-center justify-between gap-3 border-b border-background px-[10px] py-[25px] max-[800px]:flex-col">
+    <div
+      ref={productRef}
+      className="flex items-center justify-between gap-3 border-b border-background px-[10px] py-[25px] max-[800px]:flex-col"
+    >
       <div className="flex min-h-[30px] min-w-[30px] cursor-pointer items-center justify-center rounded-[50%] bg-[#ffd0d0] max-[800px]:self-start">
-        <X color="red" size={15} />
+        <X
+          color="red"
+          size={15}
+          onClick={() => {
+            manageWishList(productData.id);
+            productRef?.current?.remove();
+          }}
+        />
       </div>
       <div className="min-h-[60px] min-w-[60px] items-center justify-center !rounded-[50%] bg-white shadow-[0_2px_25px_#29295e14] max-[800px]:flex min-[800px]:hidden">
         <Image
