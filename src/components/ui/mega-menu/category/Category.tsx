@@ -8,9 +8,17 @@ import { GiLipstick, GiVacuumCleaner, GiSmallFire } from "react-icons/gi";
 export default function MegaMenuCategory({
   currentLanguage,
   category,
+  products,
 }: MegaMenuCategoryProps) {
   const categoryText =
     currentLanguage === "fa" ? category.fa[0] : category.en[0];
+
+  // TODO: change prop type later
+  const currentCategoryProducts = products.productsData.filter(
+    (product: any) => product.category.en[0] === category.en[0],
+  );
+
+  console.log(currentCategoryProducts);
 
   const categoryIconObject: Record<string, React.ReactElement> = {
     "laptop and computer": <LaptopMinimal />,
@@ -28,8 +36,12 @@ export default function MegaMenuCategory({
       <MenuTrigger asChild>
         <MegaMenuTrigger icon={categoryIcon} text={categoryText} />
       </MenuTrigger>
-      <MenuContent className="w-[100vw] max-w-container rounded-primary bg-secondary p-[30px] text-black shadow-none">
-        <span>some content here!</span>
+      <MenuContent dir={currentLanguage === "fa" ? "rtl" : "ltr"} className="mt-10 w-[100vw] max-w-container rounded-primary bg-white p-[30px] text-black shadow-none">
+        {/* TODO: change prop type later */}
+        {currentCategoryProducts.map((item: any) => {
+          const itemName = item.name[currentLanguage];
+          return <div>{itemName}</div>;
+        })}
       </MenuContent>
     </MenuRoot>
   );

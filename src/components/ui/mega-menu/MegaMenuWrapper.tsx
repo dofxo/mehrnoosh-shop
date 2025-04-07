@@ -17,6 +17,7 @@ export default function MegaMenuWrapper() {
         <div className="flex gap-1">
           {categories.map((category, idx) => (
             <MegaMenuCategory
+              products={products}
               key={idx}
               category={category}
               currentLanguage={currentLanguage}
