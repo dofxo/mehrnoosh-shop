@@ -15,8 +15,6 @@ const WhishList = () => {
     if (wishList.includes(item.id)) return item;
   }) as IProduct[];
 
-  console.log(wishList);
-
   return (
     <section className="container !mt-[20px] rounded-[25px] bg-white p-[30px]">
       <h1 className="flex items-center gap-3 text-2xl font-bold text-text-primary">
