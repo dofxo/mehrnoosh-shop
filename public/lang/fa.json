@@ -2,6 +2,10 @@
   "general": {
     "website_title": "وبسایت فروشگاهی مهرنوش"
   },
+  "landing": {
+    "top_categories": "برترین دسته بندی ها"
+  },
+
   "wishlist": {
     "title": "لیست علاقه مندی های من",
     "add_to_shopping_cart": "افزودن به سبد خرید",

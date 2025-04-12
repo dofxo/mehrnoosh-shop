@@ -2,6 +2,9 @@
   "general": {
     "website_title": "Mehrnoosh Shop"
   },
+  "landing": {
+    "top_categories": "Top Categories"
+  },
   "wishlist": {
     "title": "My Wishlist",
     "add_to_shopping_cart": "add to shopping cart",
