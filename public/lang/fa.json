@@ -2,6 +2,11 @@
   "general": {
     "website_title": "وبسایت فروشگاهی مهرنوش"
   },
+  "wishlist": {
+    "title": "لیست علاقه مندی های من",
+    "add_to_shopping_cart": "افزودن به سبد خرید",
+    "no_wishlist_item_found": "محصولی در لیست علاقه مندی ها وجود ندارد"
+  },
   "productSingle": {
     "compare": "مقایسه",
     "share": "اشتراک گذاری",

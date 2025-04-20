@@ -40,7 +40,7 @@ export default function ProductPageClient({
   }
 
   return (
-    <main className="container flex flex-col gap-[65px] py-[20px]">
+    <main className="container flex flex-col gap-[65px] py-[20px] pb-[100px]">
       <ProductInfo />
       <ProductCons />
       <RatingDetails />

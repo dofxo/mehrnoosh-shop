@@ -15,13 +15,22 @@
     -moz-appearance: textfield;
   }
 
-// override svg sizes from lucid
-.\[\&_svg\]\:size-4 svg {
-  width: 1.5rem !important;
-  height: 1.5rem !important;
+  // override svg sizes from lucid
+  .\[\&_svg\]\:size-4 svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+
+
 }
 
-
+// remove number input arrows
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 @layer base {
@@ -33,4 +42,9 @@
     @apply bg-background text-foreground;
   }
 
+}
+
+.wishListed {
+  background-color: #e11659;
+  color: #fff;
 }

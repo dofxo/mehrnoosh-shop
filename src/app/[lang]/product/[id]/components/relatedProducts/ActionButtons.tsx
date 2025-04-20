@@ -8,6 +8,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useAppSelector } from "@/lib/hooks";
+import { getWishList } from "@/utils/wishList/getWishList";
+import { manageWishList } from "@/utils/wishList/manageWishList";
 import { Eye, GitCompareArrows, Heart, ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -16,6 +18,13 @@ const ActionButtons = ({ productData }: { productData: IProduct }) => {
     (state) => state.language,
   );
   const router = useRouter();
+
+  const soldPercentage = Math.round(
+    (+productData.sold_amount * 100) / +productData.quantity,
+  );
+
+  const wishList = getWishList();
+  const isItemWishListed = wishList.includes(productData.id);
 
   const actionButtonIcons = [
     {
@@ -29,7 +38,15 @@ const ActionButtons = ({ productData }: { productData: IProduct }) => {
     },
 
     {
-      icon: <Heart size={15} />,
+      icon: (
+        <Heart
+          size={15}
+          onClick={(e) => {
+            manageWishList(productData.id, e);
+          }}
+        />
+      ),
+      isWishList: true,
       tooltipContent: languageData.productSingle.like,
     },
     {
@@ -38,7 +55,7 @@ const ActionButtons = ({ productData }: { productData: IProduct }) => {
     },
     {
       isNotActionButton: true,
-      tooltipContent: 43,
+      tooltipContent: soldPercentage,
     },
 
     {
@@ -54,7 +71,9 @@ const ActionButtons = ({ productData }: { productData: IProduct }) => {
           return (
             <TooltipProvider key={idx} delayDuration={0}>
               <Tooltip>
-                <TooltipTrigger className="flex h-[35px] w-[35px] cursor-pointer items-center justify-center rounded-[50%] bg-secondary transition hover:bg-primary hover:text-white">
+                <TooltipTrigger
+                  className={`${item.isWishList && isItemWishListed ? "wishListed" : ""} flex h-[35px] w-[35px] cursor-pointer items-center justify-center rounded-[50%] bg-secondary transition hover:bg-primary hover:text-white`}
+                >
                   {item.icon}
                 </TooltipTrigger>
                 <TooltipContent

@@ -9,13 +9,13 @@ import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
 const ProductImages = () => {
-  const { images, quantity, sold_amount, price, discount_price } =
+  const { images, quantity, id, sold_amount, price, discount_price } =
     useAppSelector((state) => state.productSingle.productData as IProduct);
 
   const sectionsClassName = "bg-background rounded-[25px] p-[30px]";
 
   const discountPercentage = Math.round(100 - (+discount_price * 100) / +price);
-  const soldPercentage = (+sold_amount * 100) / +quantity;
+  const soldPercentage = Math.round((+sold_amount * 100) / +quantity);
 
   const { currentLanguage, languageData } = useAppSelector(
     (state) => state.language,
@@ -58,18 +58,18 @@ const ProductImages = () => {
         className={`${sectionsClassName} flex flex-col gap-[20px]`}
       >
         <div className="p-[20px 30px 0 30px] flex items-center justify-between gap-[50px]">
-          <ActionButtons />
+          <ActionButtons productId={id} />
 
           {+discount_price > 0 && (
             <Badge
               variant="default"
-              className="primary-box-shadow p-[6px 15px] h-[35px] rounded-[90px] text-[15px]"
+              className="primary-box-shadow h-[35px] rounded-[90px] px-[15px] py-[6px] text-[15px] max-[930px]:h-[50px]"
             >
               {discountPercentage}% {languageData.productSingle.discount}
             </Badge>
           )}
         </div>
-        <div className="w-[310px] rounded-[25px] bg-white p-[15px]">
+        <div className="w-[310px] rounded-[25px] bg-white p-[15px] max-[930px]:w-full">
           <Slider
             {...topSliderSettings}
             asNavFor={nav2 ?? undefined} // Link to the bottom slider
@@ -87,7 +87,7 @@ const ProductImages = () => {
             ))}
           </Slider>
         </div>
-        <div className="bottom-slider w-[310px] rounded-[25px] bg-white p-[15px]">
+        <div className="bottom-slider w-[310px] rounded-[25px] bg-white p-[15px] max-[930px]:w-full">
           <Slider
             {...bottomSliderSettings}
             asNavFor={nav1 ?? undefined} // Link to the top slider

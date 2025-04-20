@@ -1,5 +1,6 @@
 import languageReducer from "./features/language/languageSlice";
 import productSingleReducer from "./features/productSingle/productSingleSlice";
+import productsSlice from "./features/productsData/productsSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const makeStore = () => {
@@ -7,6 +8,7 @@ export const makeStore = () => {
     reducer: {
       language: languageReducer,
       productSingle: productSingleReducer,
+      productsData: productsSlice,
     },
   });
 };
