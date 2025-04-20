@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import MegaMenuTrigger from "@/components/ui/mega-menu/mega-menu-trigger/MegaMenuTrigger";
 import { MenuContent, MenuRoot, MenuTrigger } from "@/components/ui/menu";
 import { Skeleton } from "@/components/ui/skeleton";
+import { IProduct } from "@/app/[lang]/product/[id]/Product";
 import { Smartphone, LaptopMinimal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,15 +13,15 @@ import { GiLipstick, GiVacuumCleaner, GiSmallFire } from "react-icons/gi";
 export default function MegaMenuCategory({
   currentLanguage,
   category,
-	products,
-	language
+  products,
+  language,
 }: MegaMenuCategoryProps) {
   const categoryText =
     currentLanguage === "fa" ? category.fa[0] : category.en[0];
 
   // TODO: change prop type later
   const currentCategoryProducts = products.productsData.filter(
-    (product: any) => product.category.en[0] === category.en[0],
+    (product: IProduct) => product.category.en[0] === category.en[0],
   );
 
   const slicedProducts = currentCategoryProducts.slice(0, 8);
@@ -43,9 +44,9 @@ export default function MegaMenuCategory({
       </MenuTrigger>
       <MenuContent
         dir={currentLanguage === "fa" ? "rtl" : "ltr"}
-        className="mt-10 hidden w-[100vw] max-w-container flex-col justify-start gap-2 rounded-primary bg-white p-[30px] text-black shadow-none lg:flex"
+        className="mt-10 hidden w-[100vw] flex-col justify-start gap-2 rounded-primary bg-white p-[30px] text-black shadow-none lg:flex"
       >
-        <div className="flex flex-row flex-wrap items-center gap-2">
+        <div className="flex max-w-container flex-row flex-wrap items-center gap-2">
           {/* TODO: change prop type later */}
           {slicedProducts.map((item: any, idx: number) => {
             const itemName = item.name[currentLanguage];

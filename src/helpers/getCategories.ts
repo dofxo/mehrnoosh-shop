@@ -1,4 +1,4 @@
-import { IProductData } from "@/lib/features/productSingle/productSingleSlice";
+import { IProductData } from "@/lib/features/productsData/productsSlice";
 
 export type CategoryType = {
   en: string[];

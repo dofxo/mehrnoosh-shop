@@ -10,7 +10,7 @@ export default function MegaMenuWrapper() {
   const { currentLanguage, languageData } = useAppSelector(
     (state) => state.language,
   );
-  const products = useAppSelector((state) => state.productSingle);
+  const products = useAppSelector((state) => state.productsData);
   const categories = getCategories(products);
 
   return (

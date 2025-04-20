@@ -6,6 +6,7 @@ import { CategoryType } from "@/helpers/getCategories";
 import { useAppSelector } from "@/lib/hooks";
 import { Sidebar } from "flowbite-react";
 import { Smartphone, LaptopMinimal } from "lucide-react";
+import Link from "next/link";
 import { GiLipstick, GiVacuumCleaner, GiSmallFire } from "react-icons/gi";
 
 export default function SidebarMenuItems() {
@@ -13,7 +14,7 @@ export default function SidebarMenuItems() {
     (state) => state.language.currentLanguage,
   ) as "en" | "fa";
 
-  const products = useAppSelector((state) => state.productSingle);
+  const products = useAppSelector((state) => state.productsData);
   const categories = getCategories(products);
 
   const categoryIconObject: Record<string, React.ElementType> = {
@@ -36,7 +37,7 @@ export default function SidebarMenuItems() {
       // wrap around Link component
       return (
         <Sidebar.Item icon={Icon} key={idx} href="#">
-          {categoryText}
+          <Link href="#">{categoryText}</Link>
         </Sidebar.Item>
       );
     });
