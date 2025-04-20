@@ -7,7 +7,9 @@ import { useAppSelector } from "@/lib/hooks";
 import { ShoppingBasket as ShoppingBasketIcon } from "lucide-react";
 
 export default function MegaMenuWrapper() {
-  const { currentLanguage } = useAppSelector((state) => state.language);
+  const { currentLanguage, languageData } = useAppSelector(
+    (state) => state.language,
+  );
   const products = useAppSelector((state) => state.productSingle);
   const categories = getCategories(products);
 
@@ -21,6 +23,7 @@ export default function MegaMenuWrapper() {
               key={idx}
               category={category}
               currentLanguage={currentLanguage}
+              language={languageData}
             />
           ))}
         </div>
