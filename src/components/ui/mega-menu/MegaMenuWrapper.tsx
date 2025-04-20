@@ -7,15 +7,25 @@ import { useAppSelector } from "@/lib/hooks";
 import { ShoppingBasket as ShoppingBasketIcon } from "lucide-react";
 
 export default function MegaMenuWrapper() {
-  const language = useAppSelector((state) => state.language.languageData);
-  const products = useAppSelector((state) => state.productSingle);
+  const { currentLanguage, languageData } = useAppSelector(
+    (state) => state.language,
+  );
+  const products = useAppSelector((state) => state.productsData);
   const categories = getCategories(products);
 
   return (
     <section className="hidden bg-white p-[15px] pt-[20px] lg:block">
       <div className="container flex flex-row items-center justify-between">
         <div className="flex gap-1">
-          <MegaMenuCategory language={language} />
+          {categories.map((category, idx) => (
+            <MegaMenuCategory
+              products={products}
+              key={idx}
+              category={category}
+              currentLanguage={currentLanguage}
+              language={languageData}
+            />
+          ))}
         </div>
         <div className="flex w-[20%] max-w-[200px] flex-row items-center justify-between gap-1 p-[10px]">
           <ShoppingBasketSheet>

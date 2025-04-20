@@ -70,7 +70,7 @@ const SheetContent = React.forwardRef<
       <SheetPrimitive.Title className="sr-only">
         Sheet Title
       </SheetPrimitive.Title>
-      <div className="absolute right-4 top-4 z-10 cursor-pointer rounded-primary bg-primary px-2 pt-[7px] text-white transition hover:bg-primary-700">
+      <div className="absolute right-4 top-4 z-10 cursor-pointer rounded-primary bg-primary px-2 pt-[7.3px] text-white transition hover:bg-primary-700">
         <SheetPrimitive.Close className="rounded-sm ring-offset-background disabled:pointer-events-none data-[state=open]:bg-white">
           <X className="h-6 w-6 text-white" />
           <span className="sr-only">Close</span>

@@ -1,4 +1,9 @@
-import { IProductData } from "@/lib/features/productSingle/productSingleSlice";
+import { IProductData } from "@/lib/features/productsData/productsSlice";
+
+export type CategoryType = {
+  en: string[];
+  fa: string[];
+};
 
 export const getCategories = (products: IProductData) => {
   const categories = Array.from(
