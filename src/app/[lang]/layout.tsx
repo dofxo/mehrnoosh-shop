@@ -1,6 +1,6 @@
 import StoreProvider from "../StoreProvider";
 import "../globals.scss";
-import { langType } from "./langs";
+import { langType } from "@/app/[lang]/langs";
 import InitProducts from "@/components/InitProducts";
 import RemoveDarkClass from "@/components/RemoveDarkClass";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
@@ -20,13 +20,53 @@ export async function generateMetadata({
 }: {
   params: { lang: langType };
 }): Promise<Metadata> {
-  const { lang } = await params;
-  const language = await getLanguage(lang);
+  const language = await getLanguage(params.lang);
+  const isFa = params.lang === "fa";
 
-  // Dynamically set metadata based on language
   return {
     title: language.general.website_title,
-    description: language.general.website_title,
+    description: language.general.website_description,
+    keywords: language.general.keywords,
+    authors: [
+      { name: "Majid Kargar", url: "https://github.com/fulcain" },
+      { name: "Mohammad Kargar", url: "https://github.com/dofxo" },
+    ],
+    openGraph: {
+      title: language.general.website_title,
+      description: language.general.website_description,
+      url: "https://mehrnoosh.com",
+      siteName: "Mehrnoosh",
+      images: [
+        {
+          // TODO: add a image in database and replace here
+          url: "https://mehrnoosh.com/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Mehrnoosh Online Shopping",
+        },
+      ],
+      locale: isFa ? "fa_IR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: language.general.website_title,
+      description: language.general.website_description,
+      site: "@mehrnooshshop",
+      // TODO: add a image in database and replace here
+      images: ["https://mehrnoosh.com/og-image.jpg"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    themeColor: "#ffffff",
+    viewport: "width=device-width, initial-scale=1.0",
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
   };
 }
 
@@ -37,7 +77,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: langType };
 }) {
-  const { lang } = await params;
+  const { lang } = params;
   const language = await getLanguage(lang);
 
   return (
