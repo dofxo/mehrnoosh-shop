@@ -1,6 +1,8 @@
 {
   "general": {
-    "website_title": "وبسایت فروشگاهی مهرنوش"
+    "website_title": "وبسایت فروشگاهی مهرنوش",
+    "website_description": "فروشگاه مهرنوش - تجربه‌ای مدرن از خرید آنلاین",
+    "keywords": ["مهرنوش", "فروشگاه آنلاین", "فروشگاه مدرن"]
   },
   "landing": {
     "top_categories": "برترین دسته بندی ها",
@@ -85,7 +87,7 @@
     "house_equipments": "لوازم خانگی",
     "laptop_and_computer": "لپ تاپ و کامپیوتر",
     "cascading_menu": "منو آبشاری",
-	"more_button": "مشاهده بیشتر"
+    "more_button": "مشاهده بیشتر"
   },
   "shoppingBasket": {
     "empty_basket": "هیچ محصولی در سبد خرید نیست",

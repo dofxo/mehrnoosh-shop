@@ -1,6 +1,8 @@
 {
   "general": {
-    "website_title": "Mehrnoosh Shop"
+    "website_title": "Mehrnoosh Shop",
+    "website_description": "Mehrnoosh Shop - A modern shopping experience",
+    "keywords": ["Mehrnoosh", "Online Shop", "Modern Ecommerce"]
   },
   "landing": {
     "top_categories": "Top Categories",
