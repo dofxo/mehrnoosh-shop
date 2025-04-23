@@ -1,5 +1,6 @@
 @use "./[lang]/product/[id]/product";
 @use "../../src/components/loader/loader";
+@use "../../src/components/loader/categoryLoader";
 
 @tailwind base;
 @tailwind components;

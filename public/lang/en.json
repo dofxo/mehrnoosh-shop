@@ -3,7 +3,8 @@
     "website_title": "Mehrnoosh Shop"
   },
   "landing": {
-    "top_categories": "Top Categories"
+    "top_categories": "Top Categories",
+    "product": "Product"
   },
   "wishlist": {
     "title": "My Wishlist",
