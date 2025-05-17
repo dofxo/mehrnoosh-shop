@@ -6,7 +6,12 @@
   },
   "landing": {
     "top_categories": "Top Categories",
-    "product": "Product"
+    "product": "Product",
+    "firsts_in_iran": "Firsts in Iran",
+    "ask_best_from_us": "Ask best from us",
+    "best_products_in_iran": "Best products in Iran",
+    "discount_only_today": "discounts only for today",
+    "up_to_90_discount": "Discounts up to 90%"
   },
   "wishlist": {
     "title": "My Wishlist",
