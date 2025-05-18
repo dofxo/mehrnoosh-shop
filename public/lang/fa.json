@@ -8,7 +8,6 @@
     "top_categories": "برترین دسته بندی ها",
     "product": "کالا"
   },
-
   "wishlist": {
     "title": "لیست علاقه مندی های من",
     "add_to_shopping_cart": "افزودن به سبد خرید",
@@ -92,5 +91,11 @@
   "shoppingBasket": {
     "empty_basket": "هیچ محصولی در سبد خرید نیست",
     "go_to_shop": "به فروشگاه بروید"
+  },
+  "shop": {
+    "title": "فروشگاه",
+    "show": "نمایش",
+    "from": "از",
+    "result": "نتیجه"
   }
 }

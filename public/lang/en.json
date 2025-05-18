@@ -91,5 +91,11 @@
   "shoppingBasket": {
     "empty_basket": "there is no items in shopping basket",
     "go_to_shop": "go to shop"
+  },
+  "shop": {
+    "title": "shop",
+    "show": "showing",
+    "from": "from",
+    "result": "results"
   }
 }
