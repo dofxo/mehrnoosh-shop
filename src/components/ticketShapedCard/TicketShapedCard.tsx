@@ -1,8 +1,11 @@
 "use client";
 
-import tailwindConfig from "../../tailwind.config.ts";
+import tailwindConfig from "../../../tailwind.config.ts";
+import DiscountIndicator from "./DiscountIndicator";
+import Divider from "./Divider.tsx";
 import { useAppSelector } from "@/lib/hooks";
 import Image from "next/image.js";
+import Slider from "react-slick";
 import resolveConfig from "tailwindcss/resolveConfig";
 
 const fullConfig = resolveConfig(tailwindConfig);
@@ -13,29 +16,23 @@ const TicketShapedCard = ({ position }: { position: string }) => {
 
   const { languageData } = useAppSelector((store) => store.language);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <section
       style={{ backgroundColor: position === "top" ? "#fff" : primaryColor }}
-      className="relative overflow-hidden rounded-[25px] px-[40px] py-[25px]"
+      className="relative grid grid-cols-2 overflow-hidden rounded-[25px] px-[40px] py-[25px]"
     >
-      <div
-        className="bottom-right-border absolute bottom-[20px] right-[-1.5px] h-[35px] w-[5px] rounded-[20px]"
-        style={{
-          backgroundColor: position === "top" ? primaryColor : "#fff",
-          boxShadow: `0px 5px 15px ${primaryColor}`,
-        }}
-      />
-      <div className="divier absolute bottom-0 right-[40%] top-0 w-[50px]">
-        <div
-          className="absolute top-[-25px] z-10 h-[50px] w-[50px] rounded-[50%]"
-          style={{ backgroundColor: bgColor }}
-        />
-        <div
-          className="absolute bottom-[-25px] z-10 h-[50px] w-[50px] rounded-[50%]"
-          style={{ backgroundColor: bgColor }}
-        />
-        <div className="absolute bottom-0 left-0 top-0 w-[25px] border-r border-dashed" />
-      </div>
+      <DiscountIndicator primaryColor={primaryColor} position={position} />
+      <Divider bgColor={bgColor} />
+
+      {/*Description*/}
       <div className="description flex flex-col gap-[30px]">
         <div className="title flex items-center gap-5">
           <div className="image flex items-center justify-center rounded-[50%] bg-white p-2">
@@ -75,7 +72,17 @@ const TicketShapedCard = ({ position }: { position: string }) => {
           {languageData.landing.up_to_90_discount}
         </span>
       </div>
-      <div className="products"></div>
+
+      {/*Products*/}
+      <div className="products">
+        <Slider {...settings}>
+          <div>test</div>
+          <div>test</div>
+          <div>test</div>
+          <div>test</div>
+          <div>test</div>
+        </Slider>
+      </div>
     </section>
   );
 };
