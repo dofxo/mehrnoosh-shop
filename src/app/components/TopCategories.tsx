@@ -3,7 +3,7 @@
 import { langType } from "../[lang]/langs";
 import { IProduct } from "../[lang]/product/[id]/Product";
 import Title from "@/components/Title";
-import { categoriesProducts } from "@/helpers/categoriesProducts";
+import { getCategorizedProducts } from "@/helpers/getCategorizedProducts";
 import { getCategoryIcon } from "@/helpers/getCategoryIcon";
 import { getCategoryLinks } from "@/helpers/getCategoryLinks";
 import { useAppSelector } from "@/lib/hooks";
@@ -20,7 +20,7 @@ const TopCategories = () => {
 
   useEffect(() => {
     (async () => {
-      const categorizedData = await categoriesProducts(
+      const categorizedData = await getCategorizedProducts(
         productsData as IProduct[],
         currentLanguage as langType,
       );

@@ -1,7 +1,7 @@
 import BannersOne from "../components/BannersOne";
 import BannersTwo from "../components/BannersTwo";
 import TopCategories from "../components/TopCategories";
-import TicketShapedCard from "@/components/TicketShapedCard/TicketShapedCard";
+import TicketShapedCard from "@/components/ticketShapedCard/TicketShapedCard";
 
 export default async function Home() {
   return (
