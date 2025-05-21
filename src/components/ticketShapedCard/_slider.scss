@@ -1,0 +1,25 @@
+#ticket-shaped-card {
+  .slick-arrow {
+    top: 90px !important;
+  }
+
+  .slick-next {
+    right: -35% !important
+  }
+
+  .slick-prev {
+    left: 125% !important;
+  }
+
+}
+
+#ticket-shaped-card.bottom-pos {
+
+  .slick-prev,
+  .slick-next {
+
+    &::before {
+      color: white !important
+    }
+  }
+}

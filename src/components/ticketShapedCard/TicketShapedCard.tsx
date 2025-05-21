@@ -1,10 +1,13 @@
 "use client";
 
-import tailwindConfig from "../../../tailwind.config.ts";
+import tailwindConfig from "../../../tailwind.config";
 import DiscountIndicator from "./DiscountIndicator";
 import Divider from "./Divider.tsx";
+import { getCategoryData } from "@/helpers/getCategoryData";
 import { useAppSelector } from "@/lib/hooks";
 import Image from "next/image.js";
+import Link from "next/link";
+import { useRef } from "react";
 import Slider from "react-slick";
 import resolveConfig from "tailwindcss/resolveConfig";
 
@@ -14,20 +17,40 @@ const TicketShapedCard = ({ position }: { position: string }) => {
   const primaryColor = fullConfig.theme.colors.primary.DEFAULT;
   const bgColor = fullConfig.theme.colors.background.DEFAULT;
 
-  const { languageData } = useAppSelector((store) => store.language);
+  const { languageData, currentLanguage } = useAppSelector(
+    (store) => store.language,
+  );
+
+  const categoryData = useRef<any[]>([]);
 
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 4,
   };
+
+  // decide on section position to show related data
+  const category =
+    position === "top"
+      ? currentLanguage === "fa"
+        ? "موبایل و تبلت"
+        : "phone and tablet"
+      : currentLanguage === "fa"
+        ? "سرخ کن"
+        : "fry";
+
+  // get data of the categories
+  getCategoryData(category).then((data) => (categoryData.current = data));
 
   return (
     <section
-      style={{ backgroundColor: position === "top" ? "#fff" : primaryColor }}
-      className="relative grid grid-cols-2 overflow-hidden rounded-[25px] px-[40px] py-[25px]"
+      id="ticket-shaped-card"
+      style={{
+        backgroundColor: position === "top" ? "#fff" : primaryColor,
+        direction: "rtl",
+      }}
+      className={`relative grid grid-cols-2 overflow-hidden rounded-[25px] px-[40px] py-[25px] ${position === "top" ? "top-pos" : "bottom-pos"}`}
     >
       <DiscountIndicator primaryColor={primaryColor} position={position} />
       <Divider bgColor={bgColor} />
@@ -75,13 +98,24 @@ const TicketShapedCard = ({ position }: { position: string }) => {
 
       {/*Products*/}
       <div className="products">
-        <Slider {...settings}>
-          <div>test</div>
-          <div>test</div>
-          <div>test</div>
-          <div>test</div>
-          <div>test</div>
-        </Slider>
+        {categoryData.current.length > 0 ? (
+          <Slider {...settings}>
+            {categoryData.current.map((item, idx) => (
+              <Link
+                href={`/product/${item.id}`}
+                className="group !flex !items-center !justify-center rounded-[50%] p-[10px]"
+                key={idx}
+              >
+                <img
+                  className={`w-[100px] p-[10px] transition group-hover:scale-110 ${position === "bottom" ? "rounded-[50%]" : ""}`}
+                  src={item.images[0]}
+                />
+              </Link>
+            ))}
+          </Slider>
+        ) : (
+          <span className="small-loader" />
+        )}
       </div>
     </section>
   );
