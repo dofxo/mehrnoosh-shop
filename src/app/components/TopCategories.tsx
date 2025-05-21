@@ -3,9 +3,9 @@
 import { langType } from "../[lang]/langs";
 import { IProduct } from "../[lang]/product/[id]/Product";
 import Title from "@/components/Title";
-import { categoriesProducts } from "@/helpers/categoriesProducts";
-import { getCategoryFilters } from "@/helpers/getCategoryFilter";
+import { getCategorizedProducts } from "@/helpers/getCategorizedProducts";
 import { getCategoryIcon } from "@/helpers/getCategoryIcon";
+import { getCategoryLinks } from "@/helpers/getCategoryLinks";
 import { useAppSelector } from "@/lib/hooks";
 import { useEffect, useState } from "react";
 
@@ -20,7 +20,7 @@ const TopCategories = () => {
 
   useEffect(() => {
     (async () => {
-      const categorizedData = await categoriesProducts(
+      const categorizedData = await getCategorizedProducts(
         productsData as IProduct[],
         currentLanguage as langType,
       );
@@ -48,7 +48,7 @@ const TopCategories = () => {
               <a
                 className="group flex h-[250px] w-[150px] cursor-pointer flex-col items-center justify-evenly gap-2 rounded-[15px] bg-white p-[10px] shadow-[0px_2px_15px_#73636317]"
                 key={idx}
-                href={getCategoryFilters(item[0])}
+                href={getCategoryLinks(item[0])}
               >
                 <span className="mb-[40px] flex items-center justify-center rounded-[50%] bg-gray-300 p-[15px] transition group-hover:scale-105">
                   {getCategoryIcon(item[0])}

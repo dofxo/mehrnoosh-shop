@@ -1,4 +1,4 @@
-const categoryFilters: Record<string, string> = {
+const categoryLinks: Record<string, string> = {
   "لپ تاپ و کامپیوتر": "#",
   "laptop and computer": "#",
 
@@ -15,6 +15,6 @@ const categoryFilters: Record<string, string> = {
   "phone and tablet": "#",
 };
 
-export const getCategoryFilters = (categoryName: string) => {
-  return categoryFilters[categoryName];
+export const getCategoryLinks = (categoryName: string) => {
+  return categoryLinks[categoryName];
 };
