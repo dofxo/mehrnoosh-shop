@@ -5,19 +5,18 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { filterOptions } from "@/configs/filterOptions";
 import { useAppSelector } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-export default function Sort({ productsAmount }: SortProps) {
+export default function Sort({
+  productsAmount,
+  currentFilter,
+  setCurrentFilter,
+  handleCurrentFilterChange,
+}: SortProps) {
   const language = useAppSelector((state) => state.language.languageData);
   const currentLanguage = useAppSelector(
     (state) => state.language.currentLanguage,
   ) as "en" | "fa";
-
-  const [currentFilter, setCurrentFilter] = useState("default");
-
-  const handleCurrentFilterChange = (value: string) => {
-    setCurrentFilter(value);
-  };
 
   // TODO: change this later
   useEffect(() => {
