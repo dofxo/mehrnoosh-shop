@@ -41,7 +41,7 @@ const TopCategories = () => {
         image="/images/landing/square-ellipsis.png"
         color={{ imageBackground: "#f2f6fc" }}
       />
-      <div className="categories flex justify-evenly gap-4">
+      <div className="categories flex flex-wrap justify-evenly gap-4">
         {Object.entries(products).length > 0 ? (
           Object.entries(products).map((item, idx) => {
             return (
