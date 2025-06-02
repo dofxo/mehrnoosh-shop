@@ -10,6 +10,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { useAppSelector } from "@/lib/hooks";
 
 export default function Paginate({
   currentPage,
@@ -22,12 +23,19 @@ export default function Paginate({
     }
   };
 
+  const currentLanguage = useAppSelector(
+    (state) => state.language.currentLanguage,
+  );
+
+  const isFa = currentLanguage === "fa";
+
   return (
     <Pagination>
-      <PaginationContent>
+      <PaginationContent dir="ltr">
         <PaginationItem>
           <PaginationPrevious
             href="#"
+            text={isFa ? "قبلی" : "Previous"}
             onClick={(e) => {
               e.preventDefault();
               handlePageClick(currentPage - 1);
@@ -53,6 +61,7 @@ export default function Paginate({
         <PaginationItem>
           <PaginationNext
             href="#"
+            text={isFa ? "بعدی" : "Next"}
             onClick={(e) => {
               e.preventDefault();
               handlePageClick(currentPage + 1);
