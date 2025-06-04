@@ -35,7 +35,6 @@ export default function Paginate({
           <PaginationItem>
             <PaginationPrevious
               href="#"
-              text={isFa ? "قبلی" : "Previous"}
               onClick={(e) => {
                 e.preventDefault();
                 handlePageClick(currentPage - 1);
@@ -63,7 +62,6 @@ export default function Paginate({
           <PaginationItem>
             <PaginationNext
               href="#"
-              text={isFa ? "بعدی" : "Next"}
               onClick={(e) => {
                 e.preventDefault();
                 handlePageClick(currentPage + 1);
