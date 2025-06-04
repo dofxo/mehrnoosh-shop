@@ -30,6 +30,12 @@ export default function Home() {
     currentPage * productsPerPage,
   );
 
+  const startIndex = (currentPage - 1) * productsPerPage + 1;
+  const endIndex = Math.min(
+    currentPage * productsPerPage,
+    products?.length || 0,
+  );
+
   return (
     <main className="container !mt-[100px] flex flex-row gap-8 py-[20px]">
       <div className="flex w-[20%] flex-col gap-2">
@@ -41,6 +47,8 @@ export default function Home() {
           setCurrentFilter={setCurrentFilter}
           handleCurrentFilterChange={handleCurrentFilterChange}
           productsAmount={products?.length}
+          startIndex={startIndex}
+          endIndex={endIndex}
         />
 
         {/* Product List */}
