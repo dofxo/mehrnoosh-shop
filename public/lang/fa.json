@@ -2,7 +2,11 @@
   "general": {
     "website_title": "وبسایت فروشگاهی مهرنوش",
     "website_description": "فروشگاه مهرنوش - تجربه‌ای مدرن از خرید آنلاین",
-    "keywords": ["مهرنوش", "فروشگاه آنلاین", "فروشگاه مدرن"]
+    "keywords": [
+      "مهرنوش",
+      "فروشگاه آنلاین",
+      "فروشگاه مدرن"
+    ]
   },
   "landing": {
     "top_categories": "برترین دسته بندی ها",
@@ -11,9 +15,9 @@
     "ask_best_from_us": "بهترین ها را از ما بخواهید",
     "best_products_in_iran": "بهترین محصولات ایران",
     "discount_only_today": "فقط امروز تخفیف داریم",
-    "up_to_90_discount": "تا 90% تخفیف ویژه"
+    "up_to_90_discount": "تا 90% تخفیف ویژه",
+    "footer_section_title": "برخی از ویژگی های ما"
   },
-
   "wishlist": {
     "title": "لیست علاقه مندی های من",
     "add_to_shopping_cart": "افزودن به سبد خرید",

@@ -2,7 +2,11 @@
   "general": {
     "website_title": "Mehrnoosh Shop",
     "website_description": "Mehrnoosh Shop - A modern shopping experience",
-    "keywords": ["Mehrnoosh", "Online Shop", "Modern Ecommerce"]
+    "keywords": [
+      "Mehrnoosh",
+      "Online Shop",
+      "Modern Ecommerce"
+    ]
   },
   "landing": {
     "top_categories": "Top Categories",
@@ -11,7 +15,8 @@
     "ask_best_from_us": "Ask best from us",
     "best_products_in_iran": "Best products in Iran",
     "discount_only_today": "discounts only for today",
-    "up_to_90_discount": "Discounts up to 90%"
+    "up_to_90_discount": "Discounts up to 90%",
+    "footer_section_title": "Some of our features"
   },
   "wishlist": {
     "title": "My Wishlist",
