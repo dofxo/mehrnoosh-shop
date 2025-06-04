@@ -7,10 +7,15 @@ import { useAppSelector } from "@/lib/hooks";
 import Image from "next/image";
 import { useState } from "react";
 
+// TODO: consider refactoring
 export default function Home() {
   const products = useAppSelector((state) => state.productsData.productsData);
   const [currentFilter, setCurrentFilter] = useState("default");
   const [currentPage, setCurrentPage] = useState(1);
+
+  const currentLanguage = useAppSelector(
+    (state) => state.language.currentLanguage,
+  );
 
   const productsPerPage = 9;
   const totalPages = products?.length
@@ -36,6 +41,8 @@ export default function Home() {
     products?.length || 0,
   );
 
+  const isFa = currentLanguage === "fa";
+
   return (
     <main className="container !mt-[100px] flex flex-row gap-8 py-[20px]">
       <div className="flex w-[20%] flex-col gap-2">
@@ -59,18 +66,18 @@ export default function Home() {
               key={idx}
             >
               <Image
-                alt={item.name.fa}
+                alt={item.name[currentLanguage as "en" | "fa"]}
                 src={item.images[0]}
                 width={214}
                 height={214}
                 className="py-5"
               />
-              <span>{item.name.fa}</span>
+              <span>{item.name[currentLanguage as "en" | "fa"]}</span>{" "}
             </div>
           ))}
         </section>
         {/* Pagination */}
-        {products?.length > productsPerPage && (
+        {products?.length && products?.length > productsPerPage && (
           <Paginate
             currentPage={currentPage}
             totalPages={totalPages}
