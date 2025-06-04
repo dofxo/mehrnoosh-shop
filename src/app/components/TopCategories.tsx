@@ -46,15 +46,17 @@ const TopCategories = () => {
           Object.entries(products).map((item, idx) => {
             return (
               <a
-                className="group flex h-[250px] w-[150px] cursor-pointer flex-col items-center justify-evenly gap-2 rounded-[15px] bg-white p-[10px] shadow-[0px_2px_15px_#73636317]"
+                className="group flex h-[80px] w-[100px] cursor-pointer flex-col items-center justify-evenly gap-2 rounded-[15px] bg-white p-[10px] shadow-[0px_2px_15px_#73636317] md:h-[250px] md:w-[150px]"
                 key={idx}
                 href={getCategoryLinks(item[0])}
               >
-                <span className="mb-[40px] flex items-center justify-center rounded-[50%] bg-gray-300 p-[15px] transition group-hover:scale-105">
+                <span className="mb-[40px] hidden items-center justify-center rounded-[50%] bg-gray-300 p-[15px] transition group-hover:scale-105 md:flex">
                   {getCategoryIcon(item[0])}
                 </span>
-                <h5 className="font-bold"> {item[0]}</h5>
-                <span className="rounded-[20px] bg-gray-200 px-[10px] py-[2px]">
+                <h5 className="text-[12px] font-bold md:text-[16px]">
+                  {item[0]}
+                </h5>
+                <span className="rounded-[20px] bg-gray-200 px-[10px] py-[2px] text-[12px] md:text-[16px]">
                   {item[1].length} {languageData.landing.product}
                 </span>
               </a>

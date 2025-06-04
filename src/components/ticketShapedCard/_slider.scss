@@ -13,6 +13,23 @@
 
 }
 
+@media screen and (max-width: 1024px) {
+  #ticket-shaped-card {
+    .slick-arrow {
+      top: -45px !important;
+    }
+
+    .slick-next {
+      left: 20px !important
+    }
+
+    .slick-prev {
+      left: -10px !important;
+    }
+  }
+
+}
+
 #ticket-shaped-card.bottom-pos {
 
   .slick-prev,

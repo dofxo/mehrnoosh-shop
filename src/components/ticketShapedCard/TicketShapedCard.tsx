@@ -2,7 +2,7 @@
 
 import tailwindConfig from "../../../tailwind.config";
 import DiscountIndicator from "./DiscountIndicator";
-import Divider from "./Divider.tsx";
+import Divider from "./Divider";
 import { getCategoryData } from "@/helpers/getCategoryData";
 import { useAppSelector } from "@/lib/hooks";
 import Image from "next/image.js";
@@ -28,6 +28,20 @@ const TicketShapedCard = ({ position }: { position: string }) => {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   // decide on section position to show related data
@@ -50,7 +64,7 @@ const TicketShapedCard = ({ position }: { position: string }) => {
         backgroundColor: position === "top" ? "#fff" : primaryColor,
         direction: "rtl",
       }}
-      className={`relative grid grid-cols-2 overflow-hidden rounded-[25px] px-[40px] py-[25px] ${position === "top" ? "top-pos" : "bottom-pos"}`}
+      className={`relative flex grid-cols-2 flex-col gap-5 overflow-hidden rounded-[25px] px-[40px] py-[25px] lg:grid lg:gap-0 ${position === "top" ? "top-pos" : "bottom-pos"}`}
     >
       <DiscountIndicator primaryColor={primaryColor} position={position} />
       <Divider bgColor={bgColor} />

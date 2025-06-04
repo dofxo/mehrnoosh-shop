@@ -1,6 +1,6 @@
 const Divider = ({ bgColor }: { bgColor: string }) => {
   return (
-    <div className="divier absolute bottom-0 right-[40%] top-0 w-[50px]">
+    <div className="divier absolute bottom-0 right-[40%] top-0 hidden w-[50px] lg:block">
       <div
         className="absolute top-[-25px] z-10 h-[50px] w-[50px] rounded-[50%]"
         style={{ backgroundColor: bgColor }}
