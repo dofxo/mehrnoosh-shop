@@ -16,7 +16,25 @@
     "best_products_in_iran": "بهترین محصولات ایران",
     "discount_only_today": "فقط امروز تخفیف داریم",
     "up_to_90_discount": "تا 90% تخفیف ویژه",
-    "footer_section_title": "برخی از ویژگی های ما"
+    "footer_section_title": "برخی از ویژگی های ما",
+    "footer_features": {
+      "free_post": {
+        "title": "ارسال رایگان",
+        "subtitle": "بدون هزینه اضافی"
+      },
+      "money_return": {
+        "title": "برگشت پول",
+        "subtitle": "برای اولین سفارش"
+      },
+      "privacy": {
+        "title": "حریم خصوصی",
+        "subtitle": "عدم ذخیره اطلاعات"
+      },
+      "quality_insurance": {
+        "title": "تضمین کیفیت",
+        "subtitle": "ضمانت برگشت کالا"
+      }
+    }
   },
   "wishlist": {
     "title": "لیست علاقه مندی های من",

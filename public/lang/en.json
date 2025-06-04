@@ -16,7 +16,25 @@
     "best_products_in_iran": "Best products in Iran",
     "discount_only_today": "discounts only for today",
     "up_to_90_discount": "Discounts up to 90%",
-    "footer_section_title": "Some of our features"
+    "footer_section_title": "Some of our features",
+    "footer_features": {
+      "free_post": {
+        "title": "Free Shipping",
+        "subtitle": "No extra cost"
+      },
+      "money_return": {
+        "title": "Money Back",
+        "subtitle": "For the first order"
+      },
+      "privacy": {
+        "title": "Privacy",
+        "subtitle": "No data storage"
+      },
+      "quality_insurance": {
+        "title": "Quality Guarantee",
+        "subtitle": "Return warranty"
+      }
+    }
   },
   "wishlist": {
     "title": "My Wishlist",
