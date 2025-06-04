@@ -4,7 +4,6 @@ import type { PaginateProps } from "./ShopPagination.d";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -32,16 +31,18 @@ export default function Paginate({
   return (
     <Pagination>
       <PaginationContent dir="ltr">
-        <PaginationItem>
-          <PaginationPrevious
-            href="#"
-            text={isFa ? "قبلی" : "Previous"}
-            onClick={(e) => {
-              e.preventDefault();
-              handlePageClick(currentPage - 1);
-            }}
-          />
-        </PaginationItem>
+        {currentPage > 1 && (
+          <PaginationItem>
+            <PaginationPrevious
+              href="#"
+              text={isFa ? "قبلی" : "Previous"}
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageClick(currentPage - 1);
+              }}
+            />
+          </PaginationItem>
+        )}
 
         {[...Array(totalPages)].map((_, index) => (
           <PaginationItem key={index}>
@@ -58,16 +59,18 @@ export default function Paginate({
           </PaginationItem>
         ))}
 
-        <PaginationItem>
-          <PaginationNext
-            href="#"
-            text={isFa ? "بعدی" : "Next"}
-            onClick={(e) => {
-              e.preventDefault();
-              handlePageClick(currentPage + 1);
-            }}
-          />
-        </PaginationItem>
+        {currentPage < totalPages && (
+          <PaginationItem>
+            <PaginationNext
+              href="#"
+              text={isFa ? "بعدی" : "Next"}
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageClick(currentPage + 1);
+              }}
+            />
+          </PaginationItem>
+        )}
       </PaginationContent>
     </Pagination>
   );
