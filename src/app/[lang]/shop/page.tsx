@@ -1,10 +1,11 @@
 "use client";
 
 import FilterCategories from "@/app/[lang]/shop/components/filter-categories/filerCategories";
+import Paginate from "@/app/[lang]/shop/components/pagination/ShopPagination";
 import Sort from "@/app/[lang]/shop/components/sort/sort";
 import { useAppSelector } from "@/lib/hooks";
+import Image from "next/image";
 import { useState } from "react";
-import Paginate from "@/app/[lang]/shop/components/pagination/ShopPagination";
 
 export default function Home() {
   const products = useAppSelector((state) => state.productsData.productsData);
@@ -26,7 +27,7 @@ export default function Home() {
 
   const paginatedProducts = products?.slice(
     (currentPage - 1) * productsPerPage,
-    currentPage * productsPerPage
+    currentPage * productsPerPage,
   );
 
   return (
@@ -43,10 +44,23 @@ export default function Home() {
         />
 
         {/* Product List */}
-        {paginatedProducts?.map((item, idx) => (
-          <div key={idx}>{item.name.fa}</div>
-        ))}
-
+        <section className="mt-10 grid grid-cols-3 gap-4">
+          {paginatedProducts?.map((item, idx) => (
+            <div
+              className="flex flex-col items-center justify-center gap-2 rounded-primary bg-white px-5 py-4"
+              key={idx}
+            >
+              <Image
+                alt={item.name.fa}
+                src={item.images[0]}
+                width={214}
+                height={214}
+                className="py-5"
+              />
+              <span>{item.name.fa}</span>
+            </div>
+          ))}
+        </section>
         {/* Pagination */}
         {products?.length > productsPerPage && (
           <Paginate
