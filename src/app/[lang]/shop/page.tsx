@@ -2,12 +2,11 @@
 
 import FilterCategories from "@/app/[lang]/shop/components/filter-categories/filerCategories";
 import Paginate from "@/app/[lang]/shop/components/pagination/ShopPagination";
+import ProductList from "@/app/[lang]/shop/components/products-list/ProductsList";
 import Sort from "@/app/[lang]/shop/components/sort/sort";
 import { useAppSelector } from "@/lib/hooks";
-import Image from "next/image";
 import { useState } from "react";
 
-// TODO: consider refactoring
 export default function Home() {
   const products = useAppSelector((state) => state.productsData.productsData);
   const [currentFilter, setCurrentFilter] = useState("default");
@@ -15,7 +14,7 @@ export default function Home() {
 
   const currentLanguage = useAppSelector(
     (state) => state.language.currentLanguage,
-  );
+  ) as "en" | "fa";
 
   const productsPerPage = 9;
   const totalPages = products?.length
@@ -41,8 +40,6 @@ export default function Home() {
     products?.length || 0,
   );
 
-  const isFa = currentLanguage === "fa";
-
   return (
     <main className="container !mt-[100px] flex flex-row gap-8 py-[20px]">
       <div className="flex w-[20%] flex-col gap-2">
@@ -59,23 +56,11 @@ export default function Home() {
         />
 
         {/* Product List */}
-        <section className="mt-10 grid grid-cols-3 gap-4">
-          {paginatedProducts?.map((item, idx) => (
-            <div
-              className="flex flex-col items-center justify-center gap-2 rounded-primary bg-white px-5 py-4"
-              key={idx}
-            >
-              <Image
-                alt={item.name[currentLanguage as "en" | "fa"]}
-                src={item.images[0]}
-                width={214}
-                height={214}
-                className="py-5"
-              />
-              <span>{item.name[currentLanguage as "en" | "fa"]}</span>{" "}
-            </div>
-          ))}
-        </section>
+        <ProductList
+          products={paginatedProducts ?? []}
+          currentLanguage={currentLanguage}
+        />
+
         {/* Pagination */}
         {products?.length && products?.length > productsPerPage && (
           <Paginate
