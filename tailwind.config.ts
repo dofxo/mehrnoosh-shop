@@ -46,6 +46,7 @@ export default {
           foreground: "#191C1D",
           dark: { DEFAULT: "#1F2937", foreground: "#FAFAFA" },
         },
+        "gray-hover": "#6d90b9",
         "primary-700": "#2786ff",
         "primary-100": "#e8f2ff",
         primary: {
