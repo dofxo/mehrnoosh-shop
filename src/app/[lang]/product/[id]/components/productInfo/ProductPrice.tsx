@@ -37,15 +37,19 @@ const ProductPrice = () => {
     <div className="flex h-fit flex-col gap-4 rounded-[20px] bg-background p-[25px]">
       {/* price */}
       <div className="price flex flex-col">
-        <span className="flex items-center gap-2 text-[15px] text-[#324A66]">
-          <span className="line-through">
-            {Number(price).toLocaleString("en")}
+        {+discount_price > 0 && (
+          <span className="flex items-center gap-2 text-[15px] text-[#324A66]">
+            <span className="line-through">
+              {Number(price).toLocaleString("en")}
+            </span>
+            <span>{languageData.productSingle.tooman}</span>
           </span>
-          <span>{languageData.productSingle.tooman}</span>
-        </span>
+        )}
         <span className="flex items-center gap-2 text-[20px] font-[700] text-text-primary">
           <span className="text-primary">
-            {Number(discount_price).toLocaleString("en")}
+            {Number(
+              +discount_price > 0 ? discount_price : price,
+            ).toLocaleString("en")}
           </span>
           <span>{languageData.productSingle.tooman}</span>
         </span>
