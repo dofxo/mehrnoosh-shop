@@ -2,7 +2,11 @@
   "general": {
     "website_title": "Mehrnoosh Shop",
     "website_description": "Mehrnoosh Shop - A modern shopping experience",
-    "keywords": ["Mehrnoosh", "Online Shop", "Modern Ecommerce"]
+    "keywords": [
+      "Mehrnoosh",
+      "Online Shop",
+      "Modern Ecommerce"
+    ]
   },
   "landing": {
     "top_categories": "Top Categories",
@@ -11,7 +15,36 @@
     "ask_best_from_us": "Ask best from us",
     "best_products_in_iran": "Best products in Iran",
     "discount_only_today": "discounts only for today",
-    "up_to_90_discount": "Discounts up to 90%"
+    "up_to_90_discount": "Discounts up to 90%",
+    "footer_section_title": "Some of our features",
+    "footer_features": {
+      "free_post": {
+        "title": "Free Shipping",
+        "subtitle": "No extra cost"
+      },
+      "money_return": {
+        "title": "Money Back",
+        "subtitle": "For the first order"
+      },
+      "privacy": {
+        "title": "Privacy",
+        "subtitle": "No data storage"
+      },
+      "quality_insurance": {
+        "title": "Quality Guarantee",
+        "subtitle": "Return warranty"
+      }
+    },
+    "footer_category_links": {
+      "categories": "categories",
+      "useful_menu": "useful inks",
+      "shopping_cart": "shopping cart",
+      "operator": "operator",
+      "free_shipping": "Free Shipping",
+      "order_product": "Order Product",
+      "ticket": "ticket"
+    },
+    "footer_address": "Tehran - Pasdaran St. - 8th street - plate 5"
   },
   "wishlist": {
     "title": "My Wishlist",

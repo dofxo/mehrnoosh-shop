@@ -3,6 +3,7 @@ import "../globals.scss";
 import { langType } from "@/app/[lang]/langs";
 import InitProducts from "@/components/InitProducts";
 import RemoveDarkClass from "@/components/RemoveDarkClass";
+import Footer from "@/components/ui/footer/Footer";
 import DesktopHeader from "@/components/ui/header/desktop/DesktopHeader";
 import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
 import MegaMenuWrapper from "@/components/ui/mega-menu/MegaMenuWrapper";
@@ -82,7 +83,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
-      <body className={`${yekanbakh.className} antialiased`}>
+      <body className={`${yekanbakh.className} py-7 antialiased`}>
         <StoreProvider language={language} currentLanguage={lang}>
           <Provider>
             <InitProducts />
@@ -93,6 +94,7 @@ export default async function RootLayout({
             <Toaster />
             <RemoveDarkClass />
             {children}
+            <Footer />
           </Provider>
         </StoreProvider>
       </body>
