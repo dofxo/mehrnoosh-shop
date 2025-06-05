@@ -9,6 +9,7 @@ import { useState } from "react";
 
 export default function Home() {
   const products = useAppSelector((state) => state.productsData.productsData);
+  const languageData = useAppSelector((state) => state.language.languageData);
   const [currentFilter, setCurrentFilter] = useState("default");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -59,6 +60,7 @@ export default function Home() {
         <ProductList
           products={paginatedProducts ?? []}
           currentLanguage={currentLanguage}
+          languageData={languageData}
         />
 
         {/* Pagination */}
