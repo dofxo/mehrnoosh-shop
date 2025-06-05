@@ -34,7 +34,17 @@
         "title": "تضمین کیفیت",
         "subtitle": "ضمانت برگشت کالا"
       }
-    }
+    },
+    "footer_category_links": {
+      "categories": "دسته بندی ها",
+      "useful_menu": "منو کاربردی",
+      "shopping_cart": "سبد خرید",
+      "operator": "پشتیبانی",
+      "free_shipping": "ارسال رایگان",
+      "order_product": "سفارش کالا",
+      "ticket": "تیکت"
+    },
+    "footer_address": "تهران - خیابان پاسداران جنوبی - فرعش هشتم - پلاک 10"
   },
   "wishlist": {
     "title": "لیست علاقه مندی های من",

@@ -34,7 +34,17 @@
         "title": "Quality Guarantee",
         "subtitle": "Return warranty"
       }
-    }
+    },
+    "footer_category_links": {
+      "categories": "categories",
+      "useful_menu": "useful inks",
+      "shopping_cart": "shopping cart",
+      "operator": "operator",
+      "free_shipping": "Free Shipping",
+      "order_product": "Order Product",
+      "ticket": "ticket"
+    },
+    "footer_address": "Tehran - Pasdaran St. - 8th street - plate 5"
   },
   "wishlist": {
     "title": "My Wishlist",
