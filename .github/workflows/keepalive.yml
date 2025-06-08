@@ -3,7 +3,7 @@ name: Supabase Keepalive
 on:
   push:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/60 * * * *'
   workflow_dispatch:
 
 jobs:
