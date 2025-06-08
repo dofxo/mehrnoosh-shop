@@ -1,18 +1,36 @@
-import { supabase } from "@/utils/supabase";
+import { createClient } from "@supabase/supabase-js";
+import dotenv from "dotenv";
 
-async function updateKeepAlive() {
+dotenv.config();
+
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  console.error(
+    "❌ Missing SUPABASE_URL or SUPABASE_KEY environment variable.",
+  );
+  process.exit(1);
+}
+
+export const supabase = createClient(supabaseUrl, supabaseKey);
+
+async function updateKeepalive() {
   try {
+    const now = new Date().toISOString();
+
     const { data, error } = await supabase
       .from("keepalive")
-      .update({ last_ping: new Date().toISOString() })
+      .update({ last_ping: now })
       .eq("id", 1);
 
     if (error) throw error;
-    console.log("✅ Keep-alive ping:", new Date().toISOString());
+
+    console.log("✅ keep-alive ping:", now);
   } catch (err) {
-    console.error("❌ Error pinging Supabase:", err.message);
-    process.exit(1); // Fail the workflow if error
+    console.error("❌ error pinging supabase:", err.message);
+    process.exit(1);
   }
 }
 
-updateKeepAlive();
+updateKeepalive();
