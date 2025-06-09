@@ -17,6 +17,10 @@
     "discount_only_today": "discounts only for today",
     "up_to_90_discount": "Discounts up to 90%",
     "footer_section_title": "Some of our features",
+    "comments": {
+      "customers_comments": "Customers comments",
+      "section_details": "You can see our customers comments here."
+    },
     "footer_features": {
       "free_post": {
         "title": "Free Shipping",

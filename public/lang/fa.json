@@ -17,6 +17,10 @@
     "discount_only_today": "فقط امروز تخفیف داریم",
     "up_to_90_discount": "تا 90% تخفیف ویژه",
     "footer_section_title": "برخی از ویژگی های ما",
+    "comments": {
+      "customers_comments": "دیدگاه خریداران",
+      "section_details": "در این قسمت شما می توانید دیگاه خریداران ما را مشاهده کنید."
+    },
     "footer_features": {
       "free_post": {
         "title": "ارسال رایگان",
