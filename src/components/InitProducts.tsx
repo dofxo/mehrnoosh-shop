@@ -13,7 +13,7 @@ export default function InitProducts({ children }: { children: React.ReactNode }
   useEffect(() => {
     (async () => {
       try {
-        const { data: productsData } = await axios.get(`/api/products/`);
+        const { data: productsData } = await axios.get(`/api/products`);
         dispatch(initializeProductsData(productsData));
       } catch (error) {
         console.error("Failed to load products:", error);
