@@ -82,22 +82,23 @@ export default async function RootLayout({
   const language = await getLanguage(lang);
 
   return (
-    <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
+      <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
       <body className={`${yekanbakh.className} py-7 antialiased`}>
-        <StoreProvider language={language} currentLanguage={lang}>
+      <StoreProvider language={language} currentLanguage={lang}>
           <Provider>
-            <InitProducts />
-            <DesktopHeader />
-            <MobileHeader />
-            <MobileNav />
-            <MegaMenuWrapper />
-            <Toaster />
-            <RemoveDarkClass />
-            {children}
-            <Footer />
+              <InitProducts>
+                  <DesktopHeader />
+                  <MobileHeader />
+                  <MobileNav />
+                  <MegaMenuWrapper />
+                  <Toaster />
+                  <RemoveDarkClass />
+                  {children}
+                  <Footer />
+              </InitProducts>
           </Provider>
-        </StoreProvider>
+      </StoreProvider>
       </body>
-    </html>
+      </html>
   );
 }
