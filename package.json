@@ -25,6 +25,7 @@
     "axios": "^1.8.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "flowbite-react": "^0.10.2",
     "framer-motion": "^12.4.7",
     "jalali-moment": "^3.3.11",
@@ -41,6 +42,7 @@
     "react-slick": "^0.30.3",
     "sass": "^1.84.0",
     "slick-carousel": "^1.8.1",
+    "swiper": "^11.2.8",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7"
   },

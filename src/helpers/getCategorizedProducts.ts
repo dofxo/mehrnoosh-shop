@@ -1,7 +1,7 @@
 import { langType } from "@/app/[lang]/langs";
 import { IProduct } from "@/app/[lang]/product/[id]/Product";
 
-export const categoriesProducts = (
+export const getCategorizedProducts = (
   products: IProduct[],
   currentLanguage: langType,
 ) => {
