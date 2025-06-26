@@ -3,4 +3,6 @@ export type SortProps = {
   currentFilter: string;
   setCurrentFilter: React.Dispatch<React.SetStateAction<string>>;
   handleCurrentFilterChange: (value: string) => void;
+  startIndex: number;
+  endIndex: number;
 };

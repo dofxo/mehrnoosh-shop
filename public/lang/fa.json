@@ -96,6 +96,12 @@
     "title": "فروشگاه",
     "show": "نمایش",
     "from": "از",
-    "result": "نتیجه"
+    "result": "نتیجه",
+    "actions": {
+      "favorite": "علاقه مندی",
+      "compare": "مقایسه",
+      "quick_watch": "مشاهده سریع",
+      "add_to_shopping_cart": "افزودن به سبد خرید"
+    }
   }
 }

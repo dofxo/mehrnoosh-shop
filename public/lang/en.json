@@ -96,6 +96,12 @@
     "title": "shop",
     "show": "showing",
     "from": "from",
-    "result": "results"
+    "result": "results",
+    "actions": {
+      "favorite": "favorite",
+      "compare": "compare",
+      "quick_watch": "quick watch",
+      "add_to_shopping_cart": "add to cart"
+    }
   }
 }

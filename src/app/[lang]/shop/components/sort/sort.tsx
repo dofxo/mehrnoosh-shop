@@ -12,6 +12,8 @@ export default function Sort({
   currentFilter,
   setCurrentFilter,
   handleCurrentFilterChange,
+  startIndex,
+  endIndex,
 }: SortProps) {
   const language = useAppSelector((state) => state.language.languageData);
   const currentLanguage = useAppSelector(
@@ -29,8 +31,7 @@ export default function Sort({
 
       <div className="flex flex-row flex-wrap items-center gap-2">
         <div className="rounded-primary bg-white px-[16px] py-[8px] text-sm">
-          {language.shop.show} 1-9 {language.shop.from} {productsAmount}{" "}
-          {language.shop.result}
+          {language.shop.show} {startIndex}-{endIndex} {language.shop.from} {productsAmount} {language.shop.result}
         </div>
 
         <RadioGroup

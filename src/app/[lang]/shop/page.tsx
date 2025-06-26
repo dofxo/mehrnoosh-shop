@@ -1,15 +1,21 @@
 "use client";
 
 import FilterCategories from "@/app/[lang]/shop/components/filter-categories/filerCategories";
+import Paginate from "@/app/[lang]/shop/components/pagination/ShopPagination";
+import ProductList from "@/app/[lang]/shop/components/products-list/ProductsList";
 import Sort from "@/app/[lang]/shop/components/sort/sort";
 import { useAppSelector } from "@/lib/hooks";
 import { useState } from "react";
-import Paginate from "@/app/[lang]/shop/components/pagination/ShopPagination";
 
 export default function Home() {
   const products = useAppSelector((state) => state.productsData.productsData);
+  const languageData = useAppSelector((state) => state.language.languageData);
   const [currentFilter, setCurrentFilter] = useState("default");
   const [currentPage, setCurrentPage] = useState(1);
+
+  const currentLanguage = useAppSelector(
+    (state) => state.language.currentLanguage,
+  ) as "en" | "fa";
 
   const productsPerPage = 9;
   const totalPages = products?.length
@@ -26,7 +32,13 @@ export default function Home() {
 
   const paginatedProducts = products?.slice(
     (currentPage - 1) * productsPerPage,
-    currentPage * productsPerPage
+    currentPage * productsPerPage,
+  );
+
+  const startIndex = (currentPage - 1) * productsPerPage + 1;
+  const endIndex = Math.min(
+    currentPage * productsPerPage,
+    products?.length || 0,
   );
 
   return (
@@ -40,15 +52,19 @@ export default function Home() {
           setCurrentFilter={setCurrentFilter}
           handleCurrentFilterChange={handleCurrentFilterChange}
           productsAmount={products?.length}
+          startIndex={startIndex}
+          endIndex={endIndex}
         />
 
         {/* Product List */}
-        {paginatedProducts?.map((item, idx) => (
-          <div key={idx}>{item.name.fa}</div>
-        ))}
+        <ProductList
+          products={paginatedProducts ?? []}
+          currentLanguage={currentLanguage}
+          languageData={languageData}
+        />
 
         {/* Pagination */}
-        {products?.length > productsPerPage && (
+        {products?.length && products?.length > productsPerPage && (
           <Paginate
             currentPage={currentPage}
             totalPages={totalPages}
