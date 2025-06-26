@@ -19,7 +19,8 @@
     "footer_section_title": "Some of our features",
     "comments": {
       "customers_comments": "Customers comments",
-      "section_details": "You can see our customers comments here."
+      "section_details": "You can see our customers comments here.",
+      "no_comments": "There are no comments."
     },
     "footer_features": {
       "free_post": {

@@ -1,10 +1,20 @@
 import Controls from "@/app/components/comments/Controls";
+import CommentsSection from "@/app/components/comments/CommentsSection";
+
+export interface IComment {
+    comment: string,
+    created_at: string,
+    cons: string[],
+    pros: string[],
+    name: string,
+    rating: string
+}
 
 const comments  = () => {
     return (
-        <section classname="container flex items-center justify-between gap-5">
+        <section className="container flex flex-col !my-10 md:flex-row items-center justify-between gap-5">
             <Controls />
-            <div classname="" id="comments"></div>
+            <CommentsSection/>
         </section>
     )
 }

@@ -81,12 +81,12 @@ const HeroSection = () => {
           <button
             key={index}
             onClick={() => handleSlideChange(index)}
-            className={`w-[40px] rounded-[50%] transition-all ${activeIndex === index ? "border-primary/2 scale-125 border border-2 bg-white" : "bg-white"}`}
+            className={`w-[40px] rounded-[50%] transition-all ${activeIndex === index ? "border-primary/2 scale-125 border-2 bg-white" : "bg-white"}`}
             aria-label={`Go to slide ${index + 1}`}
           >
             <Image
               src={`/images/landing/hero/s${index + 1}.jpg`}
-              alt={index + 1}
+              alt={`${index + 1}`}
               width={0}
               height={0}
               layout="responsive"

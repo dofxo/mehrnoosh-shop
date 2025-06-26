@@ -19,7 +19,8 @@
     "footer_section_title": "برخی از ویژگی های ما",
     "comments": {
       "customers_comments": "دیدگاه خریداران",
-      "section_details": "در این قسمت شما می توانید دیگاه خریداران ما را مشاهده کنید."
+      "section_details": "در این قسمت شما می توانید دیگاه خریداران ما را مشاهده کنید.",
+      "no_comments": "دیدگاهی وجود ندارد"
     },
     "footer_features": {
       "free_post": {
