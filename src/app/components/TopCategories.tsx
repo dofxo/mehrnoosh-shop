@@ -63,7 +63,7 @@ const TopCategories = () => {
             );
           })
         ) : (
-          <span className="category-loader"></span>
+          <span className="loader"></span>
         )}
       </div>
     </section>
