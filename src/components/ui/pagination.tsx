@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 import * as React from "react";
 
 // TODO: change the next and previous Icons
+// TODO: check the styles
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
