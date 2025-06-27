@@ -57,6 +57,7 @@
     "no_wishlist_item_found": "There is no wishlisted products"
   },
   "productSingle": {
+    "no_product": "No Product Found",
     "compare": "compare",
     "share": "share",
     "like": "like",
