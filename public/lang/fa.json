@@ -57,6 +57,7 @@
     "no_wishlist_item_found": "محصولی در لیست علاقه مندی ها وجود ندارد"
   },
   "productSingle": {
+    "no_product": "محصولی یافت نشد",
     "compare": "مقایسه",
     "share": "اشتراک گذاری",
     "like": "علاقه مندی",
