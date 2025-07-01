@@ -3,9 +3,12 @@
 import { IProduct } from "@/app/[lang]/product/[id]/Product";
 import ProductActions from "@/app/[lang]/shop/components/products-list/components/ProductActions";
 import { languageDataType } from "@/lib/features/language/languageSlice";
+import { getWishList } from "@/utils/wishList/getWishList";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
 
 interface ProductListProps {
   products: IProduct[];
@@ -18,6 +21,16 @@ export default function ProductList({
   currentLanguage,
   languageData,
 }: ProductListProps) {
+  const [wishList, setWishList] = useState<number[]>([]);
+
+  useEffect(() => {
+    setWishList(getWishList());
+  }, []);
+
+  const handleWishListChange = () => {
+    setWishList(getWishList());
+  };
+
   return (
     <section className="mt-10 grid grid-cols-3 gap-8">
       {products.map((item, idx) => {
@@ -26,9 +39,11 @@ export default function ProductList({
             Number(item.price)) *
             100,
         );
+
+        const isInWishList = wishList.includes(item.id);
+
         return (
           <div className="rounded-primary bg-white px-5 py-4" key={idx}>
-            {/* Image and product name */}
             <Link
               href={`/product/${item.id}`}
               className="flex flex-col items-center justify-center gap-2"
@@ -47,7 +62,6 @@ export default function ProductList({
               </span>
             </Link>
 
-            {/* product price */}
             <div className="flex flex-row justify-between">
               <div className="flex flex-col font-semibold">
                 {Number(item.discount_price) !== 0 && (
@@ -79,10 +93,12 @@ export default function ProductList({
               </div>
             </div>
 
-            {/* Product actions */}
             <ProductActions
               languageData={languageData}
               discountAmount={discountAmount}
+              productId={Number(item.id)}
+              isInWishList={isInWishList}
+              onWishListChange={handleWishListChange}
             />
           </div>
         );
