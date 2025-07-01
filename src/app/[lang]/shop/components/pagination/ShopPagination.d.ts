@@ -3,4 +3,3 @@ export type PaginateProps = {
   totalPages: number;
   onPageChange: (page: number) => void;
 };
-

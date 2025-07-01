@@ -8,7 +8,7 @@ export default function FilterCategories() {
   const categories = getCategories(products);
 
   return (
-    <div className="flex flex-col gap-2 bg-white p-[20px] rounded-primary">
+    <div className="flex flex-col gap-2 rounded-primary bg-white p-[20px]">
       {categories.map((item) => (
         <div key={item.id}>test</div>
       ))}

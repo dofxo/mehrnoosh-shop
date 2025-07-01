@@ -10,12 +10,15 @@ import { languageDataType } from "@/lib/features/language/languageSlice";
 import { Eye, GitCompareArrows, Heart } from "lucide-react";
 
 interface ProductActionsProps {
-	languageData: languageDataType;
-	discountAmount:number;
+  languageData: languageDataType;
+  discountAmount: number;
 }
 
-export default function ProductActions({ languageData,discountAmount }: ProductActionsProps) {
-	console.log(discountAmount)
+export default function ProductActions({
+  languageData,
+  discountAmount,
+}: ProductActionsProps) {
+  console.log(discountAmount);
   return (
     <div className="mt-4 flex flex-row items-center justify-between">
       <div className="flex flex-row gap-1">
@@ -55,11 +58,12 @@ export default function ProductActions({ languageData,discountAmount }: ProductA
               <span>{languageData.shop.actions.compare}</span>
             </TooltipContent>
           </Tooltip>
-				</TooltipProvider>
-				{discountAmount !== 100 && (
-
-				<div className="flex items-center justify-center font-semibold shadow-products-action mt-[2px] bg-primary-700 text-white rounded-primary h-[35px] px-[15px] py-[7px]"><span className="mt-[3.3px]" >{discountAmount}%</span></div>
-				)}
+        </TooltipProvider>
+        {discountAmount !== 100 && (
+          <div className="mt-[2px] flex h-[35px] items-center justify-center rounded-primary bg-primary-700 px-[15px] py-[7px] font-semibold text-white shadow-products-action">
+            <span className="mt-[3.3px]">{discountAmount}%</span>
+          </div>
+        )}
       </div>
       <div></div>
     </div>
