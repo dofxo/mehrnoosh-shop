@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/tooltip";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { languageDataType } from "@/lib/features/language/languageSlice";
-import { Eye, GitCompareArrows, Heart } from "lucide-react";
+import { Eye, GitCompareArrows, Heart, ShoppingCart } from "lucide-react";
 
 interface ProductActionsProps {
   languageData: languageDataType;
@@ -65,7 +65,21 @@ export default function ProductActions({
           </div>
         )}
       </div>
-      <div></div>
+      <div>
+        <TooltipProvider delayDuration={0}>
+          {/* Add to cart */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div className="flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-[100%] bg-gray-100 p-2 transition hover:bg-gray-hover hover:text-white">
+                <ShoppingCart size={18} />
+              </div>
+            </TooltipTrigger>
+            <TooltipContent className="bg-gray-hover">
+              <span>{languageData.shop.actions.add_to_shopping_cart}</span>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
     </div>
   );
 }

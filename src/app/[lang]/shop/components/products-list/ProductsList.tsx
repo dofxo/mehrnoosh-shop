@@ -72,8 +72,8 @@ export default function ProductList({
                   <span className="flex items-center justify-center">
                     3 {languageData.shop.from} 5
                   </span>
-                  <div className="flex h-[30px] w-[30px] flex-row items-center justify-center rounded-[100%] bg-yellow-100 p-2">
-                    <Star color="orange" />
+                  <div className="flex h-[30px] w-[30px] flex-row items-center justify-center rounded-[100%] bg-orange-100 p-2">
+                    <Star color="orange" size={25} />
                   </div>
                 </div>
               </div>
