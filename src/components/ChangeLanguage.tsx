@@ -20,7 +20,7 @@ import getCookie from "@/helpers/getCookie";
 import { changeCurrentLanguage } from "@/lib/features/language/languageSlice";
 import { useAppSelector, useAppDispatch } from "@/lib/hooks";
 import { Globe } from 'lucide-react';
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname} from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ChangeLanguage() {
@@ -40,7 +40,6 @@ export default function ChangeLanguage() {
   }, [currentLanguage]);
 
   const dispatch = useAppDispatch();
-  const router = useRouter();
   const pathname = usePathname();
   const [selectedLanguage, setSelectedLanguage] = useState(currentLanguage);
 
@@ -52,13 +51,14 @@ export default function ChangeLanguage() {
     const segments = pathname.split("/");
     segments[1] = selectedLanguage;
     const newPath = segments.join("/");
-    router.push(newPath);
 
     document.cookie =
       "language=" +
       selectedLanguage +
       "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
     dispatch(changeCurrentLanguage(selectedLanguage));
+
+    window.location.href = newPath;
   };
 
   return (

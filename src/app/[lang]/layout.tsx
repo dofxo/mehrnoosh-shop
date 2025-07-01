@@ -9,7 +9,6 @@ import MobileHeader from "@/components/ui/header/mobile/MobileHeader";
 import MegaMenuWrapper from "@/components/ui/mega-menu/MegaMenuWrapper";
 import MobileNav from "@/components/ui/mobile-nav/MobileNav";
 import { Provider } from "@/components/ui/provider";
-import yekanbakh from "@/fonts/yekanBakh";
 import { getLanguage } from "@/utils/langs";
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
@@ -30,7 +29,10 @@ export async function generateMetadata({
     keywords: language.general.keywords,
     authors: [
       { name: "Majid Kargar", url: "https://github.com/fulcain" },
-      { name: "Mohammad Kargar", url: "https://github.com/dofxo" },
+      {
+        name: "Mohammad Kargar",
+        url: "https://github.com/dofxo",
+      },
     ],
     openGraph: {
       title: language.general.website_title,
@@ -53,8 +55,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: language.general.website_title,
       description: language.general.website_description,
-      site: "@mehrnooshshop",
-      // TODO: add a image in database and replace here
+      site: "@mehrnooshshop", // TODO: add a image in database and replace here
       images: ["https://mehrnoosh.com/og-image.jpg"],
     },
     robots: {
@@ -82,23 +83,19 @@ export default async function RootLayout({
   const language = await getLanguage(lang);
 
   return (
-      <html lang={lang} dir={lang === "fa" ? "rtl" : "ltr"}>
-      <body className={`${yekanbakh.className} py-7 antialiased`}>
-      <StoreProvider language={language} currentLanguage={lang}>
-          <Provider>
-              <InitProducts>
-                  <DesktopHeader />
-                  <MobileHeader />
-                  <MobileNav />
-                  <MegaMenuWrapper />
-                  <Toaster />
-                  <RemoveDarkClass />
-                  {children}
-                  <Footer />
-              </InitProducts>
-          </Provider>
-      </StoreProvider>
-      </body>
-      </html>
+    <StoreProvider language={language} currentLanguage={lang}>
+      <Provider>
+        <InitProducts>
+          <DesktopHeader />
+          <MobileHeader />
+          <MobileNav />
+          <MegaMenuWrapper />
+          <Toaster />
+          <RemoveDarkClass />
+          {children}
+          <Footer />
+        </InitProducts>
+      </Provider>
+    </StoreProvider>
   );
 }
