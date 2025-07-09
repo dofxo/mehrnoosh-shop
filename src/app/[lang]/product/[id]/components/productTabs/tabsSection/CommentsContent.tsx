@@ -126,6 +126,7 @@ const CommentsContent = ({
                 }
               },
               inputRef: prosRef,
+              category: "pros",
             },
             {
               title: {
@@ -143,10 +144,11 @@ const CommentsContent = ({
                 }
               },
               inputRef: consRef,
+              category: "cons",
             },
-          ].map((item, idx) => (
+          ].map((item, itemIdx) => (
             <div
-              key={idx}
+              key={itemIdx}
               className="flex flex-col gap-5 rounded-[10px] bg-white p-[20px]"
             >
               <h3
@@ -164,19 +166,33 @@ const CommentsContent = ({
                 placeholder={item.placeHolder}
               />
               <ul>
-                {item.data.map((item, idx) => (
-                  <li key={idx} className="flex gap-2">
+                {item.data.map((text, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
                     <span className="font-bold">{idx + 1}.</span>
-                    <span>{item}</span>
+                    <span>{text}</span>
+                    <Button
+                      className="flex w-fit items-center self-end text-[12px] text-red-500"
+                      variant="ghost"
+                      onClick={() => {
+                        if (item.category === "pros") {
+                          setPros(pros.filter((_, i) => i !== idx));
+                        } else {
+                          setCons(cons.filter((_, i) => i !== idx));
+                        }
+                      }}
+                    >
+                      X
+                    </Button>
                   </li>
                 ))}
               </ul>
               <Button
                 className="flex w-fit items-center gap-2 self-end text-[18px] text-primary"
                 variant="ghost"
+                onClick={item.onClick}
               >
                 <Plus />
-                <span className="self-start" onClick={item.onClick}>
+                <span className="self-start">
                   {languageData.productSingle.add}
                 </span>
               </Button>
