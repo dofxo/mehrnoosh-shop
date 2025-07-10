@@ -9,7 +9,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-
 interface ProductListProps {
   products: IProduct[];
   currentLanguage: "en" | "fa";
@@ -46,9 +45,16 @@ export default function ProductList({
           <div className="rounded-primary bg-white px-5 py-4" key={idx}>
             <Link
               href={`/product/${item.id}`}
-              className="flex flex-col items-center justify-center gap-2"
+              className="relative flex flex-col items-center justify-center gap-2"
             >
-              <div className="flex h-[214px] w-[214px] items-center justify-center">
+              {Number(item.discount_price) !== 0 && (
+                <div className="absolute -top-4 right-2 border-t-4 border-primary-700 pt-2 text-primary-700">
+                  <div className="relative">
+                    <span>{languageData.shop.special_discount}</span>
+                  </div>
+                </div>
+              )}
+              <div className="mt-7 flex h-[214px] w-[214px] items-center justify-center">
                 <Image
                   alt={item.name[currentLanguage]}
                   src={item.images[0]}
